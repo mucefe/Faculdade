@@ -32,15 +32,15 @@ public class desafio07 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String nome="";
-		Integer idade=0;
-		Integer nrFilhos=0;
-		Integer respondentes=0;
-		Double salario=0d;
-		Double mediaSalarios=0d;
-		Double mediaFilhos=0d;
-		Double maiorSalario=0d;
-		Double mediaIdades=0d;
-		Boolean continua=false;
+		int idade=0;
+		int nrFilhos=0;
+		int respondentes=0;
+		double salario=0;
+		double mediaSalarios=0;
+		double mediaFilhos=0;
+		double maiorSalario=0;
+		double mediaIdades=0;
+		boolean continua=false;
 		
 		ArrayList<String> FuncSalariosMenores = new ArrayList();
 		ArrayList<Double> salarios = new ArrayList();
@@ -70,20 +70,19 @@ public class desafio07 {
 		continua=continua();
 		
 		} while (continua==true);
-		if (continua==true) {
-			sc.nextLine();
-		}
 		
-		for (int i = 0;i<salarios.size();i++) {
-			if (i<(salarios.size())-1) {
-				if (salarios.get(i)>salarios.get(i+1)) {
+		
+		for (int i = 0;i<salarios.size();i++) {   //Verifica o maior salário cadastrado
+			//if (i<(salarios.size())) {
+				if (salarios.get(i)>maiorSalario) {
 					maiorSalario=salarios.get(i);
+					;
 				}
-			}
+			//}
 			
 			
 		}
-		
+		// Calcula as médias
 		mediaIdades/=respondentes;
 		mediaSalarios/=respondentes;
 		mediaFilhos/=respondentes;
@@ -92,17 +91,15 @@ public class desafio07 {
 		System.out.println("A pesquisa ouviu um total de " + respondentes + " respondentes.");
 		System.out.println("A média de salário da população é de R$ " + mediaSalarios );
 		if (FuncSalariosMenores.size()>0) {
-			System.out.print("Os seguintes moradores possuem salário abaixo de R$ 1000,00: ");	
+			System.out.print("Os seguintes moradores possuem salário abaixo de R$ 1000,00: " + FuncSalariosMenores);	
 		} else {
-			System.out.println("Nenhum morador da cidade possui salário inferior a R$ 1000,00.");
+			System.out.print("Nenhum morador da cidade possui salário inferior a R$ 1000,00.");
 		}
 		
-		for (int i=0;i<FuncSalariosMenores.size();i++) {
-			System.out.print(FuncSalariosMenores.get(i) + ", ");
-			
-		}
+		
 		System.out.println("\nA média de idade da população é de " + mediaIdades + " anos.");
 		System.out.println("O maior salário da cidade é: R$ " + maiorSalario);
+		System.out.println("A média do número de filhos da população é de " + mediaFilhos);
 		
 	}
 
