@@ -42,7 +42,7 @@ public class desafio07 {
 		double mediaIdades=0;
 		boolean continua=false;
 		
-		ArrayList<String> FuncSalariosMenores = new ArrayList();
+		ArrayList<String> funcSalariosMenores = new ArrayList();
 		ArrayList<Double> salarios = new ArrayList();
 		
 		do {
@@ -65,7 +65,7 @@ public class desafio07 {
 		
 		
 		if (salario<1000) {
-			FuncSalariosMenores.add(nome);
+			funcSalariosMenores.add(nome);
 		}
 		continua=continua();
 		
@@ -90,8 +90,8 @@ public class desafio07 {
 		System.out.println("===== SENSO ARAQUACHUSSETS =====");
 		System.out.println("A pesquisa ouviu um total de " + respondentes + " respondentes.");
 		System.out.println("A média de salário da população é de R$ " + mediaSalarios );
-		if (FuncSalariosMenores.size()>0) {
-			System.out.print("Os seguintes moradores possuem salário abaixo de R$ 1000,00: " + FuncSalariosMenores);	
+		if (funcSalariosMenores.size()>0) {
+			System.out.print("Os seguintes moradores possuem salário abaixo de R$ 1000,00: " + funcSalariosMenores);	
 		} else {
 			System.out.print("Nenhum morador da cidade possui salário inferior a R$ 1000,00.");
 		}

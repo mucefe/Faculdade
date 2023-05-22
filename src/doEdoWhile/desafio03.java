@@ -88,11 +88,11 @@ public class desafio03 {
 		String resposta=sc.nextLine();
 		
 		if (resposta.equalsIgnoreCase("S")) {
-			sc.close();
+			
 			return true;
 		} else {
 			System.out.println("Programa encerrado.");
-			sc.close();
+			
 			return false;
 			
 		}
