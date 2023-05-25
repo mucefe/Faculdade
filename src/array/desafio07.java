@@ -1,6 +1,7 @@
 package array;
 
-import java.util.Random;
+
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 //Array - Desafio 7
@@ -12,20 +13,36 @@ programa que leia as notas de cada aluno em uma avaliação e armazene-as em um
 vetor. O programa deve calcular e imprimir a média da turma e a quantidade de alunos
 que ficaram acima da média.*/
 
-public class desafio07 {
-	Scanner sc = new Scanner(System.in);
+public  class desafio07 {
+	
 	public static void main(String[] args) {
-		Random aleatorio = new Random();
+		Scanner sc = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("##.##");
 		double[] notas = new double[30];
 		double media=0.0;		
 		int acimaMedia=0;
 		
-		for (int i=0;i<notas.length;i++) {
-			
+		for (int i=0;i<notas.length;i++) {   // Abastece o vetor com as notas
+			System.out.print("\nInsira a " + (i+1) + "ª nota: ");
+			notas[i]=sc.nextDouble();
+			sc.nextLine();;
 		}
 		
+		for (int i=0;i<notas.length;i++) {   // Faz a somatória das médias do vetor
+			media+=notas[i];
+		}
+		media/=notas.length;
 		
-
+		for (int i=0;i<notas.length;i++) { // Calcula a quantidade de notas acima da média
+			if (notas[i]>media) {
+				acimaMedia++;
+			}
+		}
+		// Prints
+		System.out.println("A média geral da turma é: " + df.format(media) + ".");
+		System.out.println(acimaMedia + " alunos ficaram acima da média da turma.");
+		
+		sc.close();
 	}
 	
 }
