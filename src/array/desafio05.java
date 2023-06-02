@@ -21,6 +21,7 @@ public class desafio05 {
 		int[] pesos = new int[3];
 		double[][] notas = new double[5][3];
 		double[] medias = new double[5];
+		int somaPesos=0;
 
 		for (int i=0;i<alunos.length;i++) {
 			System.out.println("Insira o nome do(a) " + (i+1) + "º/ª aluno(a): ");
@@ -39,15 +40,16 @@ public class desafio05 {
 			System.out.println("Insira o peso da " + (i+1) + "ª nota do bimestre:  ");
 			pesos[i]=sc.nextInt();
 			sc.nextLine();
+			somaPesos+=pesos[i];
 		}
 		
 		// Cálculo das médias
 		
-		medias[0]+=((notas[0][0]*pesos[0]) + (notas[0][1]*pesos[1]) + (notas[0][2])*pesos[2])/6;
-		medias[1]+=((notas[1][0]*pesos[0]) + (notas[1][1]*pesos[1]) + (notas[1][2])*pesos[2])/6;
-		medias[2]+=((notas[2][0]*pesos[0]) + (notas[2][1]*pesos[1]) + (notas[2][2])*pesos[2])/6;
-		medias[3]+=((notas[3][0]*pesos[0]) + (notas[3][1]*pesos[1]) + (notas[3][2])*pesos[2])/6;
-		medias[4]+=((notas[4][0]*pesos[0]) + (notas[4][1]*pesos[1]) + (notas[4][2])*pesos[2])/6;
+		medias[0]+=((notas[0][0]*pesos[0]) + (notas[0][1]*pesos[1]) + (notas[0][2])*pesos[2])/somaPesos;
+		medias[1]+=((notas[1][0]*pesos[0]) + (notas[1][1]*pesos[1]) + (notas[1][2])*pesos[2])/somaPesos;
+		medias[2]+=((notas[2][0]*pesos[0]) + (notas[2][1]*pesos[1]) + (notas[2][2])*pesos[2])/somaPesos;
+		medias[3]+=((notas[3][0]*pesos[0]) + (notas[3][1]*pesos[1]) + (notas[3][2])*pesos[2])/somaPesos;
+		medias[4]+=((notas[4][0]*pesos[0]) + (notas[4][1]*pesos[1]) + (notas[4][2])*pesos[2])/somaPesos;
 		sc.close();
 		
 		// Print da tabela com as informações
