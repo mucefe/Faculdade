@@ -27,10 +27,10 @@ melhor compreensão da situação econômica e demográfica de sua cidade, o que
 ajudá-la a planejar políticas públicas mais eficazes.*/
 
 public class desafio07 {
-
+	static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+		
 		String nome="";
 		int idade=0;
 		int nrFilhos=0;
@@ -42,8 +42,8 @@ public class desafio07 {
 		double mediaIdades=0;
 		boolean continua=false;
 		
-		ArrayList<String> funcSalariosMenores = new ArrayList();
-		ArrayList<Double> salarios = new ArrayList();
+		ArrayList<String> funcSalariosMenores = new ArrayList<String>();
+		ArrayList<Double> salarios = new ArrayList<Double>();
 		
 		do {
 			
@@ -100,11 +100,11 @@ public class desafio07 {
 		System.out.println("\nA média de idade da população é de " + mediaIdades + " anos.");
 		System.out.println("O maior salário da cidade é: R$ " + maiorSalario);
 		System.out.println("A média do número de filhos da população é de " + mediaFilhos);
-		
+		sc.close();
 	}
 
 	public static boolean continua() {
-		Scanner sc = new Scanner (System.in);
+		
 		char resp='\0';
 		
 		

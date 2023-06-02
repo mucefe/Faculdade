@@ -16,9 +16,9 @@ com erros, como divisão por zero.*/
 
 
 public class desafio03 {
-
+	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+		
 		int numA=0;
 		int numB=0;
 		int opcao=0;
@@ -83,7 +83,7 @@ public class desafio03 {
 	}
 
 	public static boolean continuaOuNao() {
-		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("Continuar? (S/N)");
 		String resposta=sc.nextLine();
 		

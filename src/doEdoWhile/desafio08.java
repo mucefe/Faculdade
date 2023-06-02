@@ -25,7 +25,7 @@ promoção.
 Obs.: não esqueça de validar se a nota está entre 0 e 10.*/
 
 public class desafio08 {
-
+static Scanner sc = new Scanner((System.in));
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String genero = "";
@@ -98,7 +98,7 @@ public class desafio08 {
 	}
 
 	public static boolean continua() {
-		Scanner sc = new Scanner((System.in));
+		
 		System.out.println("Deseja cadastrar um novo respondente? (S/N): ");
 		String resp = sc.next();
 		resp = resp.toUpperCase();
