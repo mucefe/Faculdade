@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Currículo de Murilo Ferreira</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#experiencia">Experiência</a></li>
+                <li><a href="#educacao">Educação</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p>Programador em início de carreira buscando aprender e evoluir nas tecnologias mais utilizadas no mercado.</p>
+        </section>
+
+        <section id="experiencia">
+            <h2>Experiência Profissional</h2>
+            <article>
+                <h3>Estagiário em Desenvolvimento de Software</h3>
+                <p>Schulze Advogados - 2024 até o presente</p>
+                <p>Estágio em desenvolvimento de software utilizando tecnologias como C# e php.</p>
+            </article>
+        </section>
+
+        <section id="educacao">
+            <h2>Educação</h2>
+            <article>
+                <h3>Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
+                <p>UniSenai - Atualmente cursando</p>
+            </article>
+        </section>
+    </main>
+
+    <aside>
+        <h3>Contato</h3>
+        <p>Email: mucefe@yahoo.com.br</p>
+        <p>Telefone/Whatsapp: (47) 99286-2801</p>
+    </aside>
+
+    <footer>
+        <p>&copy; 2024 Currículo de Murilo Ferreira. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
