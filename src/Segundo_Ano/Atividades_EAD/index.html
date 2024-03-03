@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Inscrição para o Evento Tech 2024</h1>
+        <p>Complete o formulário abaixo para se inscrever no evento.</p>
+        <form autocomplete="on">
+            <fieldset>
+                <legend>Informações Pessoais</legend>
+                <p>
+                    <label for="campoNome">Nome: </label>
+                    <input type="text" name="nome" id="campoNome" maxlength="100" placeholder="Digite o seu nome"
+                        required>
+                </p>
+                <p>
+                    <label for="campoEmail">E-mail:</label>
+                    <input type="email" name="email" minlength="5" id="email" placeholder="Digite o seu e-mail"
+                        required>
+                </p>
+                <p>
+                    <label for="campoSenha">Senha:</label>
+                    <input type="password" id="campoSenha" required minlength="6" maxlength="15"
+                        autocomplete="new-password" name="senha" placeholder="Senha" required>
+                </p>
+                <p>
+                    <label for="campoIdade">Idade:</label>
+                    <input type="number" min="0" max="100" step="1" name="idade" id="campoIdade" required>
+                </p>
+                <p>
+                    <label for="nascimento">Data de Nascimento</label>
+                    <input type="date" name="nascimento" id="campoNascimento" placeholder="DD/MM/AAAA" required>
+                </p>
+            </fieldset>
+        </form>
+        <form autocomplete="on">
+            <fieldset>
+                <legend>Preferências do Evento</legend>
+                <p>
+                    <label for="tema">Tema de Interesse:</label>
+                    <select name="tema" id="idTema">
+
+                        <option value="" selected>Escolha um tema</option>
+                        <option value="frontEnd">Front End</option>
+                        <option value="backEnd">Back End</option>
+                        <option value="devops">Dev Ops</option>
+                        <option value="web">Web</option>
+                        <option value="cybersec">Cybersec</option>
+                    </select>
+                <p>
+                    <label for="idworkshops">Workshops</label><br>
+                    <input type="checkbox" name="workshops" id="idworkshops">
+                    <label for="idDevWeb">Desenvolvimento Web Moderno</label><br>
+                    </input>
+                    <input type="checkbox" name="ia" id="idIA">
+                    <label for="idIA">Introdução à Inteligência Artificial</label><br>
+                    </input>
+                    <input type="checkbox" name="cybersec" id="idCybersec">
+                    <label for="idCybersec">Segurança na Internet</label>
+            </fieldset>
+            <form autocomplete="on">
+                <fieldset>
+                    <legend>Submissão de Aplicação</legend>
+
+                    <p>
+                        <label for="idCampoTitulo">Título</label>
+                        <input type="text" maxlength="100" required><br>
+                        <label for="idResumo">Resumo:</label>
+
+                        <textarea name="campoResumo" id="idResumo" cols="30" rows="6" maxlength="300" placeholder="">
+                        
+                    </p>
+                        </textarea>
+                    <p>
+                        <label for="arquivo">Anexar Arquivo Apresentação (PDF):</label>
+                        <input type="file">
+                    </p>
+
+
+                </fieldset>
+                <input type="button" onclick="alert('Inscrição Enviada!')" value="Enviar Inscrição">
+            </form>
+
+
+        </form>
+    </header>
+</body>
+<footer>
+<p>&copy; Evento Tech. Todos os direitos reservados</p>
+
+</footer>
+
+
+</html>
