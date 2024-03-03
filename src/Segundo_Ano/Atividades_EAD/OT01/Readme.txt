@@ -1,1 +1,0 @@
-Atividade em HTML5: criação de uma página com informações do currículum do aluno, seguida da disponibilização do arquivo no GitHub;
