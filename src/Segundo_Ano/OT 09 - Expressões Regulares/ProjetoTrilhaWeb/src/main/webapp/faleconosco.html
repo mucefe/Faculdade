@@ -31,8 +31,8 @@
 			<fieldset>
 				<legend>Dados Pessoais:</legend>
 				<label for="nome">Nome: </label> <input type="text" name="txtnome"
-					id=nome> <label for="fone">Telefone: </label> 
-					<input type="text" name="txtfone" id="fone"> 
+					id=nome onchange="verificaNome()"> <label for="fone">Telefone: </label> 
+					<input type="text" name="txtfone" id="fone" onchange="verificatelefone()"> 
 					<label for="email">E-mail:</label>
 					<input type="email" name="txtemail" id="email"> 
 			</fieldset>
