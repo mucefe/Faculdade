@@ -8,7 +8,8 @@ function verificaNome(){
                                                                        
     if (!expRegNome.test(nome)){                              
         alert("Preencha o campo Nome corretamente");
-        document.frmJunteSeANos.txtnome.focus();
+        document.frmJunteSeANos.campoNome.value="";
+        document.frmJunteSeANos.campoNome.focus();
         return false;
     }
     }
