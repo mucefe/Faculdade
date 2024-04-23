@@ -56,6 +56,13 @@ function verificaMotivo(motivo) {
         
         }   
 }
+4(document).ready(function(){
+	$("header").load("/ColdigoComJQuery/site/general/cabecalho.html")
+	$("nav").load("/ColdigoComJQuery/site/general/menu.html")
+	$("footer").load("/ColdigoComJQuery/site/general/rodape.html")
+}
+
+
  function verificaNome(){
 var nome = document.frmfaleconosco.txtnome.value;           // Recebe o valor do campo txtnome em uma variável
 
