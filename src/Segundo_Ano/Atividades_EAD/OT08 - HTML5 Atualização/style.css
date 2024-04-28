@@ -1,0 +1,213 @@
+*{
+    margin: auto;
+    padding:0;
+}
+
+body{
+    background-color: rgb(232, 189, 173);
+        
+}
+
+#cabecalho{
+    background-color: tomato;
+    color: white;
+    height: 4em;
+   
+}
+#h1Conteudo{
+    font-family: Signika Negative;
+    font-weight: bold;
+    color:tomato;
+    margin-bottom: 5%;
+    
+}
+a{
+    text-decoration: none;
+    color:white;
+    font-family: Signika Negative;
+}
+main{
+    margin: 5% 15% 3% 15%;
+    text-align: center;
+}
+#p1{
+    margin-bottom: 3%;
+    font-family: Signika Negative;
+}
+#imgPortfolio{
+    width: 30%;
+}
+#introducao{
+    margin-top: 4%;
+    margin-bottom: 2%;
+    font-family: Signika Negative;
+}
+a:hover{
+    font-weight: bolder;
+    text-shadow: 3px;
+}
+#titulo{
+    text-align: center;
+    vertical-align: center;
+    font-family:Signika Negative;
+    font: weight 700px;
+}
+
+#menu{
+display: flex;
+flex-direction: row;
+
+}
+
+footer{
+    
+    margin-top: 6.8%;
+    background-color: tomato;
+    height: 2em;
+    text-align: center;
+    color: white;
+    font-family: Signika Negative;
+
+}
+#footerIndex{
+    margin-top:9.5%;
+}
+#footerHab{
+    margin-top: 16%;
+}
+.lista{
+    text-align: left;
+    width: 30%;
+    
+
+}
+.container{
+    display: flex;
+    font-family: Signika Negative;
+   
+}
+#lista1{
+    flex: 1;
+}
+#lista2{
+    flex:1
+}
+.paragrafo{
+    margin-bottom: 5%;
+    font-family: Signika Negative;
+    font-weight: bold;
+}
+#maincurriculum{
+    font-family:Signika Negative;
+}
+#sobre{
+    margin-bottom: 5%;
+}
+#experiencia{
+    margin-bottom: 5%;
+}
+#educacao{
+    margin-bottom: 5%;
+}
+.pHab{
+    margin-bottom:15%;
+}
+#skills{
+    width: 20%;
+    height: 45%;
+}
+#footerHab{
+    margin-top:17.2%;
+}
+.h1Habilidades{
+    font-family: Signika Negative;
+    margin-left: 23%;
+}
+#Murilo{
+    width: 15%;
+}
+#h1SobreMim{
+    font-family: Signika Negative;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+#pSobre{
+    font-family: Signika Negative;
+    text-align: justify;
+}
+#footerSobre{
+    margin-top: 5.3%;
+}
+#footerCurriculum{
+    margin-top: -1.6%;
+}
+#maincurriculum{
+    font-family: Signika Negative;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+    border-color: tomato;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+button[type="submit"] {
+    background-color: tomato;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff6347;
+}
+.lista div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.lista label {
+    margin-right: 10px;
+}
+
+.lista input[type="radio"] {
+    margin-right: 5px;
+}
+#comentario{
+    resize: none;
+}
+#OK:hover{
+    background-color: #ed3515;
+    box-shadow: 10px;
+}
+
+
