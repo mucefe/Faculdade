@@ -11,7 +11,7 @@ body{
 #cabecalho{
     background-color: tomato;
     color: white;
-    height: 4em;
+    height: 7em;
    
 }
 #h1Conteudo{
@@ -42,10 +42,7 @@ main{
     margin-bottom: 2%;
     font-family: Signika Negative;
 }
-a:hover{
-    font-weight: bolder;
-    text-shadow: 3px;
-}
+
 #titulo{
     text-align: center;
     vertical-align: center;
@@ -56,9 +53,24 @@ a:hover{
 #menu{
 display: flex;
 flex-direction: row;
+height: 60px;
 
 }
-
+.link {
+    font-weight: bolder;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+.link:hover {
+    font-weight: bolder;
+    background-color: rgb(251, 83, 53);
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    transition: .2s ;
+    box-shadow: 3px 7px 5px #000000;
+}
 footer{
     
     margin-top: 6.8%;
