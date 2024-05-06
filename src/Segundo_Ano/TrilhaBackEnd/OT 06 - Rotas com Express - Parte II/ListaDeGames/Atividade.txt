@@ -1,0 +1,69 @@
+1. O que é Node.js e por que é popular no desenvolvimento web?
+É uma forma de fazer o JavaScript funcionar tanto no FrontEnd quanto no Backend. É popular porque é o JS serv e de base para vários 
+frameworks populares e com grande engajamento e adesão por parte da comunidade de desenvolvedores.
+
+2. Qual é a diferença entre o Node.js e outras tecnologias de servidor, como o
+Apache?
+NodeJS e Apache são dois servidores web amplamente utilizados, cada um com suas próprias características e vantagens. O NodeJS é um ambiente de 
+execução JavaScript de código aberto e multiplataforma, construído sobre o motor JavaScript V8 do Chrome. Ele permite executar JavaScript no lado 
+do servidor, possibilitando a construção de aplicações web escaláveis e eficientes. O NodeJS é conhecido por seu desempenho excepcional devido à 
+sua natureza não bloqueante e assíncrona, sendo ideal para aplicações e APIs em tempo real. Além disso, com o NodeJS, tanto o front-end quanto o 
+back-end podem ser escritos em JavaScript, simplificando o processo de desenvolvimento.
+
+Por outro lado, o Apache, oficialmente conhecido como Apache HTTP Server, é um software de servidor web de código aberto mantido pela Apache 
+Software Foundation. Ele tem uma longa história e é considerado um dos servidores web mais populares e confiáveis. O Apache segue uma arquitetura 
+baseada em processos, onde cada solicitação do cliente é tratada por um processo ou thread separado. Isso proporciona estabilidade e isolamento 
+entre as solicitações, garantindo que uma única solicitação não impacte o desempenho de todo o servidor. Além disso, o Apache suporta tanto modelos
+ de multithreading quanto de multiprocessing, permitindo que ele lide com múltiplas solicitações de forma eficiente.
+
+3. Como você inicia um projeto Node.js usando o npm?
+
+Para iniciar um projeto Node.js utiliza-se o comando "npm init" para preencher as informações do projeto, ou "npm init -y" para inserir no projeto
+as informações padrão pelo sistema.
+
+4. O que é o Express.js e qual é o seu papel no desenvolvimento web com
+Node.js?
+O Express.JS é um framework para a criação de aplicações utilizando JavaScript e Node.JS
+
+5. Explique o conceito de middleware no contexto do Express.js.
+O middleware é um software que possui funcionalidades para possibilitar a comunicação de diferentes aplicações de maneira eficiente e possibilitando 
+a inovação de maneira mais rápida.
+
+6. Como você roteia solicitações HTTP em um aplicativo Express?
+No Express.js, é possível rotear solicitações HTTP usando métodos como app.get() e app.post(), que são aplicados a instâncias do objeto express.
+
+7. O que é o middleware de análise de corpo (body-parser) e por que é útil em
+um aplicativo Express?
+
+O body-parser é um middleware que é usado para analisar o corpo das solicitações HTTP recebidas em um aplicativo Express.js. Ele é útil porque 
+permite que se use o corpo da solicitação de maneira mais conveniente.
+Quando um cliente envia uma solicitação para um servidor, os dados podem ser enviados no corpo da solicitação. Esses dados podem estar em vários 
+formatos, como JSON, texto simples ou até mesmo arquivos. O body-parser analisa esses dados e os torna acessíveis através do objeto "req.body" em 
+suas rotas.
+
+8. Quais são os principais métodos HTTP e como eles são usados em rotas
+Express?
+Os principais métodos HTTP e como eles podem ser usados em rotas Express são:
+    GET: Este método é usado para obter informações do servidor. No Express, pode-se definir uma rota GET.
+    POST: Este método é usado para enviar informações ao servidor. No Express, pode-se definir uma rota POST.
+    PUT: Este método é usado para atualizar informações no servidor. No Express, pode-se definir uma rota PUT.
+    DELETE: Este método é usado para excluir informações do servidor. No Express, pode-se definir uma rota DELETE.
+
+Esses são os métodos HTTP mais comumente usados. No Express, o primeiro argumento para essas funções é a rota como uma string e o segundo 
+argumento é uma função de callback que é chamada quando a rota é acessada. Esta função de callback tem dois argumentos: um objeto de 
+solicitação (req) e um objeto de resposta (res).
+
+9. Como você lida com erros em um aplicativo Express?
+
+No Express, os erros podem ser tratados usando middleware de tratamento de erros. O middleware de tratamento de erros é uma função que tem quatro 
+argumentos: (err, req, res, next). Quando essa função é passada para app.use(), ela será usada para tratar quaisquer erros que ocorram durante a 
+execução do aplicativo.
+Além disso, o Express vem com um middleware de tratamento de erros integrado que é usado quando nenhum outro middleware de tratamento de erros é 
+definido. Este middleware de tratamento de erros integrado irá enviar uma resposta HTML com detalhes do erro se o ambiente estiver definido como 
+‘development’, e uma resposta sem detalhes do erro se o ambiente estiver definido como ‘production’.
+
+10. O que é uma API RESTful e como o Express pode ser usado para criar uma?
+Uma API RESTful usa o protocolo HTTP para comunicação entre sistemas. O Express simplifica a criação de APIs RESTful. Com o Express, rotas são 
+definidas para manipular requisições HTTP, como GET, POST, PUT e DELETE. Cada rota corresponde a uma operação CRUD (Create, Read, Update, Delete) 
+em recursos identificáveis. Isso permite a criação de APIs que seguem os princípios REST, promovendo a escalabilidade e a simplicidade na interação
+ entre sistemas.

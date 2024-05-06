@@ -1,7 +1,11 @@
 const express = require("express");
-app.use(express.json());
-
 const app = express();
+
+app.listen(3080,() => {
+    console.log("Servidor rodando!")
+});
+
+app.use(express.json());
 
 let games = [
     {title: "Sea of Thieves", studio: "Rare", price: 30},
@@ -22,16 +26,18 @@ let games = [
     {title: "Horizon Zero Chase 2", studio: "Aquiris Game Studio", price:112},
 ]
 
-
-
 app.get("/", (req,res) => {
     res.json(games);
 })
 
-app.post("/novogame", (req,res) => {
+
+app.post("/novogame", (req, res) => {
     let title = req.body.title;
     let studio = req.body.studio;
     let price = req.body.price;
+
+    let newGame = {title, studio, price};
+    games.push(newGame);
 
     console.log(title);
     console.log(studio);
@@ -40,6 +46,4 @@ app.post("/novogame", (req,res) => {
     res.send("OK");
 });
 
-app.listen(3080,() => {
-    console.log("Servidor rodando!")
-})
+ 
