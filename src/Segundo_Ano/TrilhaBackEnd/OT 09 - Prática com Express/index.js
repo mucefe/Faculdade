@@ -50,12 +50,16 @@ app.get('/users/:name', (req,res) => {
     return res.json([req.params.name]);
 });
 app.get('/cars', (req,res) => {
-    return carros.toString;
+    return res.json(carros);
 });
 
 app.post('/cars/',(req,res) =>{
     let name = req.body.name;
+    let preco = req.body.preco;
+    let marca = req.body.marca;
     carros[(carros.length)] = name;
+    carros[(carros.length)] = preco;
+    carros[(carros.length)] = marca;
     return res.json([carros[(carros.length -1)]]);
 })
 
