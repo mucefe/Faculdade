@@ -1,7 +1,7 @@
-const express = require("express");
-app.use(express.json());
-
+const express = require('express');
 const app = express();
+
+app.use(express.json());
 
 let games = [
     {title: "Sea of Thieves", studio: "Rare", price: 30},

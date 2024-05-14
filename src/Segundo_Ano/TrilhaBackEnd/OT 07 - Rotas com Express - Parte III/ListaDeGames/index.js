@@ -46,15 +46,23 @@ app.post("/novogame", (req, res) => {
     res.send("OK");
 });
 
-app.put('/novogame/:index', (req,res) => {
+app.put('/novogame/:index', (req, res) => {
     const { index } = req.params;
-    let title = req.body.title;
-    let studio = req.body.studio;
-    let price = req.body.price;
+    const { title, studio, price } = req.body;
 
-        games[index] = {title, studio, price };
+    console.log("Index:", index);
+    console.log("Title:", title);
+    console.log("Studio:", studio);
+    console.log("Price:", price);
+
+    
+    if (isNaN(index) || index < 0 || index >= games.length) {
+        return res.status(400).send("Índice inválido");
+    }
+
+   
+    games[index] = { title, studio, price };
+    
     
     return res.json(games);
-})
-
- 
+});

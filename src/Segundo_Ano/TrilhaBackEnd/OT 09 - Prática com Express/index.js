@@ -85,10 +85,6 @@ app.delete('/cars/delete/:id', (req, res) => {
     return res.json(deletedCar);
 });
 
-
 app.listen(3000, () =>
     console.log('Servidor iniciado na porta 3000')
 );
-
-
-
