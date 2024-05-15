@@ -25,7 +25,9 @@ body {
     padding-top: 150px;
   } 
 
-
+#outonoInverno{
+width: 25%;
+}
   .produtos {
     grid-column: 2;
     display: grid;
@@ -52,11 +54,11 @@ body {
     text-align: center;
     margin-top: 89px;
     height: 10vh;
-    padding-top: 20px;
-    
-
+    padding-top: 20px;  
   }
-  
+  #footerIndex{
+    
+}
   
   /* Layout responsivo para telas menores */
   @media (max-width: 768px) {
