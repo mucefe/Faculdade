@@ -1,10 +1,7 @@
 const express = require("express");
 const app = express();
 
-app.listen(3080,() => {
-    console.log("Servidor rodando!")
-});
-
+// Middleware para interpretar o corpo das requisições como JSON
 app.use(express.json());
 
 let games = [
@@ -23,14 +20,15 @@ let games = [
     {title: "Cities Skylines", studio: "Colossal Order", price: 107},
     {title: "Tibia", studio: "CipSoft", price: 0},
     {title: "Stardew Valley", studio: "ConcernedApe", price: 16},
-    {title: "Horizon Zero Chase 2", studio: "Aquiris Game Studio", price:112},
-]
+    {title: "Horizon Zero Chase 2", studio: "Aquiris Game Studio", price: 112},
+];
 
-app.get("/", (req,res) => {
+// Rota para obter a lista de todos os jogos
+app.get("/", (req, res) => {
     res.json(games);
-})
+});
 
-
+// Rota para adicionar um novo jogo
 app.post("/novogame", (req, res) => {
     let title = req.body.title;
     let studio = req.body.studio;
@@ -46,23 +44,35 @@ app.post("/novogame", (req, res) => {
     res.send("OK");
 });
 
+// Rota para atualizar um jogo existente com base no índice
 app.put('/novogame/:index', (req, res) => {
-    const { index } = req.params;
+    const index = parseInt(req.params.index, 10);
     const { title, studio, price } = req.body;
 
     console.log("Index:", index);
+    console.log("Request Body:", req.body); // Adiciona log para o corpo da requisição
+
     console.log("Title:", title);
     console.log("Studio:", studio);
     console.log("Price:", price);
 
-    
+    // Verificar se o índice é um número válido
     if (isNaN(index) || index < 0 || index >= games.length) {
         return res.status(400).send("Índice inválido");
     }
 
-   
+    // Verificar se todas as propriedades necessárias estão presentes no corpo da requisição
+    if (typeof title === 'undefined' || typeof studio === 'undefined' || typeof price === 'undefined') {
+        return res.status(400).send("Dados inválidos no corpo da requisição");
+    }
+
+    // Atualizar o jogo no array
     games[index] = { title, studio, price };
-    
-    
+
     return res.json(games);
+});
+
+// Inicia o servidor na porta 3080
+app.listen(3080, () => {
+    console.log("Servidor rodando!");
 });
