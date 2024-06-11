@@ -1,6 +1,4 @@
-/* style.css */
 
-/* Reset some default browser styles */
 body, h1, h2, h3, p, ul, li, a {
     margin: 0;
     padding: 0;
@@ -9,14 +7,15 @@ body, h1, h2, h3, p, ul, li, a {
     color: inherit;
 }
 
-/* Body styles */
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f8f9fa;
+    
 }
 
-/* Header styles */
+
 header {
     background: #343a40;
     color: white;
@@ -28,12 +27,12 @@ header .navbar-brand {
     font-weight: bold;
 }
 
-/* Main content */
+
 main {
     padding: 20px 0;
 }
 
-/* Footer styles */
+
 footer {
     background: #343a40;
     color: white;
@@ -42,7 +41,7 @@ footer {
     margin-top: 20px;
 }
 
-/* Custom form styles */
+
 form .form-group label {
     font-weight: bold;
 }
@@ -52,7 +51,7 @@ form .btn-primary {
     border-color: #007bff;
 }
 
-/* Custom styles for lists */
+
 .list-group-item {
     background-color: #fff;
     border: 1px solid #dee2e6;
@@ -60,7 +59,7 @@ form .btn-primary {
     margin-bottom: 5px;
 }
 
-/* Jumbotron customization */
+
 .jumbotron {
     background-color: #e9ecef;
     padding: 2rem 1rem;
@@ -76,7 +75,7 @@ form .btn-primary {
     font-size: 1.25rem;
 }
 
-/* Custom navbar styles */
+
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.8);
 }
@@ -85,7 +84,7 @@ form .btn-primary {
     color: rgba(255, 255, 255, 1);
 }
 
-/* Custom navbar alignment */
+
 .navbar-nav {
     display: flex;
     justify-content: space-between;
@@ -103,3 +102,12 @@ margin-left: 43%;
 margin-top: 5%;
 }
 
+.nav-item:hover {
+    font-weight: bold;
+    text-shadow: 3px 3px rgb(13, 13, 13); 
+  }
+
+  .navbar-brand:hover {
+    font-weight:900;
+    text-shadow: 3px 3px rgb(13, 13, 13); 
+  }
