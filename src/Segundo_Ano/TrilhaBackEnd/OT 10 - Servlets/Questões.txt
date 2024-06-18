@@ -1,0 +1,7 @@
+a. Porque tudo funcionou se fizemos o envio dos dados via GET e nossa implementação está no método service e não no doGet?
+
+R.: Porque o método service já é implementado pela classe HttpServlet e é apenas sobrescrito pelo servlet AdicionaContatoServlet. 
+
+b. Como você faria a impressão dos dados utilizando os outros métodos que criamos na Servlet: doGet() e doPost()?
+
+R.: Eu simplesmente copiaria o corpo do método sobrescrito 'service' para o método doGet() ou doPost().
