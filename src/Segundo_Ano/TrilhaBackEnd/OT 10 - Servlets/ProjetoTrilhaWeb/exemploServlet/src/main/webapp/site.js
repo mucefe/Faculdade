@@ -17,16 +17,18 @@ function validaFaleConosco() {
 }
 
 function verificaNome() {
-    var nome = document.forms['frmfaleconosco']['txtnome'].value;
-    var expRegNome = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
+    var form = document.forms['frmfaleconosco'];
+    var nome = form['txtnome'].value.trim(); 
+    var expRegNome = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/; 
 
-    if (!expRegNome.test(nome) || nome.trim().length < 3) {
+    if (nome.length < 3 || !expRegNome.test(nome)) {
         alert("Preencha o campo Nome corretamente. Ele deve conter pelo menos 3 caracteres, apenas letras e espaços.");
-        document.forms['frmfaleconosco']['txtnome'].focus();
+        form.getElementById(form).focus();        
         return false;
     }
     return true;
 }
+
 
 function verificaEndereco() {
     var endereco = frmfaleconosco.forms['frmfaleconosco']['txtendereco'].value;

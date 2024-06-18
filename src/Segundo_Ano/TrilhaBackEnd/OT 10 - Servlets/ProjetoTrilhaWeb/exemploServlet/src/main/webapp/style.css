@@ -18,7 +18,7 @@ body {
 #titulo{
 margin-left: 30%;
 font-weight: bold;
-color:red
+color:rgb(0,0,0)
 }
 
 #container {
@@ -45,11 +45,4 @@ color:red
   width: 100px;
 }
 
-#btenviar {
-  margin-top: 10px;
-}
 
-#btlimpar {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
