@@ -31,24 +31,27 @@
     <main class="container mt-4">
         <section>
             <div class="jumbotron">
-                <h1 class="display-4">Contato</h1>
-                <p class="lead">Entre em contato comigo.</p>
+                <h1 id="tituloContato">Contato</h1>
+                <p id="entreEmContato">Entre em contato comigo.</p>
                 <hr class="my-4">
-                <p>Preencha o formulário abaixo para me enviar uma mensagem.</p>
+                
                 <form>
-                    <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Seu nome">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Seu email">
-                    </div>
-                    <div class="form-group">
-                        <label for="mensagem">Mensagem</label>
-                        <textarea class="form-control" id="mensagem" rows="3" placeholder="Sua mensagem"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <div class="container">
+                        
+                        <p id="TxtpreenchaForm">Preencha o formulário abaixo para me enviar uma mensagem:</p>
+                        <form action="/action_page.php">
+                          <div class="form-group">
+                            <label for="nme">Nome:</label>
+                            <input type="text" class="form-control" id="nome" name="nome">
+                          </div>
+                          <div class="form-group">
+                            <label for="E-mail">E-mail:</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                          </div>
+                          <textarea name="mensagem" id="mensagem" ></textarea> <br>
+                          <button type="submit" class="btn btn-primary" id="btenviar">Enviar</button>
+                        </form>
+                      </div>
                 </form>
             </div>
         </section>
