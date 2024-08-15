@@ -1,0 +1,11 @@
+CREATE
+INSERT into categoria VALUES (6, "Petshop");
+
+READ
+SELECT * FROM categoria WHERE idcategoria=3;
+
+UPDATE
+UPDATE categoria SET descricao="Pet shop" where idcategoria=6 AND descricao="Petshop";
+
+DELETE
+DELETE FROM categoria WHERE idcategoria=6 AND descricao="Petshop";

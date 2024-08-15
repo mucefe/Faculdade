@@ -1,51 +1,64 @@
 @charset "UTF-8";
 
+*{
+margin: 0;
+padding: 0;
+}
+
+
 body{
 	margin: 0 auto;
 	font-family: "Century Gothic", sans-seriff;
+		
 }
 
 header{
-	height:170px;
+	height:75px;
 	background-color:#008eb6;
+	
 }
 header img {
 	float: left;
-	height: 150px;
-	width: 150px;
-	margin: 10px;
+	height: 50px;
+	width: 50px;
+	margin: 18px;
 }
 header h1{
 	float: left;
-	margin: 50px 0 0 30px;
-	font-size: 60px;
+	margin: 10px 0 0 220px;
+	font-size: 40px;
 	color: #ffffff;
 }
 
 nav{
-	clear: both;
 	width: 80%;
-	margin: 0px auto;
+	margin-left: 38%;
 	height: 55px;
+	
 }
 
 nav a{
-	color: white;
-	text-decoration:none;
+	color: white !important;
+	text-decoration: none;
 	text-align: center;
 }
 
 nav .opcao{
+	text-decoration: none;
 	float:left;
-	width:31.3%;
+	width:12%;
+	margin-left: 3px;
 	background-color: #b1ccf5; 
 	padding: 10px 0;
-	margin: 0 1%;
-	font-size: 26px;
+	font-size: 12px;
 }
 
 nav .opcao:hover{
 	background-color: #83afd3;
+}
+
+.submenu{
+color: white;
 }
 
 section {
@@ -54,6 +67,8 @@ section {
 	min-height: 470px;
 	width: 100%;
 	margin-top: 0px;
+	text-align: center;	
+	
 }
 
 footer{
@@ -63,3 +78,20 @@ footer{
 	padding: 10px;
 	
 }
+
+#divCentral > img {
+width: 80px;
+}
+
+#divCentral {
+display: flex;
+margin-top: 5%;
+margin-left: 25%;
+text-align: center;
+
+}
+
+#divTexto {
+margin-top: 30px;
+}
+

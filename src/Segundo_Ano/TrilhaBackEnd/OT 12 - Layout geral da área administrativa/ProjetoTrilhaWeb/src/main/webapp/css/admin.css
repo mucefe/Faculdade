@@ -55,6 +55,7 @@ font-weight: bold; /* NOVO */
 letter-spacing: 1px; /* NOVO */ 
 text-decoration: none;
 text-align: center;
+color: white;
 }
 nav .opcao{
 float: left;
@@ -91,10 +92,57 @@ color: white;
 	display: block;	
 }
 
-.dropdownn-content a:hover{
+.dropdown-content a:hover{
 	background-color: #83afd3;
 }
 
 .dropdown:hover .dropdown-content {
 	display: block;
+	
+}
+
+
+/**************************************************************************
+       							LAYOUT CRUDs
+****************************************************************************/
+
+/*****					Título da página					*****/
+
+section h2, section h3 {
+	text-align: center;
+}
+
+/*****					FORMULÁRIOS					*****/
+
+.frmInserir{
+	margin: 0px auto;
+	margin-bottom: 10px;
+	width: min-content;
+}
+.fgrmInserir{
+	width: 500px;
+}
+.frmInserir label {
+	width: 200px;
+}
+.frmInserir input, .frmInserir textarea, .frmInserir select {
+	width: 300px;
+	padding: 2px 0;
+}
+.frmInserir textarea {
+	height: 100px;
+	resize: none;
+}
+.frmInserir button {
+	width: 100px;
+	margin: 0 1%;
+	background-color: #b1ccf5;
+	font-weight: bold;
+	font-size: 16px;
+	float: right;
+}
+.frmInserir .aviso {
+	background-color: #ff0000;
+	color: #fff;
+	font-weight: bold;
 }
