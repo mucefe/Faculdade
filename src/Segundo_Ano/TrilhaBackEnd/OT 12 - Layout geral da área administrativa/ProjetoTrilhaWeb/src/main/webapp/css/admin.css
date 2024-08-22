@@ -100,7 +100,10 @@ color: white;
 	display: block;
 	
 }
-
+/*****					MODAIS					*****/
+#modalAviso{
+	display:none;
+}
 
 /**************************************************************************
        							LAYOUT CRUDs

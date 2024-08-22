@@ -18,6 +18,8 @@ public class JDBCMarcaDAO implements MarcaDAO {
 	
 	public List<Marca> buscar() {
 		String comando = "SELECT * FROM marcas";
+		System.out.println(comando);
+		System.out.println("JDBCMarcaDAO");
 		List<Marca> listMarcas = new ArrayList<Marca>();
 		Marca marca = null;
 		
