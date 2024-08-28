@@ -6,10 +6,30 @@ $(document).ready(function() {
 		
 		$.ajax({
 			type: "GET",
-			URL: "/ProjetoTrilhaWeb/rest/marca/buscar",
+			url: "/ProjetoTrilhaWeb/rest/marca/buscar",
 			success: function(marcas) {	
-				console.log("Teste de marcas " + marcas);
-						
+				if (marcas!=""){
+					$("#selMarca").html("");
+					var option = document.createElement("option");
+					option.setAttribute("value","");
+					option.innerHTML = ("Escolha");
+					$("#selMarca").append(option);
+					
+					for(var i=0;i<marcas.length;i++){
+						var option = document.createElement("option");
+						option.setAttribute("value", marcas[i].id);
+						option.innerHTML = (marcas[i].nome);
+						$("#selMarca").append(option);
+					}
+				} else {
+					$("#selMarca").html("");
+					
+					var option = document.createElement("option");
+					option.setAttribute("value","");
+					option.innerHTML = ("Cadastre uma marca primeiro!");
+					$("#selMarca").append(option);
+					$("#selMarca").addClass("aviso");
+				}
 			},
 			error: function(info) {
 				
