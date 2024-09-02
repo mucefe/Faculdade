@@ -22,7 +22,7 @@ public class MarcaRest extends UtilRest {
 	public Response buscar() {
 		
 		try {
-			
+			System.out.println("Passei por MarcaRest");
 			List<Marca> listaMarcas = new ArrayList<Marca>();
 			
 			Conexao conec = new Conexao();
