@@ -41,7 +41,7 @@ header h1{
 float: left;
 margin: 30px 0 15px 30px; /* NOVO */
 font-size: 40px; /* NOVO */
-color: #ffff
+color: #ffff;
 }
 
 nav{
@@ -117,13 +117,16 @@ section h2, section h3 {
 
 /*****					FORMULÁRIOS					*****/
 
-.frmInserir{
+.frmInserir, .frmFiltrar{
 	margin: 0px auto;
 	margin-bottom: 10px;
 	width: min-content;
 }
-.fgrmInserir{
+.frmInserir{
 	width: 500px;
+}
+.frmFiltrar{
+width: 350px;
 }
 .frmInserir label {
 	width: 200px;
@@ -136,7 +139,27 @@ section h2, section h3 {
 	height: 100px;
 	resize: none;
 }
-.frmInserir button {
+
+/*****	Tabela de registros	*****/
+.listaRegistros {
+margin-bottom: 10px;
+}
+.listaRegistros table {
+border: 1px solid #000;
+border-collapse: collapse;
+margin: 0;
+min-width: 50%;
+}
+.listaRegistros table th {
+text-align: center;
+font-size: 18px;
+font-weight: bold;
+color: #fff;
+padding: 0 5px;
+border: transparent;
+}
+
+.frmInserir button, .frmFiltrar button {
 	width: 100px;
 	margin: 0 1%;
 	background-color: #b1ccf5;
@@ -149,3 +172,27 @@ section h2, section h3 {
 	color: #fff;
 	font-weight: bold;
 }
+
+.listaRegistros tr, .listaRegistros td, .listaRegistros th {
+border: 1px solid #b0c4de;
+padding: 0px 5px;
+}
+.listaRegistros tr, .listaRegistros td{
+font-size: 16px;
+}
+.listaRegistros tr:nth-child(even){
+background-color: #b1ccf5;
+}
+.listaRegistros tr:nth-child(odd){
+background-color: #83afd3;
+}
+.listaRegistros .acoes{
+width: 70px;
+}
+.listaRegistros table img {
+padding: 0 5px;
+width: 20px;
+height: 20px;
+cursor: pointer;
+}
+
