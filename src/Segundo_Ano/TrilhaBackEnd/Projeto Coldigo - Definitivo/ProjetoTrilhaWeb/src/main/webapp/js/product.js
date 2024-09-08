@@ -73,5 +73,33 @@ $(document).ready(function() {
 		
 		
 	}
-	
+	COLDIGO.produto.buscar = function(){
+		var valorBusca = $("#campoBuscaProduto").val();
+
+		$.ajax({
+			type: "GET",
+			url: COLDIGO.PATH + "/produto/buscar",
+			data: "valorBusca="+valorBusca,
+			success: function(dados){
+				dados = JSON.parse(dados);
+				$("#listaProdutos").html(COLDIGO.produto.exibir(dados));
+			},
+			error: function(info){
+				COLDIGO.exibirAviso("Erro ao consultar os contatos: " + info.status + " + info.status.Text");
+			}
+		});
+		
+	};
+	COLDIGO.produto.exibir = function(listaDeProdutos){
+		var tabela = "<table>" +
+		"<tr>" + 
+		"<th>Categoria</th>" +
+		"<th>Marca</th>" +
+		"<th>Modelo</th>" +
+		"<th>Cap.(1)</th>" +
+		"<th>Valor</th>" +
+		"<th class='acoes'>Ações</th>" +
+		"</tr>";                            // PAREI NO INÍCIO DA PÁGINA 14 DA OT 21
+	};
+	COLDIGO.produto.buscar();
 });
