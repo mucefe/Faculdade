@@ -46,6 +46,7 @@ $(document).ready(function() {
 
 	
 	COLDIGO.produto.cadastrar = function() {
+		
 		var produto = {};
 		produto.categoria = document.frmAddProduto.categoria.value;
 		produto.marcaId = document.frmAddProduto.selMarca.value;  
@@ -109,7 +110,7 @@ $(document).ready(function() {
 					"<td>" + listaDeProdutos[i].marcaNome + "</td>" +
 					"<td>" + listaDeProdutos[i].modelo + "</td>" +
 					"<td>" + listaDeProdutos[i].capacidade + "</td>" +
-					"<td> R$ " +COLDIGO.formatarDinheiro(listaDeProdutos[i].valor)+ "</td>" +
+					"<td> R$ " + COLDIGO.formatarDinheiro(listaDeProdutos[i].valor)+ "</td>" +
 					"<td>" + 
 							"<a><img src='../../imgs/edit.png' alt='Editar registro'></a>" +
 							"<a onclick=\"COLDIGO.produto.excluir('"+listaDeProdutos[i].id+"')\"><img src='../../imgs/delete.png' alt='Excluir registro'></a>" +
@@ -124,11 +125,17 @@ $(document).ready(function() {
 	};
 
 	COLDIGO.produto.buscar();
+	
+	
 	COLDIGO.produto.excluir = function(id){
+		console.log("Passou pelo AJAX");
+		console.log(id);
+		console.log("url: " + COLDIGO.PATH);
 		$.ajax({
 			type: "DELETE",
-			url: COLDIGO.PATH + "produto/excluir/"+id,
+			url: COLDIGO.PATH + "/produto/excluir/"+id,
 			success: function(msg){
+				console.log("sucesso")
 				COLDIGO.exibirAviso(msg);
 				COLDIGO.produto.buscar();
 			},

@@ -91,12 +91,13 @@ public class JDBCProdutoDAO implements ProdutoDAO {
 	}
 	
 	public boolean deletar (int id) {
+		System.out.println("Passou pelo método deletar em JDBCProdutoDAO");
 		String comando = "DELETE FROM produtos WHERE id = ?";
 		PreparedStatement p;
 		try {
 			p=this.conexao.prepareStatement(comando);
 			p.setInt(1, id);
-			p.execute();                                //PAREI NA PÁGINA 5 DA OT 22
+			p.execute();                               
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
