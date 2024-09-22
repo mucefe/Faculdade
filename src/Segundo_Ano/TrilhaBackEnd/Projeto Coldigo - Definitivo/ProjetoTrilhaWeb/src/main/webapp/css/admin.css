@@ -101,7 +101,7 @@ color: white;
 	
 }
 /*****					MODAIS					*****/
-#modalAviso{
+#modalAviso, .modalEditar{
 	display:none;
 }
 

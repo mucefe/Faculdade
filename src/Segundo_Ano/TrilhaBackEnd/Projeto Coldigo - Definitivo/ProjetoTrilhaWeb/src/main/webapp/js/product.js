@@ -4,6 +4,7 @@ $(document).ready(function() {
 	console.log("product.js");
 
 	COLDIGO.produto.carregarMarcas = function() {
+		console.log("Entrou");
 		$.ajax({
 			type: "GET",
 			url: COLDIGO.PATH + "/marca/buscar",
@@ -31,6 +32,7 @@ $(document).ready(function() {
 				}
 			},
 			error: function(info) {
+					console.log(info);
 				COLDIGO.exibirAviso("Erro ao buscar as marcas: " + info.status + " - " + info.statusText);
 				$("#selMarca").html("");
 				var option = document.createElement("option");
@@ -112,7 +114,7 @@ $(document).ready(function() {
 					"<td>" + listaDeProdutos[i].capacidade + "</td>" +
 					"<td> R$ " + COLDIGO.formatarDinheiro(listaDeProdutos[i].valor)+ "</td>" +
 					"<td>" + 
-							"<a><img src='../../imgs/edit.png' alt='Editar registro'></a>" +
+							"<a onclick=\"COLDIGO.produto.exibirEdicao('"+listaDeProdutos[i].id+"')\"><img src='../../imgs/edit.png' alt='Editar registro'></a>" +
 							"<a onclick=\"COLDIGO.produto.excluir('"+listaDeProdutos[i].id+"')\"><img src='../../imgs/delete.png' alt='Excluir registro'></a>" +
 					"</td>" + 
 					"</tr>"
@@ -144,5 +146,22 @@ $(document).ready(function() {
 			}
 		});
 	}
+
+	//Carrega no BD os dados do produto selecionado para alteração e coloca-os no formulário de alteração
+	COLDIGO.produto.exibirEdicao = function(id){
+		$.ajax({
+			type: "GET",
+			url: COLDIGO.PATH + "produto/buscarPorId",
+			data: "id"+id,
+			success: function(produto){
+
+			},
+			error: function(info){
+				COLDIGO.exibirAviso("Erro ao buscar produto para edição: " + info.status + " - " + info.statusText);
+			}
+		});
+
+
+	};
 	
 });

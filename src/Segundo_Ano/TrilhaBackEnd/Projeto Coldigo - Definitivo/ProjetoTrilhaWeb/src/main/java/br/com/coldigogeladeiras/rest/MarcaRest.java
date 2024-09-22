@@ -20,7 +20,7 @@ public class MarcaRest extends UtilRest {
 	@Path("/buscar")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response buscar() {
-		
+		System.out.println("Chegou");
 		try {
 			System.out.println("Passei por MarcaRest");
 			List<Marca> listaMarcas = new ArrayList<Marca>();
