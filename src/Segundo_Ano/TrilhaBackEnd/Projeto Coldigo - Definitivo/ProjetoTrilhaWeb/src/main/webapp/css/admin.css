@@ -92,6 +92,11 @@ color: white;
 	display: block;	
 }
 
+#listaProdutos {
+	margin-left: 30%;
+	margin-top: 5%;
+}
+
 .dropdown-content a:hover{
 	background-color: #83afd3;
 }

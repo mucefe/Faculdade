@@ -11,7 +11,7 @@
 					<select name="categoria">
 						<option value="">Selecione</option>
 						<option value="1">Geladeira</option>
-						<option value="2">Freezer</option>
+						<option value="2">Freezer</option>					
 					</select>
 				</td>
 			</tr>
@@ -46,9 +46,9 @@
 					<button type="button" onclick="COLDIGO.produto.cadastrar()">Cadastrar</button>
 					<button type="reset">Limpar</button>
 				</td>
-			</tr>
-		</table>
-	</fieldset>
+			</tr>					
+		</table>	
+	</fieldset>                         
 </form>
 <h3>Produtos registrados</h3>
 <form id="filtraProduto" class="frmFiltrar">
@@ -60,6 +60,7 @@
 </form>
 <div id="listaProdutos" class="listaRegistros">
 </div>
+
 <div id="modalEditaProduto" class="modalEditar">
 	<form name="frmEditaProduto" id="editaProduto" class="frmEditar">
 		<table>
@@ -96,7 +97,7 @@
 			<tr>
 				<th>Valor (R$)</th>
 				<td>
-					<input type="hidden" name="valor">
+					<input type="text" name="valor">
 				</td>
 			</tr>
 		</table>
