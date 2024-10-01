@@ -1,7 +1,7 @@
 COLDIGO.produto = {}; 
 
 $(document).ready(function() {
-	console.log("product.js");
+	
 
 	COLDIGO.produto.carregarMarcas = function(id) {
 		if (id != undefined) {
@@ -107,7 +107,7 @@ $(document).ready(function() {
         "<th>Cap.(1)</th>" +
         "<th>Valor</th>" +
         "<th class='acoes'>Ações</th>" +
-        "</tr>";
+        "</tr>";                            
 
     if (listaDeProdutos != undefined && listaDeProdutos.length > 0) {
         for (var i = 0; i < listaDeProdutos.length; i++) {
