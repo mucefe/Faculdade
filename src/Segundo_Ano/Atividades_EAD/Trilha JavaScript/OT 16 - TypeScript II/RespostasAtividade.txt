@@ -1,0 +1,13 @@
+1 - Typescript é uma linguagem de programação desenvolvida pela Miscrosoft que adiciona tipos estáticos ao Javascript facilitando o desenvolvimento
+de aplicações mais robustas à medida que possibilita o debugging e a captura de erros antes mesmo da execução do código.
+
+2 - O código apresenta uma função que recebe dois números e retorna o resultado da multiplicação dos dois. No exemplo em questão, ele apresentaria um 
+erro, já que está recebendo um número inteiro e uma string, quando deveria receber dois números inteiros.
+
+3 - Baixar e instalar o node, criar e configurar os arquivos package.json e tsconfig.json e em seguida executar o arquivo .ts para, só então, executar 
+através do node o arquivo .js que será criado.
+
+4 - É o arquivo com as configurações do Typescript no projeto atual. É ele quem vai definir a compatibilidade do Javascript com as bibliotecas do 
+Typescript e do node.
+
+5 - tsc index.ts e então node index.js
