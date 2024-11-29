@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem não Vue, verá</title>
+</head>
+
+<body>
+    <!-- Incluímos todo o conteúdo gerenciado pelo Vue dentro da div `#app` -->
+    <div id="app">
+        <!-- Formulário de entrada -->
+        <form @submit.prevent="mostrarSaudacao">
+            <label for="nome">Digite seu nome:</label>
+            <input type="text" name="nome" id="nome" v-model="nome">
+            <button type="submit">Enviar</button>
+        </form>
+
+        <!-- Mensagem de saudação, exibida dinamicamente -->
+        <p v-if="mostrarMensagem">{{ greeting }}</p>
+    </div>
+
+    <!-- Inclusão do Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        // Instância Vue
+        var app = new Vue({
+            el: '#app',
+            data: {
+                nome: '',
+                greeting: '',
+                mostrarMensagem: false
+            },
+            methods: {
+                mostrarSaudacao() {
+                    if (this.nome.trim() !== '') {
+                        // Atualiza a saudação e exibe a mensagem
+                        this.greeting = `Olá, ${this.nome}!`;
+                        this.mostrarMensagem = true;
+                    } else {
+                        // Mostra um alerta se o nome estiver vazio
+                        alert('Por favor, insira um nome!');
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+<footer>
+    <p style="margin-top: 38%;">Obs.: Feito pelo ChatGPT, porque a OT não explicou como solicitar dados do usuário através do Vue.</p>
+</footer>
+
+</html>
