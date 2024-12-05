@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Ciclo de Vida Viu</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <button @click="changeMessage">Mudar Mensagem</button>
+        <button @click="destroyComponent">Destruir Componente</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue.js!',
+            },
+            methods: {
+                changeMessage(){
+                    this.message = 'Mensagem atualizada!';
+                },
+                destroyComponent(){
+                    this.$destroy();
+                }
+            },
+            beforeCreate(){
+                console.log('beforeCreate: dados ainda não estçao disponíveis');
+            },
+            created(){
+                console.log('created: Dados já foram inicializados');
+            },
+            beforeMount(){
+                console.log('beforeMount: Componente prestes a ser montado no DOM');
+            },
+            mounted(){
+                console.log('mounted: Componente montado no DOM');
+            },
+            beforeUpdate(){
+                console.log('beforeUpdate: Dados foram alterados, prestes a atualizar o DOM');
+            },
+            update(){
+                console.log('updated: DOM foi atualizado');
+            },
+            beforeDestroy(){
+                console.log('beforeDestroy: Componente prestes a ser destruído');
+            },
+            destroyed(){
+                console.log('destroyed: Componente foi destruído');
+            }
+        });
+    </script>
+</body>
+</html>

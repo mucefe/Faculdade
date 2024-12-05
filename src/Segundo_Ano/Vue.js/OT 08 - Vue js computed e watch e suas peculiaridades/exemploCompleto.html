@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo com Computed e Watch</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{ fullName }}</p>
+        <input v-model="firstName" placeholder="First Name">
+        <input v-model="lastName" placeholder="Last Name">
+        <p>{{ apiResponse }}</p>
+    </div> 
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                firstName: 'John',
+                lastName: 'Doe',
+                apiResponse: ''
+            },
+            computed: {
+                fullName(){
+                    return `${this.firstName} ${this.lastName}`;
+                }
+            },
+            watch: {
+                fullName(newName){
+                    this.fakeApiCall(newName);
+                }
+            },
+            methods: {
+                fakeApiCall(name){
+                    this.apiResponse = `API chamada com o nome: ${name}`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
