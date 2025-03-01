@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Gorditas';
+    src: url('../fonts/Gorditas-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gorditas';
+    src: url('../fonts/Gorditas-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../fonts/Merriweather-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #c9ffcc;
+    height: 80vh;
+    justify-content: center;
+    font-family: 'Merriweather';
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: #2e7d32;
+}
+
+:root {
+    --color: white;
+    --transition-time: 0.5s;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Open Sans';
+    background: #c9ffcc
+}
+
+a {
+    color: inherit;
+}
+
+.cards-wrapper {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4rem;
+    padding: 4rem;
+    margin: 0 auto;
+    margin-top: 30%;
+    width: max-content;
+}
+
+.card {
+    font-family: 'Gorditas';
+    --bg-filter-opacity: 0.5;
+    background-image: linear-gradient(rgba(0, 0, 0, var(--bg-filter-opacity)), rgba(0, 0, 0, var(--bg-filter-opacity))), var(--bg-img);
+    height: 20em;
+    width: 16em;
+    font-size: 1.5em;
+    color: white;
+    border-radius: 1em;
+    padding: 0.5em;
+    /*margin: 2em;*/
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 5em -1em black;
+    transition: all, var(--transition-time);
+    position: relative;
+    overflow: hidden;
+    border: 10px solid #2e7d32;
+    text-decoration: none;
+}
+
+.card2 {
+    background-image: url('../img/sustentabilidade.jpg');
+}
+
+.card3 {
+    background-image: url('../img/empresas.jpeg');
+}
+
+.card:hover {
+    transform: rotate(0);
+}
+
+.card h1 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Gorditas';
+    line-height: 1.2em;
+    padding-right: 5px;
+}
+
+.card p {
+    font-size: 0.75em;
+    font-family: 'Merriweather';
+    font-style: italic;
+    margin-top: 0.5em;
+    line-height: 2em;
+}
+
+.card .tags {
+    display: flex;
+}
+
+.card .tags .tag {
+    font-size: 0.75em;
+    font-family: 'Merriweather';
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 0.3rem;
+    padding: 0 0.5em;
+    margin-right: 0.5em;
+    line-height: 1.5em;
+    transition: all, var(--transition-time);
+}
+
+.card:hover .tags .tag {
+    background: var(--color);
+    color: #2e7d32;
+}
+
+.card .date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.75em;
+    padding: 1em;
+    line-height: 1em;
+    opacity: .8;
+}
+
+.card:before,
+.card:after {
+    content: '';
+    transform: scale(0);
+    transform-origin: top left;
+    border-radius: 50%;
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    z-index: -5;
+    transition: all, var(--transition-time);
+    transition-timing-function: ease-in-out;
+}
+
+.card:before {
+    background: white;
+    width: 250%;
+    height: 250%;
+}
+
+.card2:before {
+    background: white;
+    width: 250%;
+    height: 250%;
+}
+
+.card2:after {
+    background-image: url('../img/sustentabilidade2.jpg');
+    background-position: center;
+    background-size: auto;
+    width: 200%;
+    height: 200%;
+}
+
+.card1:after {
+    background-image: url('../img/teatro2.jpg');
+    background-position: center;
+    background-size: contain;
+    width: 200%;
+    height: 200%;
+}
+
+.card2:before {
+    background: white;
+    width: 250%;
+    height: 250%;
+}
+
+.card3:after {
+    background-image: url('../img/empresas2.jpg');
+    background-position: center;
+    background-size: contain;
+    width: 200%;
+    height: 200%;
+}
+
+.card:hover {
+    color: var(--color);
+}
+
+.card:hover:before,
+.card:hover:after {
+    transform: scale(1);
+}
+
+.card-grid-space .num {
+    font-size: 3em;
+    margin-bottom: 1.2rem;
+    margin-left: 1rem;
+}
+
+.card>p {
+    font-family: 'Merriweather';
+    font-weight: bold;
+    text-align: left;
+}
+
+.info {
+    font-size: 1.2em;
+    display: flex;
+    padding: 1em 3em;
+    height: 3em;
+
+
+}
+
+.info img {
+    height: 3em;
+    margin-right: 0.5em;
+}
+
+.info h1 {
+    font-size: 2em;
+    color: #2e7d32;
+    margin-left: 12%;
+    font-weight: normal;
+    margin-top: 30%;
+}
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    gap: 40%;
+    align-items: center;
+    background-color: #2e7d32;
+    padding-left: 1%;
+    padding-right: 1%;
+    height: 80px;
+    color: white;
+    font-family: 'Gorditas' bold;
+}
+
+h1 {
+
+    font-weight: bold;
+    font-family: 'Gorditas';
+    margin-left: -5%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 10%;
+    padding: 10%;
+    height: 50%;
+    font-family: 'Merriweather';
+    font-size: 12px;
+}
+
+
+
+.paragrafo {
+    text-indent: 30px;
+    text-align: justify;
+}
+
+
+
+#linkSeta :hover {
+    scale: 1.2;
+}
+
+@media screen and (max-width: 926px) and (orientation: portrait)  {
+
+    *{
+    margin:0;
+    padding: 0;
+    }
+
+    html{
+    width: 100%;
+    }
+
+    body {
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    header {
+    display:flex;
+    }
+
+
+    main {
+    margin-top: -8%;
+    width: 100% !important;
+    height: 100% !important;
+    
+    }
+
+    #titulo {
+    margin-left: -30%;
+    font-size: 30px;
+    font-size: 27px;
+    float: right;
+    
+    }
+
+    .info > h1 {
+    font-size: 20px;
+    margin-top: -10px
+    }
+
+    .cards-wrapper{
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15%;
+    }
+
+    .card {
+    margin: 0;
+    width: 250px;
+    height: 250px;
+    }
+
+    div.card-grid-space:nth-child(1) {
+    height: 100%;
+    }
+
+    .card > div:nth-child(1) > h1:nth-child(1) {
+    font-size: 20px;
+    }
+
+    .card > div:nth-child(1) > p:nth-child(2) {
+    font-size: 10px
+    }
+
+    
+
+}

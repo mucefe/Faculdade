@@ -1,0 +1,7 @@
+Atividade 2: Listagem Dinâmica com v-for
+Objetivo:
+Criar uma lista dinâmica com Vue.js que recebe um array de objetos e exibe informações.
+
+Solução:
+Defina um array de objetos no data.
+Use v-for para iterar sobre o array e exibir os dados.

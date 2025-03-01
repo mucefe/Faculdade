@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Atividade 2 - Lista de Moedas</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul v-if="listaVisivel" id="moedas">
+            <li v-for="moeda in moedas" :key="moeda.nome">
+                {{ moeda.nome }}
+            </li>
+        </ul>
+        <button v-on:click="exibeLista">Mostrar Lista</button>
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                listaVisivel: false,
+                moedas: [
+                {nome: 'dólar americano', pais: 'EUA'},
+                {nome: 'libra esterlina', pais: 'Inglaterra'},
+                {nome: 'peso argentino', pais: 'Argentina'},
+                {nome: 'iene', pais: 'Japão'},
+                {nome: 'yuan', pais: 'China'}
+                ]               
+            },
+            methods: {
+                    exibeLista(){
+                        this.listaVisivel=!this.listaVisivel;
+                    }
+                }
+        })
+    </script>
+</body>
+</html>

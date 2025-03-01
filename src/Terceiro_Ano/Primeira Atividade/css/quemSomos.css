@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Gorditas';
+    src: url('../fonts/Gorditas-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gorditas';
+    src: url('../fonts/Gorditas-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../fonts/Merriweather-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #c9ffcc;
+    height: 90vh;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    gap: 40%;
+    align-items: center;
+    background-color: #2e7d32;
+    padding-left: 1%;
+    padding-right: 1%;
+    height: 80px;
+    color: white;
+    font-family: 'Gorditas' bold;
+}
+
+h1 {
+    margin-left: 5%;
+    font-weight: bold;
+    font-family: 'Gorditas';
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2%;
+    gap: 10%;
+    padding: 10%;
+    height: min-content;
+}
+
+#containerTexto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.paragrafo {
+    text-indent: 30px;
+    text-align: justify;
+}
+
+#linkSeta :hover {
+    scale: 1.2;
+}
+
+#textoContainer {
+text-align: justify;
+width: 50%;
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    
+    main {
+    display: flex;
+    flex-direction: column;
+    }
+    
+    main > img {
+    width: 100%;
+    height: 50%;
+    }
+
+    #titulo {
+    margin-left: -19%;
+    }
+
+    #linkSeta :hover {
+        scale: 1.2;
+    }
+
+}
