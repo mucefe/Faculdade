@@ -1,0 +1,225 @@
+1 - 
+
+int[] vetor = {2,10,21,33,9,12,28,55,34,37};
+
+ function buscaNumero(int numero){
+ 
+	for (int i = 0; i < 10; i++) {
+		if (vetor[i]==numero){
+		
+		return "O número " + numero + "foi encontrado na " + i + "ª posição do vetor"; 
+		
+		}
+	} 
+ }
+ 
+ 2 - using System;
+
+class Node {
+    public int Dados;
+    public Node Proximo;
+
+    public Node(int dados) {
+        Dados = dados;
+        Proximo = null;
+    }
+}
+
+public class LinkedList {
+    private Node head;
+
+    public void Add(int dados) {
+        Node novoNode = new Node(dados);
+        if (head == null) {
+            head = novoNode;
+        } else {
+            Node atual = head;
+            while (atual.Proximo != null) {
+                atual = atual.Proximo;
+            }
+            atual.Proximo = novoNode;
+        }
+    }
+
+    public void InserirNoInicio(int valor) {
+        Node novoNode = new Node(valor);
+        novoNode.Proximo = head;
+        head = novoNode;
+    }
+
+    public void RemoverPosicao(int posicao) {
+        if (head == null) {
+            Console.WriteLine("Não há elementos para remover");
+            return;
+        }
+
+        if (posicao == 0) {
+            head = head.Proximo;
+            return;
+        }
+
+        Node atual = head;
+        Node anterior = null;
+        int contador = 0;
+
+        while (atual != null && contador < posicao) {
+            anterior = atual;
+            atual = atual.Proximo;
+            contador++;
+        }
+
+        if (atual == null) {
+            Console.WriteLine("Posição inválida");
+            return;
+        }
+
+        anterior.Proximo = atual.Proximo;
+    }
+
+    public void Print() {
+        Node atual = head;
+        while (atual != null) {
+            Console.Write(atual.Dados + " -> ");
+            atual = atual.Proximo;
+        }
+        Console.WriteLine("null");
+    }
+}
+
+3 - 
+
+class Node {
+	public int Dados;
+	public Node Proximo;
+	public Node Anterior;
+	
+	public Node(int dados){
+		Dados = dados;
+		Propximo = null;
+		Anterior = null;
+	
+	}
+}
+
+public class DLinkedList {
+	private Node Primeiro;
+	private Node Ultimo;
+
+}
+
+public void Adicionar (int dados){
+	Node novoNode = new Node(dados);
+	if (Primeiro == null) {
+		Primeiro = novoNode;
+		Ultimo = novoNode;	
+	} else {
+		Ultimo.Proximo = novoNode;
+		novoNode.Anterior = Ultimo;
+		Ultimo = novoNode;	
+	}
+}
+
+public void PercorrerEmAmbasDirecoes() {
+    
+    Console.WriteLine("Percorrendo do início ao fim:");
+    Node atual = Primeiro;
+    while (atual != null) {
+        Console.Write(atual.Dados + " <-> ");
+        atual = atual.Proximo;
+    }
+    Console.WriteLine("null");
+
+    
+    Console.WriteLine("Percorrendo do fim para o início:");
+    atual = Ultimo;
+    while (atual != null) {
+        Console.Write(atual.Dados + " <-> ");
+        atual = atual.Anterior;
+    }
+    Console.WriteLine("null");
+}
+
+}
+
+4 - 
+
+private Stack<char> pilha;
+
+public Pilha() {
+	pilha = new Stack<char>();
+	
+	}
+	
+public bool VerificarParentesesBalanceados (string expressao){
+	foreach (char c in expressao) {
+		if (c == '(') {
+			pilha.Push(c);
+		} else if (c == ')'){
+		
+			if (pilha.Count == 0) {
+				return false;			
+			}
+			pilha.Pop();
+		
+		}
+	
+	}
+	return pilha.Count == 0;
+}
+}
+
+5 -
+
+class Fila<T> {
+
+	private LinkedList<T> lista;
+	
+	public Fila() {
+	
+		lista = new LinkedLList<T>;
+	
+	}
+	
+	public void Enqueue(T item) {
+	
+		lista.AddLast(item);
+		
+	}
+	
+	public T Dequeue() {
+	
+		if (IsEmpty()) {
+			throw new InvalidOperationException("A fila está vazia");
+		
+		}
+		
+		T value = lista.First.Value;
+		lista.RemoveFirst();
+		return value;
+	
+	}
+	
+	
+	public T Peek() {
+	
+		if (IsEmpty()) {
+		
+			thro new InvalidOperationException("A fila está vazia");
+		
+		}		
+		
+		return lista.First.Value;
+	
+	}
+	
+	public bool IsEmpty() {
+		return llista.Count == 0;
+	
+	}
+	
+	public int Count() {
+	
+		return lista.Count;
+	
+	}
+}
