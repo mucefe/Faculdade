@@ -13,8 +13,7 @@ int[] vetor = {2,10,21,33,9,12,28,55,34,37};
 	} 
  }
  
- 2 - using System;
-
+ 2 -
 class Node {
     public int Dados;
     public Node Proximo;
@@ -87,7 +86,6 @@ public class LinkedList {
 }
 
 3 - 
-
 class Node {
 	public int Dados;
 	public Node Proximo;
@@ -138,7 +136,7 @@ public void PercorrerEmAmbasDirecoes() {
     }
     Console.WriteLine("null");
 }
-
+\
 }
 
 4 - 
@@ -223,3 +221,4 @@ class Fila<T> {
 	
 	}
 }
+

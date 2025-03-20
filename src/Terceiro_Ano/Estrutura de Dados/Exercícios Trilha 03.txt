@@ -1,0 +1,251 @@
+
+1 -
+
+public int calcularFatorial (int numero) {
+	
+	if (numero == 0) {
+		return 1;
+	} else {
+	
+		return numero * calcularFatorial(numero-1);
+	
+	}
+
+}
+
+2 -
+
+public static int CalcularFibonacci (int n) {
+
+	if (n==0) {
+	
+		return 0;
+		
+	} else if (n==1) {
+	
+		return 1;
+	
+	}
+	
+	return CalcularFibonacci(n-1) + CalcularFibonacci(n-2);
+
+}
+
+public static void main () {
+
+	Console.WriteLine("Insira um número: ");
+	int num = int.Parse(Console.ReadLine());
+	COnsole.WriteLine($"Fibonacci({num}) = {Fibonacci(num)}}");
+}
+
+}
+
+
+class No
+{
+    public int dado;
+    public No esquerda, direita;
+
+    public No(int item)
+    {
+        dado = item;
+        esquerda = direita = null;
+    }
+}
+
+class ArvoreBinaria
+{
+    public No raiz;
+
+   
+    public void InOrder(No no)
+    {
+        if (no != null)
+        {
+            InOrder(no.esquerda);
+            Console.WriteLine(no.dado);
+            InOrder(no.direita);
+        }
+    }
+
+    
+    public void PreOrder(No no)
+    {
+        if (no != null)
+        {
+            Console.WriteLine(no.dado);
+            PreOrder(no.esquerda);
+            PreOrder(no.direita);
+        }
+    }
+
+    
+    public void PostOrder(No no)
+    {
+        if (no != null)
+        {
+            PostOrder(no.esquerda);
+            PostOrder(no.direita);
+            Console.WriteLine(no.dado);
+        }
+    }
+}
+4 -  
+	public int percorreLista(List<int> lista, int indice=0) 
+	{
+		if (indice>=lista.Count) {
+			return 0;
+			
+			return lista[indice] + percorreLista(lista, indice+1);
+			
+		}
+
+	}
+	
+5 - 
+
+class No
+{
+    public int dado;
+    public No esquerda, direita;
+
+    public No(int item)
+    {
+        dado = item;
+        esquerda = direita = null;
+    }
+}
+
+public class ArvoreBinariaDeBusca
+{
+    public No raiz;
+
+    
+    public bool Buscar(No no, int valor)
+    {
+        
+        if (no == null)
+        {
+            return false;
+        }
+
+        
+        if (no.dado == valor)
+        {
+            return true;
+        }
+
+        
+        if (valor < no.dado)
+        {
+            return Buscar(no.esquerda, valor);
+        }
+        
+        else
+        {
+            return Buscar(no.direita, valor);
+        }
+    }
+
+    
+    public No Inserir(No no, int valor)
+    {
+        if (no == null)
+        {
+            return new No(valor);
+        }
+
+        if (valor < no.dado)
+        {
+            no.esquerda = Inserir(no.esquerda, valor);
+        }
+        else if (valor > no.dado)
+        {
+            no.direita = Inserir(no.direita, valor);
+        }
+
+        return no;
+    }
+}
+
+
+6 - 
+
+	public class TorreDeHanoi {
+
+		public int movimentos=0;		
+		
+		
+		public static void Resolver(int n, int origem, int destino, int auxiliar){
+		
+			if (n==1){
+				Console.WriteLine($"Mover disco 1 de {origem} para {destino} ");
+				movimentos++;
+				return;
+			}
+			
+			Resolver(n-1,origem,auxiliar,destino);
+			
+			Console.WriteLine($"Movendo o disco {n} de {origem} para {destino}"};
+			movimentos++;
+			
+			Resolver(n-1,auxiliar,destino,origem);
+		
+		}
+
+		static void main (string[], args){
+		
+			Console.WriteLine("Digite o número de discos");
+			int n = int.Parse("Console.Readline());
+			
+			Resolver(n, 'A','C','B');
+			
+			Console.WriteLine($"\nTotal de movimentos: {movimentos}");
+		
+		
+		}
+
+	}
+	
+	7 - 
+
+public class No
+{
+    public int dado;
+    public No proximo;
+
+    public No(int valor)
+    {
+        dado = valor;
+        proximo = null;
+    }
+	
+}
+
+public class ListaEncadeada
+{
+    public No cabeca;
+
+    // Função recursiva que conta o número de nós
+    public int ContarNos(No no)
+    {
+        // Caso base: se o nó for nulo, chegou ao final da lista
+        if (no == null)
+            return 0;
+
+        // Passo recursivo: conta 1 (o nó atual) + o restante da lista
+        return 1 + ContarNos(no.proximo);
+    }
+}
+
+    Cada nó é visitado uma única vez. Se a lista tem n nós, ela realiza n chamadas recursivas.
+    Complexidade de tempo: O(n), onde n é o número de nós da lista.
+
+
+
+
+
+
+
+
+
