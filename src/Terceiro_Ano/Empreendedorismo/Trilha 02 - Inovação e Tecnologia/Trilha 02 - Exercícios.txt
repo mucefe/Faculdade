@@ -1,0 +1,69 @@
+Exercício Trilha 02
+
+1. Explique o conceito de inovação no desenvolvimento de sistemas e dê um exemplo
+de como a inovação pode melhorar a usabilidade de um software.
+
+A inovação no desenvolvimento de sistemas consiste na criação de soluções tecnológicas que aprimoram processos, produtos ou serviços, especialmente no campo do software. Ela pode se manifestar na automatização de tarefas manuais, reduzindo erros e aumentando a eficiência; na melhoria da performance dos sistemas, como a otimização de bancos de dados e algoritmos; e na usabilidade, com interfaces mais intuitivas e interativas, como chatbots com inteligência artificial.
+
+Além disso, a inovação também pode estar na criação de novos modelos de negócio. Um exemplo é o modelo SaaS (Software como Serviço), em que o usuário paga uma assinatura recorrente para acessar o software, em vez de adquirir uma licença única, o que altera significativamente a forma de consumo de produtos digitais.
+
+2. Pesquise sobre uma tecnologia emergente e descreva como ela pode criar novas
+oportunidades de mercado. Dê exemplos de setores que podem ser transformados
+por essa tecnologia.
+
+A IA generativa vai revolucionar o mercado do entretenimento. Conforme ela se desenvolve, ela passará a ser capaz de desenvolver roteiros, imagens, software e até mesmo filmes inteiros, bastando ao usuário criar um prompt ou mesmo preencher um formulário simples.
+
+3. Cite dois exemplos de inovações em sistemas que você utilizou no seu dia a dia e
+explique como essas inovações melhoraram o serviço ou produto.
+
+Em uma época em que os sites de busca funcionavam por meio de catálogos de sites cadastrados manualmente, o Google inovou com o algoritmo PageRank que introduziu a ideia de relevância baseada na autoridade das páginas — ou seja, quanto mais links uma página recebia de outros sites relevantes, maior sua credibilidade. Isso não apenas melhorou a qualidade das buscas, como também criou novos modelos de negócio, como o AdWords (atual Google Ads), que revolucionou o marketing digital ao permitir anúncios segmentados diretamente nos resultados de busca. 
+
+4. Descreva o impacto da Inteligência Artificial em um setor específico (como saúde,
+educação ou transporte) e como ela está gerando novas oportunidades para
+empresas.
+
+O advento da Inteligência Artificial (em especial a generativa) tem promovido uma mudança considerável na área da educação, tanto para o bem, quanto para o mal. Para o bem, os chatbots baseados em IA como o ChatGPT têm se mostrado aliados valiosos ao elaborar planos de estudo, explicar conteúdos complexos e até mesmo desenvolver questionários para estudantes das mais variadas áreas. Para o mal, os professores de ensino fundamental, médio e até mesmo superior têm se visto obrigados adaptar seus métodos de ensino à presença de uma tecnologia capaz de responder provas, lições de casa e exercícios com precisão considerável em poucos segundos.
+
+5. Analise um case de sucesso (por exemplo, Uber ou Airbnb) e descreva como a
+inovação tecnológica foi crucial para o sucesso do modelo de negócios.
+
+O iFood é um bom exemplo de como a inovação tecnológica pode impulsionar o sucesso de um modelo de negócios digital. Desde seu lançamento em 2011, a empresa investiu fortemente em uma plataforma inteligente e escalável baseada em nuvem, capaz de atender milhões de usuários com eficiência. Seu sistema utiliza algoritmos avançados para roteamento e alocação de pedidos, otimizando entregas com base em localização, tempo e desempenho dos entregadores, o que melhora a experiência do consumidor e a operação como um todo.
+
+Outro fator essencial foi o uso intensivo de dados e inteligência artificial. Através da análise de comportamento dos usuários, o iFood personaliza recomendações, prevê picos de demanda e orienta restaurantes sobre tendências e precificação dinâmica. Além disso, a empresa inovou na logística com o uso de geolocalização em tempo real, sistemas de priorização de pedidos e testes com tecnologias emergentes, como drones e veículos autônomos, sempre buscando maior eficiência e rapidez nas entregas.
+
+Mais recentemente, o iFood ampliou seu papel ao integrar serviços financeiros para restaurantes e entregadores, oferecendo maquininhas, contas digitais e crédito. Essa estratégia fortalece seu ecossistema, reduz barreiras para pequenos negócios e fideliza parceiros. Com isso, o sucesso do iFood vai além da entrega de comida: ele mostra como a tecnologia, aliada à inovação constante, pode transformar um aplicativo em uma plataforma essencial para a vida urbana.
+
+6. Crie uma ideia de negócio inovadora aplicando uma das tecnologias emergentes
+citadas (IA, IoT, blockchain, etc.) e explique como ela se destacaria no mercado
+atual.
+
+MobiCompras - Um aplicativo que reúne os preços de todas as mercadorias dos mercados da cidade, mostrando quais itens estão em promoção, permitindo ao usuário criar uma lista de desejos e buscar pelo item mais barato. O aplicativo também permitiria pré-selecionar as mercadorias em um carrinho de compras que seria separado pela equipe do mercado para serem retiradas com maios conforto e praticidade pelo usuário ao chegar no mercado. O usuário também poderia solicitar a entrega de suas compras em domicílio pagando pelo próprio aplicativo.
+
+Para garantir o funcionamento eficiente e contínuo do MobiCompras, diversas tecnologias podem ser empregadas: O backend do aplicativo seria desenvolvido com C# utilizando o framework .NET, que oferece alta performance, segurança e escalabilidade. Para o gerenciamento de dados, especialmente os preços e estoques dos mercados, seria ideal utilizar um banco de dados robusto como PostgreSQL ou MongoDB, ambos compatíveis com o ecossistema .NET. A integração com os sistemas dos supermercados pode ser realizada por meio de APIs RESTful desenvolvidas com ASP.NET Core, permitindo a atualização em tempo real das informações. Além disso, tecnologias como o Firebase podem ser utilizadas para autenticação, notificações em tempo real e gerenciamento de sessões de usuários. Para a criação de um aplicativo multiplataforma (Android e iOS) com experiência fluida, frameworks como Flutter ou React Native continuam sendo excelentes opções. Para rotas de entrega e cálculo de distâncias, pode-se integrar serviços como o Google Maps API. Por fim, o app pode incorporar soluções de pagamento confiáveis, como PagSeguro, Stripe ou Pix, permitindo que os usuários realizem suas compras diretamente pela plataforma com praticidade e segurança.
+
+7. Explique como a computação em nuvem pode ajudar uma empresa a escalar suas
+operações e melhorar a colaboração entre equipes distribuídas. Dê exemplos
+práticos.
+
+A computação em nuvem ajuda empresas a escalarem suas operações com agilidade e menor custo, ao oferecer recursos sob demanda, como armazenamento e processamento, sem a necessidade de investir em infraestrutura física. Isso permite crescer rapidamente conforme a demanda, como no caso de e-commerces que ampliam sua capacidade em datas de alto tráfego. Além disso, melhora a colaboração entre equipes distribuídas, com ferramentas como Google Workspace ou Microsoft 365, que permitem edição simultânea de documentos, comunicação em tempo real e compartilhamento seguro de arquivos. A nuvem também facilita a inovação, ao permitir testes e desenvolvimento de novas soluções de forma rápida e isolada.
+
+8. Identifique uma área de sua vida cotidiana que você acha que poderia se beneficiar
+de uma inovação tecnológica e descreva como isso seria feito.
+
+Uma área da vida cotidiana que poderia se beneficiar muito de uma inovação tecnológica é o uso de smartphones. Uma solução interessante seria o desenvolvimento de celulares verdadeiramente modulares, nos quais o usuário pudesse montar o aparelho com os componentes que melhor atendem às suas necessidades, de forma semelhante ao que já acontece com computadores desktop e, em menor escala, com alguns laptops.
+
+No modelo atual, quem precisa de alto desempenho — como um processador potente, bateria de longa duração e bastante memória RAM — acaba sendo forçado a comprar modelos topo de linha que também incluem câmeras avançadas, mesmo que fotografia não seja uma prioridade. Isso encarece o aparelho em até 25%, já que os módulos de câmera são um dos componentes mais caros do dispositivo.
+
+Com um celular modular, o usuário poderia, por exemplo, abrir mão de uma câmera de última geração e investir esse valor em outros recursos mais relevantes para seu perfil. Essa personalização não só reduziria o desperdício, como também tornaria a tecnologia mais acessível e alinhada com as necessidades reais de cada pessoa.
+
+9. Qual a principal diferença entre um sistema de blockchain e um banco de dados
+tradicional? Em que cenários o uso de blockchain seria mais vantajoso?
+
+A principal diferença entre um sistema de blockchain e um banco de dados tradicional está na forma como os dados são controlados e armazenados. Enquanto bancos de dados tradicionais são centralizados e gerenciados por uma única entidade que pode modificar ou excluir registros, blockchains são descentralizados, imutáveis e funcionam por meio de consenso entre múltiplos participantes. Além disso, os dados em uma blockchain são criptografados e registrados em blocos encadeados de forma permanente, o que garante maior transparência e segurança contra fraudes ou alterações não autorizadas.
+
+O uso de blockchain é mais vantajoso em cenários onde não há confiança entre as partes envolvidas, como em transações financeiras descentralizadas, cadeias de suprimento com múltiplos agentes ou sistemas que exigem registros auditáveis e imutáveis, como contratos inteligentes, votações eletrônicas ou certificações digitais. No entanto, seu uso não é recomendado quando há uma autoridade central confiável, alta demanda por velocidade ou quando os custos e a complexidade técnica superam os benefícios oferecidos pela tecnologia.
+
+10. Descreva como a Internet das Coisas (IoT) pode ser aplicada ao setor de saúde e
+que tipo de oportunidades de mercado isso pode criar para empresas tecnológicas.
+
+A Internet das Coisas pode revolucionar o setor de saúde ao conectar dispositivos e sensores que monitoram pacientes em tempo real, permitindo o acompanhamento remoto de sinais vitais, a detecção precoce de problemas e a melhoria da eficiência hospitalar com rastreamento de equipamentos e controle de estoques. Isso abre oportunidades de mercado para empresas tecnológicas no desenvolvimento de dispositivos médicos inteligentes, plataformas de análise de dados, soluções de segurança da informação e integração de sistemas. Com o envelhecimento da população e a demanda por cuidados personalizados e remotos, a IoT na saúde se torna um campo promissor para inovação e investimentos.

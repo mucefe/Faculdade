@@ -1,0 +1,57 @@
+1. Explique as diferenças entre SCRUM e Kanban. Em que situações seria mais adequado usar cada metodologia?
+
+SCRUM trabalha com sprints curtas e entrega incremental de funcionalidades, ideal para projetos com metas claras e prazos definidos. Kanban foca em fluxo contínuo e visualização do trabalho, sendo mais adequado quando há demandas constantes e variáveis, como manutenção de sistemas.
+
+2. Descreva as responsabilidades de um Product Owner no SCRUM. Por que esse papel é importante no desenvolvimento de sistemas?
+
+O Product Owner define prioridades, organiza o backlog e garante que a equipe esteja focada no que traz mais valor ao cliente. É fundamental para alinhar o produto às necessidades do negócio e garantir entregas relevantes.
+
+3. Explique como a prática de programação em par do XP pode melhorar a qualidade do código. Dê um exemplo de quando essa prática seria benéfica.
+
+Na programação em par, dois desenvolvedores colaboram no mesmo código, o que reduz erros, melhora a lógica e favorece o aprendizado mútuo. É útil, por exemplo, ao implementar uma API complexa com muitos pontos de integração.
+
+4. Liste e explique as fases do ciclo de vida de um projeto de software. Dê um exemplo prático para cada fase.
+
+Planejamento: Definir objetivos – ex: controlar finanças pessoais.
+
+Análise de Requisitos: Levantar funcionalidades como cadastro de despesas.
+
+Design: Projetar as telas e estrutura do app.
+
+Desenvolvimento: Codificar os módulos.
+
+Testes: Verificar funcionamento e corrigir bugs.
+
+Entrega: Implantar o sistema para os usuários.
+
+Manutenção: Atualizar e corrigir falhas pós-lançamento.
+
+5. Crie um quadro Kanban simples com três colunas: 'A Fazer', 'Em Progresso' e 'Concluído'. Adicione pelo menos cinco tarefas para um projeto de desenvolvimento de um aplicativo móvel.
+
+A Fazer: Criar tela de login, definir design do app.
+
+Em Progresso: Programar cadastro de usuários, configurar banco de dados.
+
+Concluído: Esboçar requisitos iniciais.
+
+6. Descreva como a integração contínua pode ser usada para melhorar o fluxo de trabalho em um projeto ágil. Dê um exemplo prático.
+
+A integração contínua automatiza testes e builds a cada nova alteração no código. Por exemplo, em um app de e-commerce, a cada nova funcionalidade adicionada, o sistema verifica automaticamente se há falhas antes da próxima entrega.
+
+7. Explique como os testes automatizados contribuem para o controle de qualidade no desenvolvimento de software.
+
+Eles detectam erros rapidamente após alterações, garantindo que o sistema continue funcionando corretamente. Reduzem retrabalho e aumentam a confiança nas atualizações.
+
+8. Simule a organização de uma sprint no SCRUM para o desenvolvimento de um módulo de login de um sistema. Defina o objetivo da sprint, as tarefas e o tempo estimado.
+
+Objetivo: Implementar o módulo de login.
+Tarefas: Criar tela de login, validar dados do usuário, integrar com banco, testar segurança, revisar design.
+Tempo estimado: 2 semanas.
+
+9. Pesquise uma ferramenta de integração contínua e descreva como ela pode ser implementada em um projeto de software.
+
+O Jenkins é uma ferramenta popular de CI. Ele pode ser configurado para rodar testes e builds automaticamente sempre que um desenvolvedor faz push no repositório, garantindo entregas frequentes e seguras.
+
+10. Explique como o ciclo de vida de um projeto de software pode ser adaptado ao uso de metodologias ágeis, como SCRUM e XP.
+
+Nas metodologias ágeis, as fases do ciclo são iterativas e podem se repetir dentro de cada sprint. Em SCRUM, planejamento, desenvolvimento e testes ocorrem a cada ciclo. Em XP, há foco em práticas como refatoração e testes contínuos durante todo o ciclo.

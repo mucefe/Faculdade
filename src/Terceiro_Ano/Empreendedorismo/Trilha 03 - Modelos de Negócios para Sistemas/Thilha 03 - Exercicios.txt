@@ -1,0 +1,57 @@
+1. Explique a diferença entre o Business Model Canvas e o Lean Startup. Como cada um pode ser utilizado no planejamento de um sistema?
+O Business Model Canvas é uma ferramenta visual que mapeia os principais elementos de um negócio, como proposta de valor, canais, recursos e receita. Já o Lean Startup é uma abordagem focada em validar ideias rapidamente, usando ciclos curtos de construção, medição e aprendizado. O Canvas ajuda a estruturar o sistema como um todo, enquanto o Lean Startup auxilia na experimentação e ajustes rápidos com base no feedback do mercado.
+
+2. No contexto de um sistema de gerenciamento de estoque para pequenas empresas, preencha os nove blocos do Business Model Canvas com informações que fariam sentido para esse tipo de sistema.
+
+Segmentos de Clientes: Pequenas empresas e comércios locais.
+
+Proposta de Valor: Controle de estoque fácil, rápido e automatizado.
+
+Canais: Site oficial, app store, redes sociais.
+
+Relacionamento com Clientes: Suporte online e chatbot.
+
+Fontes de Receita: Assinatura mensal ou anual.
+
+Recursos Principais: Equipe de TI, servidores em nuvem, suporte técnico.
+
+Atividades Principais: Desenvolvimento de software, suporte ao cliente, marketing.
+
+Parcerias Principais: Plataformas de pagamento, revendedores, integradores de sistemas.
+
+Estrutura de Custos: Desenvolvimento, manutenção, marketing e suporte.
+
+3. Descreva como o ciclo Build-Measure-Learn da Lean Startup pode ser aplicado ao desenvolvimento de um aplicativo de saúde.
+Inicialmente, a empresa pode construir um MVP com funcionalidades básicas, como registro de sintomas e lembrete de medicamentos. Depois, mede o uso e a aceitação dos usuários com métricas como engajamento diário e taxa de retorno. Por fim, aprende com os dados, ajustando o app conforme as preferências dos usuários, podendo adicionar novas funções como teleconsulta ou integração com wearables.
+
+4. Explique o que é o MVP e por que ele é importante para o desenvolvimento de sistemas. Dê exemplos práticos.
+
+O MVP é a versão mais simples de um produto, com apenas as funcionalidades essenciais para ser testado com usuários reais. Ele é importante porque economiza tempo e dinheiro, reduz riscos e permite ajustes com base em feedbacks. Exemplo: lançar um app de entrega que inicialmente só permite cadastro e pedidos básicos antes de incluir rastreamento e avaliações.
+
+5. Desenvolva uma ideia de software para resolver um problema do dia a dia. Descreva como você aplicaria a validação de ideias e a prototipagem para garantir o sucesso da ideia.
+
+Ideia: app que ajuda a organizar refeições da semana e lista de compras. A validação seria feita com pesquisas online e entrevistas para entender a dor do público-alvo. A prototipagem incluiria uma interface simples em Figma, com teste de navegação com usuários reais para validar usabilidade antes de iniciar o desenvolvimento completo.
+
+6. Pesquise um case de sucesso de uma startup que utilizou o conceito de MVP. Explique como isso ajudou a empresa a validar sua ideia e alcançar o sucesso.
+
+Um exemplo é o Airbnb, que começou como um MVP com uma página simples oferecendo colchões infláveis em uma sala para participantes de uma conferência. Com o retorno positivo, validaram a demanda por hospedagem alternativa e escalaram a plataforma, adicionando funcionalidades e melhorando o design com base no feedback dos usuários.
+
+7. Crie um esboço de um protótipo para um sistema de gestão de tarefas e descreva como você o apresentaria aos usuários para obter feedbacks.
+
+O protótipo incluiria uma interface com login, criação de tarefas com prazos e categorias, e um painel com visualização diária/semanal. Seria feito em uma ferramenta como Figma. A apresentação seria feita em encontros online ou presenciais, com usuários navegando pelo protótipo e respondendo perguntas sobre clareza, facilidade de uso e melhorias desejadas.
+
+8. Explique como você utilizaria a prototipagem para reduzir riscos em um projeto de desenvolvimento de software.
+
+A prototipagem permite testar ideias antes do investimento completo. Com ela, é possível identificar problemas de usabilidade, verificar se o público entende a proposta do sistema e ajustar funcionalidades com base em testes rápidos. Isso evita retrabalho e investimentos em recursos que não atendem às expectativas dos usuários.
+
+9. Descreva um exemplo fictício de um produto digital que poderia ser desenvolvido usando o modelo Lean Startup, explicando como seria o MVP inicial.
+
+Produto: App que conecta freelancers a tarefas rápidas no bairro. O MVP incluiria apenas cadastro, criação de tarefas e notificação de novos serviços. Após o lançamento, seria feita a medição do uso, feedback dos usuários e ajustes, como incluir pagamentos pelo app ou avaliações, conforme a necessidade real observada.
+
+10. Liste três vantagens de utilizar o Business Model Canvas para planejar um sistema de software e explique como cada uma dessas vantagens pode influenciar o sucesso do projeto.
+
+- Visão clara e estruturada do negócio: Ajuda a alinhar todos os envolvidos e tomar decisões mais assertivas.
+
+- Identificação rápida de pontos fracos: Permite visualizar onde estão as lacunas ou riscos antes de investir.
+
+- Facilidade de comunicação da ideia: A ferramenta visual torna mais fácil explicar o projeto a investidores, parceiros e equipe, facilitando apoio e engajamento.

@@ -1,0 +1,39 @@
+1. Explique como o planejamento financeiro pode ajudar uma startup a escalar uma solução tecnológica. Dê exemplos de recursos que devem ser planejados.
+
+O planejamento financeiro ajuda a prever custos e investimentos necessários para acompanhar o crescimento da demanda sem comprometer a qualidade. Ele permite que a startup invista corretamente em servidores, licenças, equipe e ferramentas, como infraestrutura em nuvem e automatização de processos.
+
+2. Descreva o que são KPIs e liste três indicadores de performance importantes para um sistema de e-commerce. Explique por que eles são relevantes.
+
+KPIs (Key Performance Indicators) são métricas usadas para medir o desempenho de um sistema. Em um e-commerce, os mais relevantes são: tempo de resposta (impacta na experiência do usuário), uptime (garante o sistema sempre online) e taxa de conversão (mede o sucesso nas vendas).
+
+3. Crie uma simulação de planejamento de escalabilidade para uma aplicação web que espera dobrar o número de usuários em seis meses. Considere os custos de infraestrutura e equipe.
+
+Para escalar, será necessário dobrar os servidores (custos com AWS), aumentar o armazenamento em nuvem, contratar dois novos desenvolvedores e um analista de suporte. Também será preciso automatizar deploys e monitoramento para garantir performance.
+
+4. Dê um exemplo de como a automação de processos pode ajudar a escalar um software sem comprometer a qualidade.
+
+Automatizar testes e deploys permite lançar atualizações frequentes sem erros, reduzindo o tempo e o custo com revisões manuais, garantindo qualidade mesmo com aumento de usuários e funcionalidades.
+
+5. Explique a importância do uptime como indicador de performance e descreva como uma empresa pode garantir altos níveis de uptime em seu software.
+
+O uptime garante que o sistema esteja disponível para os usuários. Para manter altos níveis, a empresa pode usar servidores redundantes, monitoramento em tempo real e serviços em nuvem com SLA elevado.
+
+6. Pesquise e descreva uma ferramenta de monitoramento de desempenho para sistemas em nuvem. Como ela pode ser usada para melhorar a escalabilidade de um software?
+
+O Amazon CloudWatch monitora recursos da AWS, como CPU, memória e latência. Ele ajuda a escalar automaticamente a infraestrutura conforme o uso aumenta, evitando gargalos e melhorando a performance.
+
+7. Descreva três práticas que uma empresa de software pode adotar para garantir a sustentabilidade financeira e ambiental de seus negócios.
+
+Usar data centers energeticamente eficientes, adotar modelos de receita como SaaS e promover diversidade e inclusão na equipe são práticas que garantem sustentabilidade financeira e ambiental.
+
+8. Elabore um estudo de caso sobre uma empresa que tenha conseguido escalar sua solução tecnológica com sucesso. Quais foram os principais desafios enfrentados e como foram superados?
+
+Uma startup de CRM na nuvem enfrentou desafios de lentidão com o crescimento. Superou isso migrando para servidores escaláveis da AWS, automatizando deploys e contratando mais desenvolvedores, garantindo performance e suporte.
+
+9. Explique como o uso de indicadores de performance pode auxiliar uma equipe de desenvolvimento a identificar gargalos e melhorar a experiência do usuário.
+
+Indicadores como tempo de resposta e uso de CPU ajudam a detectar falhas ou sobrecarga, permitindo ajustes rápidos na infraestrutura ou no código para manter uma experiência fluida para o usuário.
+
+10. Descreva como a migração para servidores em nuvem pode ser uma estratégia sustentável para empresas de software em crescimento. Quais são as vantagens desse modelo?
+
+A nuvem permite escalar recursos conforme a demanda, reduzindo custos com infraestrutura ociosa. Também melhora a eficiência energética e oferece alta disponibilidade, contribuindo para crescimento sustentável e flexível.

@@ -1,0 +1,1 @@
+2 - Imagens são como imagens congeladas de todos os componentes que a aplicação precisa para ser executada, como o código do programa, as bibliotecas, as configurações, sistemas de arquivos e etc. Já os contêineres são a instância em execução de uma imagem. 

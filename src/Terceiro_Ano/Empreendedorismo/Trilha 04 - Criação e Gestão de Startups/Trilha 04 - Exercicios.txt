@@ -1,0 +1,58 @@
+1. Descreva as etapas para criar uma startup de tecnologia e escolha um problema do seu dia a dia para usar como base na criação de uma ideia inovadora.
+
+As etapas são: (1) Identificação do problema, (2) Desenvolvimento da ideia e proposta de valor, (3) Formação da equipe fundadora, (4) Criação do MVP, (5) Validação do mercado, (6) Planejamento de crescimento e (7) Captação de investimentos.
+Um problema do dia a dia é a dificuldade de encontrar produtos com bons preços em mercados diferentes. A ideia inovadora seria um app que compara preços em tempo real de supermercados próximos, permitindo ao usuário montar listas de compras e pedir entrega.
+
+2. Explique a importância do MVP no processo de criação de uma startup. Como ele pode ajudar na validação da ideia?
+
+O MVP (Produto Mínimo Viável) permite lançar uma versão básica do produto para testá-lo rapidamente no mercado. Isso ajuda a economizar recursos, obter feedback real dos usuários e ajustar a proposta antes de investir pesado.
+Ele valida se a ideia tem aceitação e se realmente resolve o problema identificado, diminuindo os riscos de fracasso.
+
+3. Simule a formação de uma equipe fundadora para uma startup que desenvolva um aplicativo de saúde. Que habilidades e perfis você buscaria para essa equipe?
+
+A equipe ideal teria: um desenvolvedor com conhecimento em mobile e segurança de dados, um designer com foco em UX/UI para saúde, e um profissional da área médica para validar os conteúdos e funcionalidades.
+Também seria importante ter alguém com visão de negócios e marketing para planejar o modelo de monetização e a atração de usuários.
+
+4. Escolha uma metodologia ágil (Scrum ou Kanban) e explique como ela pode ser aplicada na gestão de equipes em uma startup de tecnologia.
+
+O Scrum pode ser aplicado dividindo o trabalho em sprints (ciclos curtos), com reuniões diárias para alinhamento. O time define metas a cada sprint e revê os resultados ao final.
+Isso permite entregas rápidas, correções constantes e maior adaptação ao feedback dos usuários, fundamental em ambientes de startup.
+
+5. Imagine que sua startup conseguiu lançar um MVP. Crie um plano de ação para validar o produto no mercado e listar os recursos financeiros necessários para a próxima fase.
+
+Plano de ação: coletar feedback dos primeiros usuários via pesquisa online, observar métricas de uso e comportamento, ajustar funcionalidades com base nesses dados.
+Recursos necessários: marketing digital (R$2.000), melhorias no app (R$5.000), contratação de suporte ao cliente (R$3.000), e hospedagem/infraestrutura (R$1.000).
+
+6. Descreva como você faria a gestão de uma equipe de desenvolvimento em uma startup com recursos financeiros limitados. Quais seriam suas prioridades?
+
+Prioridades: definir bem os papéis de cada membro, usar ferramentas gratuitas ou de baixo custo (como Trello, GitHub, Google Drive), focar no desenvolvimento de funcionalidades essenciais.
+Manter uma comunicação clara, reuniões curtas e frequentes, e incentivar a colaboração e autonomia da equipe seriam essenciais para produtividade sem sobrecarga.
+
+7. Desenvolva um pitch para uma ideia de startup de tecnologia. No pitch, apresente o problema, a solução, o modelo de negócios e o tamanho do mercado.
+
+Problema: Pessoas perdem tempo e dinheiro tentando economizar em supermercados diferentes.
+Solução: Um app que compara preços em tempo real de mercados locais, permite montar listas e pedir entrega.
+Modelo de negócios: Assinatura mensal premium + comissão sobre entregas.
+Mercado: Mais de 30 milhões de consumidores urbanos no Brasil que fazem compras semanais.
+
+8. Crie uma lista de critérios que você acredita serem importantes para atrair investidores para uma startup de software. Explique por que cada critério é importante.
+
+Proposta de valor clara – mostra o diferencial da startup.
+
+Mercado-alvo grande – indica potencial de crescimento.
+
+Equipe qualificada – garante execução eficiente.
+
+Progresso inicial (MVP, usuários) – prova de que a ideia funciona.
+
+Plano financeiro realista – aumenta a confiança do investidor.
+
+9. Pesquise um caso de sucesso de uma startup que conseguiu captar investimentos. Descreva o que fez essa startup se destacar e atrair investidores.
+
+Exemplo: A Nubank. Ela se destacou ao oferecer uma solução simples e digital para serviços bancários, com excelente atendimento e ausência de taxas.
+O modelo inovador, o grande mercado potencial e o crescimento rápido da base de clientes atraíram grandes investidores como a Sequoia Capital.
+
+10. Explique como a cultura de inovação pode impactar o desempenho de uma startup. Como você promoveria essa cultura em sua equipe?
+
+A cultura de inovação incentiva experimentação, criatividade e adaptação, o que ajuda a equipe a encontrar soluções únicas e melhorar o produto constantemente.
+Eu promoveria essa cultura incentivando a troca de ideias, aceitando erros como parte do aprendizado, e dando liberdade para que todos proponham melhorias.

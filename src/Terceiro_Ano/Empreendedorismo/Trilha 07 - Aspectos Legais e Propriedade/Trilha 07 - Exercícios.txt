@@ -1,0 +1,39 @@
+1. Explique a diferença entre uma licença de software proprietária e uma licença open source. Dê exemplos de cada uma.
+
+Licenças proprietárias mantêm o controle total do software com o autor, permitindo o uso sob condições restritas e proibindo modificações sem autorização. Exemplo: Microsoft Windows. Já licenças open source permitem acesso ao código-fonte, modificação e redistribuição, desde que os termos da licença sejam respeitados. Exemplo: Licença GNU GPL.
+
+2. Pesquise as principais características de uma licença GNU GPL e descreva como ela impacta a distribuição e modificação de software.
+
+A GNU GPL exige que qualquer software derivado também seja distribuído com o código-fonte aberto e sob a mesma licença. Isso garante liberdade para modificar e compartilhar o software, mas obriga os desenvolvedores a manter essa liberdade nas versões modificadas.
+
+3. Descreva o processo de registro de software no INPI no Brasil e explique como ele pode ser útil para um desenvolvedor.
+
+O registro é feito no INPI com a apresentação de documentação técnica do software. Embora não obrigatório, serve como prova legal de autoria em disputas judiciais, fortalecendo os direitos autorais do desenvolvedor.
+
+4. Explique a diferença entre direitos autorais e patentes em relação ao software. Em que situação o desenvolvedor de software pode requerer uma patente?
+
+Direitos autorais protegem a forma do software (código), enquanto patentes protegem invenções técnicas. No Brasil, só é possível patentear software se ele fizer parte de um sistema inovador. Por exemplo, um algoritmo que integra um processo industrial.
+
+5. Simule a criação de um contrato de desenvolvimento de software entre um freelancer e uma empresa, detalhando os principais itens que devem constar no documento.
+
+Um contrato deve incluir: escopo do projeto, prazos de entrega, forma de pagamento, cláusulas de confidencialidade, propriedade intelectual do software (se fica com o cliente ou com o desenvolvedor), suporte pós-entrega e penalidades por descumprimento.
+
+6. Descreva como um acordo de confidencialidade (NDA) pode proteger o código-fonte e outras informações sensíveis durante um projeto de software.
+
+O NDA impede que informações sigilosas, como código-fonte, algoritmos e planos de negócio, sejam compartilhadas ou usadas sem permissão. Ele garante segurança jurídica ao desenvolvedor ou à empresa contra vazamentos.
+
+7. Dê um exemplo de como o uso de software sem a devida licença pode gerar problemas legais para uma empresa.
+
+Uma empresa que utiliza software pirata pode ser processada pelo titular dos direitos autorais, sofrer multas e ter seus equipamentos apreendidos por violação de propriedade intelectual.
+
+8. Explique como um desenvolvedor pode licenciar seu software sob uma licença proprietária e ainda permitir que outros desenvolvedores criem extensões ou plug-ins para seu sistema.
+
+O desenvolvedor pode liberar uma API pública com diretrizes claras de integração, permitindo o desenvolvimento de extensões sem liberar o código-fonte principal, mantendo o núcleo sob licença proprietária.
+
+9. Pesquise um caso real de disputa legal envolvendo direitos autorais de software e descreva como os direitos autorais ou o registro de software foram utilizados no caso.
+
+No caso Oracle vs. Google, a Oracle alegou que o Google usou indevidamente trechos da API Java. A disputa girou em torno do uso justo e dos limites dos direitos autorais em APIs. O caso mostrou como a definição de autoria e a proteção por copyright afetam o uso de software.
+
+10. Descreva os benefícios de se utilizar uma licença open source em um projeto de software colaborativo. Que tipo de desafios isso pode apresentar para os desenvolvedores?
+
+Os benefícios incluem colaboração global, melhoria contínua, correção rápida de bugs e baixo custo. Os desafios envolvem controle de qualidade, conciliação de contribuições diversas e dificuldade em gerar lucro direto com o software.

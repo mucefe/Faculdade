@@ -1,0 +1,69 @@
+1. Explique como identificar as necessidades dos usuários ao planejar um software. Dê um exemplo prático.
+
+A identificação das necessidades dos usuários pode ser feita por meio de pesquisas, entrevistas com o público-alvo e análise dos concorrentes. Essas práticas ajudam a entender as dores, desejos e hábitos dos usuários, possibilitando o desenvolvimento de um software que realmente atenda às suas expectativas.
+
+Exemplo: Ao planejar um app de entrega de comida, você pode entrevistar usuários para descobrir que eles valorizam entregas rápidas, rastreamento em tempo real e avaliações de restaurantes, orientando assim o desenvolvimento dessas funcionalidades.
+
+2. Descreva o que é um roadmap de produto e como ele ajuda no planejamento de um serviço de software.
+
+Um roadmap de produto é um plano estratégico que define o cronograma de desenvolvimento, as funcionalidades prioritárias e as metas de lançamento. Ele serve como guia para a equipe de desenvolvimento e alinha todos os envolvidos ao progresso e à visão do produto.
+
+Com isso, a equipe consegue organizar melhor as tarefas, priorizar entregas com base em valor para o usuário e acompanhar o avanço das metas em direção ao lançamento ou melhorias futuras.
+
+3. Pesquise um software que você utiliza e liste suas funcionalidades principais e diferenciadas. Explique como você faria o planejamento de funcionalidades para esse software.
+
+Software: Trello.
+Funcionalidades principais: Criação de quadros, listas e cartões, atribuição de tarefas e datas de entrega.
+Funcionalidades diferenciadas: Integração com outras plataformas (como Slack e Google Drive), automações com o Butler e personalização de quadros.
+
+No planejamento, eu começaria pelas funções básicas essenciais para gestão de tarefas. Depois, com base no feedback dos usuários, priorizaria as funcionalidades diferenciadas que aumentam a produtividade e integração com outras ferramentas.
+
+4. Explique o que é uma persona no marketing digital e crie uma persona fictícia para um software de gestão de projetos.
+
+Uma persona é a representação fictícia do cliente ideal, baseada em dados reais sobre comportamentos, objetivos e desafios dos usuários. Ela ajuda a direcionar melhor as estratégias de marketing e comunicação.
+
+Persona fictícia: João, 35 anos, gerente de projetos em uma empresa de tecnologia. Ele busca uma ferramenta que organize tarefas da equipe, com relatórios automáticos e integração com outras plataformas. João valoriza praticidade e mobilidade, usando o celular para acompanhar o trabalho fora do escritório.
+
+5. Escolha dois canais de marketing digital (como e-mail marketing e SEO) e explique como eles podem ser usados para promover um sistema de gestão de academias.
+
+E-mail marketing: Pode ser usado para enviar newsletters com dicas de gestão, novidades do sistema, depoimentos de clientes e promoções para atrair leads e fidelizar usuários.
+
+SEO: Criar um blog com conteúdos sobre gestão de academias, treinos, e saúde pode melhorar o ranqueamento no Google, atrair visitas qualificadas e gerar autoridade na área.
+
+6. Descreva como uma startup de tecnologia poderia usar marketing de conteúdo para atrair clientes para um aplicativo de organização financeira.
+
+A startup pode criar artigos, vídeos e infográficos sobre educação financeira, controle de gastos e dicas de economia. Isso atrai pessoas interessadas nesses assuntos, gera confiança e mostra como o app resolve esses problemas de forma prática.
+
+Esses conteúdos também podem ser divulgados em redes sociais e e-mails para aumentar o alcance e engajamento do público.
+
+7. Defina um objetivo SMART para uma empresa de software que deseja aumentar sua base de clientes em 20% nos próximos 6 meses. Explique cada elemento do SMART aplicado à sua meta.
+
+Objetivo SMART: “Aumentar a base de clientes ativos em 20% até o final do próximo semestre, por meio de campanhas de marketing digital e parcerias estratégicas.”
+
+Específico: Aumentar a base de clientes.
+
+Mensurável: Em 20%.
+
+Atingível: Com ações de marketing e parcerias.
+
+Relevante: Crescimento de clientes é essencial para o negócio.
+
+Temporal: Prazo de 6 meses.
+
+8. Crie um plano de metas de curto e longo prazo para uma startup de tecnologia que desenvolve um sistema de CRM (gestão de relacionamento com o cliente).
+
+Curto prazo (6 meses): Implementar integração com redes sociais, conquistar 200 clientes ativos e melhorar o suporte ao usuário com chatbot.
+
+Longo prazo (2 anos): Expandir para outros países da América Latina, lançar uma versão com inteligência artificial para análise de dados de vendas e alcançar 10 mil clientes ativos.
+
+9. Descreva como você organizaria uma campanha de marketing digital para um novo software de educação online, considerando mídias sociais e SEO.
+
+Criaria perfis nas redes sociais (Instagram, LinkedIn, YouTube) para divulgar conteúdos educativos, depoimentos de alunos e vídeos explicativos. Paralelamente, criaria um blog com artigos otimizados em SEO sobre métodos de estudo, ensino online e uso de tecnologia na educação.
+
+Com isso, a campanha aumentaria a visibilidade do software, atrairia tráfego qualificado e criaria autoridade no setor educacional.
+
+10. Pesquise um caso de sucesso de uma empresa de software que utilizou um bom planejamento estratégico e descreva o impacto das metas e objetivos estabelecidos no sucesso da empresa.
+
+A Slack é um exemplo de sucesso. Ela definiu como meta criar uma plataforma que centralizasse a comunicação de equipes em um só lugar, facilitando a colaboração. O planejamento estratégico incluiu um MVP simples, foco em UX e uma forte estratégia de marketing digital.
+
+Com metas claras de aquisição de usuários e expansão por convites dentro das equipes, a Slack cresceu rapidamente e foi adquirida pela Salesforce por US$ 27,7 bilhões, mostrando como objetivos bem definidos impactam diretamente no crescimento.

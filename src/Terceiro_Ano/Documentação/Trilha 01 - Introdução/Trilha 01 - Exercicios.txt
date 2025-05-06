@@ -1,0 +1,21 @@
+Trilha 01: Introdução à Documentação de Software - Exercícios
+
+1. Exercício 1: Escreva uma breve explicação sobre a importância da documentação técnica em um projeto de software. Dê um exemplo de como ela pode ajudar no desenvolvimento futuro.
+
+A documentação técnica é essencial em um projeto de software porque permite que desenvolvedores compreendam a estrutura, a lógica e os componentes do sistema mesmo sem terem participado de sua criação original. Isso facilita significativamente a manutenção, a correção de erros e a implementação de novas funcionalidades ao longo do tempo. Por exemplo, se uma nova equipe assumir um projeto legado, ela poderá entender como o sistema foi projetado e como suas partes se relacionam apenas consultando a documentação técnica, o que evita retrabalho e reduz o risco de introduzir falhas.
+
+2. Exercício 2: Crie uma estrutura de documentação para uma API simples que permite adicionar, editar e excluir produtos de uma loja online.
+
+Uma estrutura de documentação para uma API que permite gerenciar produtos de uma loja online deve conter uma descrição clara de cada endpoint, os métodos HTTP utilizados, os parâmetros esperados nas requisições e exemplos de resposta. Para adicionar um produto, seria usado o endpoint POST /api/produtos, com parâmetros como nome, descrição e preço. Para editar, o endpoint PUT /api/produtos/{id} permitiria atualizar essas mesmas informações de um produto já cadastrado. E para excluir, o endpoint DELETE /api/produtos/{id} removeria o produto do sistema. Cada um desses pontos deve ser bem explicado com exemplos de requisição e resposta para que o desenvolvedor consiga utilizar a API corretamente.
+
+3. Exercício 3: Escreva um tutorial passo a passo que explique ao usuário final como registrar uma nova conta em uma plataforma de e-commerce.
+
+Para registrar uma nova conta em uma plataforma de e-commerce, o usuário deve primeiro acessar o site e localizar a opção “Criar Conta” no topo da página inicial. Ao clicar, será redirecionado a um formulário de cadastro onde deve preencher informações como nome completo, endereço de e-mail e uma senha segura. Depois de aceitar os termos de uso, basta clicar no botão “Registrar”. O sistema enviará automaticamente um e-mail de confirmação. Ao clicar no link enviado, a conta será ativada e o usuário poderá começar a usar a plataforma normalmente.
+
+4. Exercício 4: Elabore um exemplo de boas práticas na escrita de documentação de software, aplicando clareza, organização e uso de exemplos.
+
+Um exemplo de boas práticas na escrita de documentação de software pode ser visto em um guia que ensina como atualizar um produto no sistema. O texto deve começar com um título objetivo, como “Como atualizar um produto”, seguido de uma explicação clara em linguagem simples sobre os passos que o usuário precisa seguir. Por exemplo, deve-se instruir o leitor a acessar o painel administrativo, localizar o produto desejado e editar as informações antes de salvar as alterações. Ao final, incluir um exemplo prático como: “Altere o nome do produto de ‘Camiseta Preta’ para ‘Camiseta Preta Slim Fit’”. Essa estrutura ajuda o usuário a compreender com facilidade o procedimento, mantendo a consistência e a clareza ao longo do material.
+
+5. Exercício 5: Identifique as diferenças entre documentação técnica, de usuário e de API. Explique por que é importante manter cada tipo atualizado e relevante.
+
+A documentação técnica é voltada para desenvolvedores e outros profissionais que precisam entender o funcionamento interno do software, incluindo sua arquitetura, algoritmos e infraestrutura. Já a documentação de usuário é direcionada ao público final e ensina como utilizar o sistema por meio de manuais, tutoriais e guias passo a passo. Por sua vez, a documentação de API é usada por desenvolvedores que querem integrar o sistema com outros aplicativos, explicando endpoints, métodos, parâmetros e exemplos de uso. É fundamental manter todos esses tipos de documentação atualizados porque mudanças no sistema sem a devida atualização na documentação podem causar falhas, confusões e dificultar o uso correto da aplicação, tanto por usuários quanto por desenvolvedores e parceiros.

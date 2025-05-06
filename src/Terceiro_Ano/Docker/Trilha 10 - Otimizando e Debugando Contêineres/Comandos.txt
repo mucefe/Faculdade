@@ -1,0 +1,40 @@
+Criando e Publicando Imagem Docker
+
+1 - Criar um diretório para a imagem e entrar nele:
+
+mkdir minha-imagem-docker
+cd minha-imagem-docker
+
+
+2 - Construir a imagem com o comando docker build:
+
+docker build -t minha-imagem .
+
+
+3 - Fazer login no Docker Hub:
+
+docker login
+
+
+4 - Marcar (taguear) a imagem com o seu nome de usuário do Docker Hub:
+
+docker tag minha-imagem murilocfer/minha-imagem
+
+
+5 - Publicar a imagem no Docker Hub:
+
+docker push murilocfer/minha-imagem
+
+Baixando uma imagem publicada por outro usuário:
+
+1 - Baixar a imagem publicada por outro usuário:
+
+docker pull nginx
+
+
+2 - Executar a imagem baixada
+
+docker run -d -p 8080:80 nginx
+
+
+

@@ -1,0 +1,54 @@
+1. Explique a importância de considerar os custos indiretos na precificação de um projeto freelancer.
+
+Custos indiretos, como energia, internet, ferramentas e impostos, afetam diretamente a rentabilidade do projeto. Ignorá-los pode levar a prejuízos, pois o valor cobrado não cobrirá todas as despesas envolvidas na entrega do serviço.
+
+2. Calcule o preço final de um software utilizando o método Custo + Margem, sabendo que o custo total é R$ 150.000 e a margem de lucro desejada é de 25%.
+
+Preço = R$ 150.000 + (R$ 150.000 × 0,25) = R$ 150.000 + R$ 37.500 = R$ 187.500
+
+3. Descreva como o valor percebido pelo cliente pode influenciar na precificação de um software, mesmo quando os custos de desenvolvimento são baixos. Dê um exemplo.
+
+Se o cliente percebe que o software gera grandes benefícios, como aumento de lucro ou economia significativa, ele aceitará pagar mais. Exemplo: um app que aumenta vendas em R$ 500.000 pode ser vendido por R$ 100.000, mesmo custando apenas R$ 30.000 para desenvolver.
+
+4. Uma empresa oferece um software como serviço (SaaS) a R$ 300/mês por cliente. Se os custos operacionais mensais são R$ 45.000, quantos clientes são necessários para atingir o ponto de equilíbrio?
+
+Ponto de equilíbrio = R$ 45.000 ÷ R$ 300 = 150 clientes
+
+5. Liste e explique três ferramentas que podem ser utilizadas para análise financeira e projeções de receita em projetos de software.
+
+Planilhas eletrônicas: permitem simular preços, lucros e custos com flexibilidade.
+
+Softwares de gestão financeira: ajudam no controle de fluxo de caixa e contabilidade.
+
+Modelos de fluxo de caixa descontado: projetam o valor presente dos lucros futuros.
+
+6. Em um projeto, você como freelancer estima trabalhar 80 horas a R$ 120/hora. O cliente propõe um contrato fixo de R$ 8.000. Analise se vale a pena aceitar e justifique.
+
+O valor esperado seria 80 x 120 = R$ 9.600. O contrato oferece R$ 8.000, ou seja, R$ 1.600 a menos. Não vale a pena, a menos que o projeto traga benefícios indiretos, como visibilidade ou portfólio.
+
+7. Uma equipe de desenvolvimento gastou R$ 500.000 para criar um sistema. Se o preço de venda é R$ 750.000, qual é a margem de lucro?
+
+Margem de lucro = (750.000 - 500.000) / 500.000 = 250.000 / 500.000 = 50%
+
+8. Como a concorrência pode afetar a estratégia de precificação de um novo aplicativo no mercado? O que pode ser feito para se destacar mesmo com preços similares?
+
+A concorrência força preços mais baixos. Para se destacar, é preciso oferecer diferenciais como melhor suporte, usabilidade, funcionalidades exclusivas ou integração com outros serviços.
+
+9. Pesquise um caso de sucesso de uma empresa que utiliza o modelo SaaS e identifique como ela estruturou sua precificação para ser competitiva e lucrativa.
+
+(Resposta exemplo baseada em conhecimento prévio)
+A Dropbox usa o modelo SaaS com planos gratuitos e pagos (freemium), oferecendo funcionalidades básicas grátis e avançadas nos planos pagos. Isso atrai usuários e converte parte deles em assinantes, equilibrando competitividade e lucro.
+
+10. Elabore uma simulação de composição de preço para um projeto de desenvolvimento de site, considerando custos diretos, indiretos, margem de lucro e impostos.
+
+Horas estimadas: 50 horas x R$ 100/h = R$ 5.000
+
+Custos indiretos (15%): R$ 750
+
+Impostos (10%): R$ 575
+
+Subtotal: R$ 5.000 + R$ 750 + R$ 575 = R$ 6.325
+
+Margem de lucro (20%): R$ 1.265
+
+Preço final: R$ 6.325 + R$ 1.265 = R$ 7.590

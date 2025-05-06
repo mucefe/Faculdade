@@ -1,0 +1,8 @@
+- Crie e remova imagens Docker.
+
+Para criar uma imagem Docker, é necessário escrever um arquivo chamado Dockerfile com as instruções de build, como a imagem base, arquivos a copiar e comandos a executar, e depois rodar o comando docker build -t nome-da-imagem . no terminal, dentro do diretório onde o Dockerfile está localizado. Para remover uma imagem criada, basta usar docker rmi nome-da-imagem ou o ID da imagem; se houver contêineres que ainda usam essa imagem, será necessário removê-los antes ou forçar a remoção com docker rmi -f nome-da-imagem.
+
+
+- Descreva como o cache de camadas acelera a construção de imagens.
+
+O cache de camadas no Docker acelera a construção de imagens reutilizando camadas não alteradas de builds anteriores. Cada instrução no Dockerfile cria uma camada, e se essa camada não mudou, o Docker usa o cache, evitando a execução da mesma operação novamente. Isso economiza tempo e recursos, especialmente em etapas pesadas, como a instalação de pacotes. Assim, apenas as camadas modificadas são reconstruídas, tornando o processo mais eficiente.

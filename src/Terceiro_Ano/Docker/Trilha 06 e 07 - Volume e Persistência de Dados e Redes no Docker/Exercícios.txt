@@ -1,0 +1,11 @@
+Trilha 06
+
+- docker volume create dados-meus
+docker run -d --name meu-container -v dados-meus:/app/data minha-imagem
+
+
+- Volumes são essenciais em ambientes de produção porque permitem que os dados persistam independentemente do ciclo de vida dos contêineres, o que garante estabilidade, confiabilidade e continuidade de serviço. Em produção, é comum atualizar imagens, reiniciar ou substituir contêineres por novos, e sem o uso de volumes, qualquer dado armazenado dentro do contêiner seria perdido nesse processo. Volumes também oferecem desempenho otimizado em comparação com o uso direto de diretórios do host e isolam os dados do sistema de arquivos do host, melhorando a segurança e a portabilidade. Além disso, facilitam a realização de backups, a replicação de ambientes e o compartilhamento de dados entre múltiplos contêineres. Em serviços como bancos de dados, filas de mensagens ou qualquer aplicação com estado, o uso de volumes é uma prática indispensável para garantir consistência e durabilidade da informação mesmo diante de falhas ou atualizações.
+
+Trilha 07
+
+Para verificar a conectividade, primeiro se acessa um dos containers usando docker exec container1, em seguida se usa ping container2.
