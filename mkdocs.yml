@@ -1,0 +1,10 @@
+theme:
+name: 'material'
+palette:
+primary: 'indigo'
+accent: 'orange'
+plugins:
+- search
+- seo:
+site_name: "Minha Documentação"
+site_description: "Documentação detalhada sobre o projeto"
