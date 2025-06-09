@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwapLibrary - Entre no ciclo da leitura</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f4f3;
+        }
+        
+        .book-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .medal-icon {
+            animation: spin 4s linear infinite;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #368141 0%, #0a333f 100%);
+        }
+        
+        .notification-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .input-focus:focus {
+            border-color: #368141;
+            box-shadow: 0 0 0 2px rgba(54, 129, 65, 0.2);
+        }
+        
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-book-open text-2xl"></i>
+                    <h1 class="text-2xl font-bold">SwapLibrary</h1>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="hover:text-green-200 transition">Início</a>
+                    <a href="biblioteca.html" class="hover:text-green-200 transition">Estante</a>
+                    <a href="buscar.html" class="hover:text-green-200 transition">Trocas</a>
+                    <a href="doacoes.html" class="hover:text-green-200 transition">Doações</a>
+                    <a href="missoes.html" class="hover:text-green-200 transition">Missões</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <i class="fas fa-bell text-xl cursor-pointer hover:text-green-200 transition"></i>
+                        <span class="notification-badge bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-envelope text-xl cursor-pointer hover:text-green-200 transition"></i>
+                        <span class="notification-badge bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">1</span>
+                    </div>
+                    <a href="login.html" class="flex items-center space-x-2 cursor-pointer hover:text-green-200 transition">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="w-8 h-8 rounded-full border-2 border-white">
+                        <span class="hidden md:inline">Maria Silva</span>
+                    </a>
+                    
+                </div>
+                
+                <button class="md:hidden text-xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="w-full max-w-md">
+            <!-- Login Card -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl">
+                <!-- Header with Logo -->
+                <div class="p-6 text-center relative" style="background: linear-gradient(135deg, #368141 0%, #0a333f 100%);">
+                    <div class="absolute top-2 left-2">
+                        <i class="fas fa-book-open text-white text-xl book-icon"></i>
+                    </div>
+                    <div class="absolute top-2 right-2">
+                        <i class="fas fa-medal text-yellow-400 text-xl medal-icon"></i>
+                    </div>
+                    <h1 class="text-3xl font-bold text-white">
+                        <span class="text-white">Book</span><span class="text-[#f5f4f3]">Cycle</span>
+                    </h1>
+                    <p class="text-[#f5f4f3] mt-2 text-sm">Compartilhe livros, acumule pontos, leia mais!</p>
+                </div>
+                
+                <!-- Login Form -->
+                <div class="p-8">
+                    <form id="loginForm" class="space-y-6">
+                        <!-- Email Field -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-[#0a333f] mb-1">E-mail</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-envelope text-[#7ca674]"></i>
+                                </div>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    placeholder="Digite seu e-mail cadastrado" 
+                                    required 
+                                    class="pl-10 w-full px-4 py-3 rounded-lg border border-gray-300 input-focus focus:outline-none focus:ring-2 focus:ring-[#368141] focus:border-transparent"
+                                >
+                            </div>
+                        </div>
+                        
+                        <!-- Password Field -->
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-[#0a333f] mb-1">Senha</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-lock text-[#7ca674]"></i>
+                                </div>
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    name="password" 
+                                    placeholder="Digite sua senha secreta" 
+                                    required 
+                                    class="pl-10 w-full px-4 py-3 rounded-lg border border-gray-300 input-focus focus:outline-none focus:ring-2 focus:ring-[#368141] focus:border-transparent"
+                                >
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                    <button type="button" id="togglePassword" class="text-[#7ca674] hover:text-[#368141] focus:outline-none">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Remember Me & Forgot Password -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-[#368141] focus:ring-[#368141] border-gray-300 rounded">
+                                <label for="remember-me" class="ml-2 block text-sm text-[#0a333f]">Lembrar de mim</label>
+                            </div>
+                            <div class="text-sm">
+                                <a href="#" class="font-medium text-[#368141] hover:text-[#0a333f]">Esqueci minha senha</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <div>
+                            <button type="submit" id="loginButton" class="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[#0a333f] hover:bg-[#2a6b36] btn-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#368141] transition-colors duration-300">
+                                <span id="buttonText">Entrar</span>
+                                <svg id="spinner" class="hidden ml-2 h-4 w-4 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <!-- Error Message -->
+                        <div id="errorMessage" class="hidden p-3 text-sm text-red-700 bg-red-100 rounded-lg"></div>
+                    </form>
+                    
+                    <!-- Sign Up Link -->
+                    <div class="mt-6 text-center">
+                        <p class="text-sm text-[#7c8490]">
+                            Ainda não tem uma conta?
+                            <a href="#" class="font-medium text-[#368141] hover:text-[#0a333f]">Crie uma agora</a>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Footer with Social Icons -->
+                <div class="bg-[#f5f4f3] px-6 py-4">
+                    <div class="flex justify-center space-x-6">
+                        <a href="#" class="text-[#7ca674] hover:text-[#368141]">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-[#7ca674] hover:text-[#368141]">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-[#7ca674] hover:text-[#368141]">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <p class="mt-2 text-center text-xs text-[#7c8490]">
+                        © 2025 SwapLibrary. Todos os direitos reservados.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Decorative Elements -->
+            <div class="hidden md:block fixed bottom-4 left-4 text-[#7ca674] text-4xl">
+                <i class="fas fa-book"></i>
+            </div>
+            <div class="hidden md:block fixed bottom-4 right-4 text-[#7ca674] text-4xl">
+                <i class="fas fa-users"></i>
+            </div>
+        </div>
+    </main>
+<footer class="gradient-bg text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">SwapLibrary</h3>
+                    <p class="text-sm">Promovendo o compartilhamento de livros e o amor pela leitura entre estudantes de escolas públicas.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Links Úteis</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:underline">Como funciona</a></li>
+                        <li><a href="#" class="hover:underline">Regras da comunidade</a></li>
+                        <li><a href="#" class="hover:underline">Perguntas frequentes</a></li>
+                        <li><a href="#" class="hover:underline">Termos de uso</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contato</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>contato@swaplibrary.org</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>(47) 1234-5678</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Joinville, SC</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Redes Sociais</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-white text-green-600 p-2 rounded-full hover:bg-green-100 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-white text-green-600 p-2 rounded-full hover:bg-green-100 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-white text-green-600 p-2 rounded-full hover:bg-green-100 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-white text-green-600 p-2 rounded-full hover:bg-green-100 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-green-300 mt-8 pt-6 text-sm text-center">
+                <p>&copy; 2025 SwapLibrary. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle password visibility
+            const togglePassword = document.getElementById('togglePassword');
+            const password = document.getElementById('password');
+            
+            togglePassword.addEventListener('click', function() {
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+                this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+            });
+            
+            // Form submission
+            const loginForm = document.getElementById('loginForm');
+            const loginButton = document.getElementById('loginButton');
+            const buttonText = document.getElementById('buttonText');
+            const spinner = document.getElementById('spinner');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading state
+                buttonText.textContent = 'Entrando...';
+                spinner.classList.remove('hidden');
+                loginButton.disabled = true;
+                
+                // Simulate API call
+                setTimeout(function() {
+                    // Reset form
+                    buttonText.textContent = 'Entrar';
+                    spinner.classList.add('hidden');
+                    loginButton.disabled = false;
+                    
+                    // For demo purposes, show error message
+                    errorMessage.textContent = 'E-mail ou senha incorretos. Tente novamente.';
+                    errorMessage.classList.remove('hidden');
+                    
+                    // Hide error message after 5 seconds
+                    setTimeout(function() {
+                        errorMessage.classList.add('hidden');
+                    }, 5000);
+                    
+                    // In a real app, you would make an API call here
+                    // fetch('/api/login', {
+                    //     method: 'POST',
+                    //     headers: {
+                    //         'Content-Type': 'application/json',
+                    //     },
+                    //     body: JSON.stringify({
+                    //         email: document.getElementById('email').value,
+                    //         password: document.getElementById('password').value
+                    //     }),
+                    // })
+                    // .then(response => response.json())
+                    // .then(data => {
+                    //     if (data.success) {
+                    //         window.location.href = '/dashboard';
+                    //     } else {
+                    //         errorMessage.textContent = data.message || 'E-mail ou senha incorretos. Tente novamente.';
+                    //         errorMessage.classList.remove('hidden');
+                    //     }
+                    // })
+                    // .catch((error) => {
+                    //     errorMessage.textContent = 'Ocorreu um erro. Por favor, tente novamente mais tarde.';
+                    //     errorMessage.classList.remove('hidden');
+                    // })
+                    // .finally(() => {
+                    //     buttonText.textContent = 'Entrar';
+                    //     spinner.classList.add('hidden');
+                    //     loginButton.disabled = false;
+                    // });
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>

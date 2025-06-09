@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwapLibrary - Livros para Doação</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f4f3;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #368141 0%, #0a333f 100%);
+        }
+        
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+        
+        .donation-badge {
+            background-color: #c0d3c1;
+            color: #0a333f;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header/Navigation -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-book-open text-2xl"></i>
+                    <h1 class="text-2xl font-bold">SwapLibrary</h1>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="hover:text-green-200 transition">Início</a>
+                    <a href="biblioteca.html" class="hover:text-green-200 transition">Estante</a>
+                    <a href="buscar.html" class="hover:text-green-200 transition">Trocas</a>
+                    <a href="doacoes.html" class="hover:text-green-200 transition font-bold">Doações</a>
+                    <a href="missoes.html" class="hover:text-green-200 transition">Missões</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <i class="fas fa-bell text-xl cursor-pointer hover:text-green-200 transition"></i>
+                        <span class="notification-badge bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-envelope text-xl cursor-pointer hover:text-green-200 transition"></i>
+                        <span class="notification-badge bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">1</span>
+                    </div>
+                    <a href="login.html" class="flex items-center space-x-2 cursor-pointer hover:text-green-200 transition">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="w-8 h-8 rounded-full border-2 border-white">
+                        <span class="hidden md:inline">Maria Silva</span>
+                    </a>
+                </div>
+                
+                <button class="md:hidden text-xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Page Header -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+            <div class="mb-4 md:mb-0">
+                <h1 class="text-3xl font-bold text-[#368141]">Livros para Doação</h1>
+                <p class="text-[#0a333f]">Encontre livros que outros estudantes estão doando</p>
+            </div>
+            <button class="bg-[#368141] text-white px-4 py-2 rounded-md hover:bg-[#2a6b36] transition flex items-center">
+                <i class="fas fa-gift mr-2"></i> Doar um Livro
+            </button>
+        </div>
+
+        <!-- Filters Section -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-xl font-bold text-[#0a333f] mb-4">Filtrar Doações</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Título do Livro</label>
+                    <input type="text" placeholder="Buscar por título" class="w-full px-4 py-2 rounded border border-gray-300 focus:border-[#368141] focus:ring-2 focus:ring-[#368141] focus:outline-none">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Autor</label>
+                    <input type="text" placeholder="Buscar por autor" class="w-full px-4 py-2 rounded border border-gray-300 focus:border-[#368141] focus:ring-2 focus:ring-[#368141] focus:outline-none">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Gênero</label>
+                    <select class="w-full px-4 py-2 rounded border border-gray-300 focus:border-[#368141] focus:ring-2 focus:ring-[#368141] focus:outline-none">
+                        <option value="">Todos os gêneros</option>
+                        <option>Literatura Brasileira</option>
+                        <option>Ficção Científica</option>
+                        <option>Fantasia</option>
+                        <option>Infantil</option>
+                        <option>Biografia</option>
+                        <option>Poesia</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Localização</label>
+                    <select class="w-full px-4 py-2 rounded border border-gray-300 focus:border-[#368141] focus:ring-2 focus:ring-[#368141] focus:outline-none">
+                        <option value="">Todas as regiões</option>
+                        <option>Minha escola</option>
+                        <option>Meu bairro</option>
+                        <option>Minha cidade</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="flex justify-between items-center">
+                <div>
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" class="h-4 w-4 text-[#368141] focus:ring-[#368141] border-gray-300 rounded" checked>
+                        <span class="ml-2 text-sm text-gray-700">Mostrar apenas disponíveis</span>
+                    </label>
+                </div>
+                <button class="bg-[#368141] text-white px-6 py-2 rounded hover:bg-[#2a6b36] transition">
+                    Aplicar Filtros
+                </button>
+            </div>
+        </div>
+
+        <!-- Donation Stats -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+            <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                <p class="text-sm text-gray-600">Livros disponíveis</p>
+                <p class="text-2xl font-bold text-[#368141]">48</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                <p class="text-sm text-gray-600">Doações esta semana</p>
+                <p class="text-2xl font-bold text-[#368141]">12</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                <p class="text-sm text-gray-600">Livros doados por você</p>
+                <p class="text-2xl font-bold text-[#368141]">5</p>
+            </div>
+        </div>
+
+        <!-- Donation Books Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Donation Card 1 -->
+            <div class="book-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="relative">
+                    <img src="https://m.media-amazon.com/images/I/61Kt3d+mhuL._SL1360_.jpg" alt="Quincas Borba" class="w-full h-48 object-cover">
+                    <div class="absolute top-2 left-2">
+                        <span class="donation-badge text-xs px-2 py-1 rounded-full">Para Doação</span>
+                    </div>
+                    <div class="absolute top-2 right-2">
+                        <span class="bg-white text-xs px-2 py-1 rounded-full text-gray-700">2 dias atrás</span>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800 mb-1">Quincas Borba</h3>
+                    <p class="text-sm text-gray-600 mb-2">Machado de Assis</p>
+                    
+                    <div class="flex items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Doador" class="w-8 h-8 rounded-full border-2 border-[#368141]">
+                        <div class="ml-2">
+                            <p class="text-sm font-medium text-gray-800">Carlos A.</p>
+                            <p class="text-xs text-gray-500">9º Ano - Escola Estadual</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Romance</span>
+                        <span class="text-xs text-gray-700">Estado: <span class="font-medium">Bom</span></span>
+                    </div>
+                    
+                    <p class="text-sm text-gray-700 mb-3">"Livro em bom estado, apenas algumas páginas com anotações a lápis."</p>
+                    
+                    <div class="flex space-x-2">
+                        <button class="flex-1 bg-[#368141] text-white py-2 rounded hover:bg-[#2a6b36] transition flex items-center justify-center">
+                            <i class="fas fa-envelope mr-2"></i> Contatar
+                        </button>
+                        <button class="bg-gray-200 text-gray-700 p-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Donation Card 2 -->
+            <div class="book-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="relative">
+                    <img src="https://m.media-amazon.com/images/I/81TmOZIXvzL._SL1500_.jpg" alt="O Pequeno Príncipe" class="w-full h-48 object-cover">
+                    <div class="absolute top-2 left-2">
+                        <span class="donation-badge text-xs px-2 py-1 rounded-full">Para Doação</span>
+                    </div>
+                    <div class="absolute top-2 right-2">
+                        <span class="bg-white text-xs px-2 py-1 rounded-full text-gray-700">1 semana atrás</span>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800 mb-1">O Pequeno Príncipe</h3>
+                    <p class="text-sm text-gray-600 mb-2">Antoine de Saint-Exupéry</p>
+                    
+                    <div class="flex items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Doador" class="w-8 h-8 rounded-full border-2 border-[#368141]">
+                        <div class="ml-2">
+                            <p class="text-sm font-medium text-gray-800">Juliana M.</p>
+                            <p class="text-xs text-gray-500">8º Ano - Escola Municipal</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Infantil</span>
+                        <span class="text-xs text-gray-700">Estado: <span class="font-medium">Excelente</span></span>
+                    </div>
+                    
+                    <p class="text-sm text-gray-700 mb-3">"Livro em perfeito estado, sem rasuras ou páginas danificadas."</p>
+                    
+                    <div class="flex space-x-2">
+                        <button class="flex-1 bg-[#368141] text-white py-2 rounded hover:bg-[#2a6b36] transition flex items-center justify-center">
+                            <i class="fas fa-envelope mr-2"></i> Contatar
+                        </button>
+                        <button class="bg-gray-200 text-gray-700 p-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Donation Card 3 -->
+            <div class="book-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="relative">
+                    <img src="https://m.media-amazon.com/images/I/81t7altQZxL._SL1500_.jpg" alt="Capitães da Areia" class="w-full h-48 object-cover">
+                    <div class="absolute top-2 left-2">
+                        <span class="donation-badge text-xs px-2 py-1 rounded-full">Para Doação</span>
+                    </div>
+                    <div class="absolute top-2 right-2">
+                        <span class="bg-white text-xs px-2 py-1 rounded-full text-gray-700">Ontem</span>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800 mb-1">Capitães da Areia</h3>
+                    <p class="text-sm text-gray-600 mb-2">Jorge Amado</p>
+                    
+                    <div class="flex items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Doador" class="w-8 h-8 rounded-full border-2 border-[#368141]">
+                        <div class="ml-2">
+                            <p class="text-sm font-medium text-gray-800">Ricardo F.</p>
+                            <p class="text-xs text-gray-500">1º Ano - Colégio Estadual</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Romance</span>
+                        <span class="text-xs text-gray-700">Estado: <span class="font-medium">Usado</span></span>
+                    </div>
+                    
+                    <p class="text-sm text-gray-700 mb-3">"Livro completo mas com capa um pouco desgastada. Boa leitura!"</p>
+                    
+                    <div class="flex space-x-2">
+                        <button class="flex-1 bg-[#368141] text-white py-2 rounded hover:bg-[#2a6b36] transition flex items-center justify-center">
+                            <i class="fas fa-envelope mr-2"></i> Contatar
+                        </button>
+                        <button class="bg-gray-200 text-gray-700 p-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Donation Card 4 -->
+            <div class="book-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="relative">
+                    <img src="https://m.media-amazon.com/images/I/91BsZhxCRjL._SL1500_.jpg" alt="A Revolução dos Bichos" class="w-full h-48 object-cover">
+                    <div class="absolute top-2 left-2">
+                        <span class="donation-badge text-xs px-2 py-1 rounded-full">Para Doação</span>
+                    </div>
+                    <div class="absolute top-2 right-2">
+                        <span class="bg-white text-xs px-2 py-1 rounded-full text-gray-700">3 dias atrás</span>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800 mb-1">A Revolução dos Bichos</h3>
+                    <p class="text-sm text-gray-600 mb-2">George Orwell</p>
+                    
+                    <div class="flex items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Doador" class="w-8 h-8 rounded-full border-2 border-[#368141]">
+                        <div class="ml-2">
+                            <p class="text-sm font-medium text-gray-800">Amanda S.</p>
+                            <p class="text-xs text-gray-500">7º Ano - Escola Municipal</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Ficção</span>
+                        <span class="text-xs text-gray-700">Estado: <span class="font-medium">Novo</span></span>
+                    </div>
+                    
+                    <p class="text-sm text-gray-700 mb-3">"Livro novo, ganhei de presente mas já tenho outro exemplar."</p>
+                    
+                    <div class="flex space-x-2">
+                        <button class="flex-1 bg-[#368141] text-white py-2 rounded hover:bg-[#2a6b36] transition flex items-center justify-center">
+                            <i class="fas fa-envelope mr-2"></i> Contatar
+                        </button>
+                        <button class="bg-gray-200 text-gray-700 p-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Donation Card 5 -->
+            <div class="book-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="relative">
+                    <img src="https://m.media-amazon.com/images/I/61Z2bMhGicL._SL1360_.jpg" alt="Dom Casmurro" class="w-full h-48 object-cover">
+                    <div class="absolute top-2 left-2">
+                        <span class="donation-badge text-xs px-2 py-1 rounded-full">Para Doação</span>
+                    </div>
+                    <div class="absolute top-2 right-2">
+                        <span class="bg-white text-xs px-2 py-1 rounded-full text-gray-700">5 dias atrás</span>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800 mb-1">Dom Casmurro</h3>
+                    <p class="text-sm text-gray-600 mb-2">Machado de Assis</p>
+                    
+                    <div class="flex items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Doador" class="w-8 h-8 rounded-full border-2 border-[#368141]">
+                        <div class="ml-2">
+                            <p class="text-sm font-medium text-gray-800">Pedro H.</p>
+                            <p class="text-xs text-gray-500">3º Ano - Colégio Estadual</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Romance</span>
+                        <span class="text-xs text-gray-700">Estado: <span class="font-medium">Bom</span></span>
+                    </div>
+                    
+                    <p class="text-sm text-gray-700 mb-3">"Livro em bom estado, apenas algumas páginas com marcações."</p>
+                    
+                    <div class="flex space-x-2">
+                        <button class="flex-1 bg-[#368141] text-white py-2 rounded hover:bg-[#2a6b36] transition flex items-center justify-center">
+                            <i class="fas fa-envelope mr-2"></i> Contatar
+                        </button>
+                        <button class="bg-gray-200 text-gray-700 p-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Donation Card 6 -->
+            <div class="book-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="relative">
+                    <img src="https://m.media-amazon.com/images/I/71LCDi6E2oL._SL1500_.jpg" alt="Iracema" class="w-full h-48 object-cover">
+                    <div class="absolute top-2 left-2">
+                        <span class="donation-badge text-xs px-2 py-1 rounded-full">Para Doação</span>
+                    </div>
+                    <div class="absolute top-2 right-2">
+                        <span class="bg-white text-xs px-2 py-1 rounded-full text-gray-700">Hoje</span>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-gray-800 mb-1">Iracema</h3>
+                    <p class="text-sm text-gray-600 mb-2">José de Alencar</p>
+                    
+                    <div class="flex items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Doador" class="w-8 h-8 rounded-full border-2 border-[#368141]">
+                        <div class="ml-2">
+                            <p class="text-sm font-medium text-gray-800">Luana P.</p>
+                            <p class="text-xs text-gray-500">2º Ano - Escola Estadual</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Romance</span>
+                        <span class="text-xs text-gray-700">Estado: <span class="font-medium">Excelente</span></span>
+                    </div>
+                    
+                    <p class="text-sm text-gray-700 mb-3">"Livro em excelente estado, sem nenhum defeito."</p>
+                    
+                    <div class="flex space-x-2">
+                        <button class="flex-1 bg-[#368141] text-white py-2 rounded hover:bg-[#2a6b36] transition flex items-center justify-center">
+                            <i class="fas fa-envelope mr-2"></i> Contatar
+                        </button>
+                        <button class="bg-gray-200 text-gray-700 p-2 rounded hover:bg-gray-300 transition">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-8 flex justify-center">
+            <nav class="inline-flex rounded-md shadow">
+                <a href="#" class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-[#368141] font-medium hover:bg-gray-50">1</a>
+                <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">2</a>
+                <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">3</a>
+                <a href="#" class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">SwapLibrary</h3>
+                    <p class="text-sm">Promovendo o compartilhamento de livros e o amor pela leitura entre estudantes de escolas públicas.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Links Úteis</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:underline">Como funciona</a></li>
+                        <li><a href="#" class="hover:underline">Regras da comunidade</a></li>
+                        <li><a href="#" class="hover:underline">Perguntas frequentes</a></li>
+                        <li><a href="#" class="hover:underline">Termos de uso</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contato</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>contato@swaplibrary.org</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>(47) 1234-5678</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Joinville, SC</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Redes Sociais</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-white text-green-600 p-2 rounded-full hover:bg-green-100 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-white text-green-600 p-2 rounded-full hover:bg-green-100 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-white text-green-600 p-2 rounded-full hover:bg-green-100 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-white text-green-600 p-2 rounded-full hover:bg-green-100 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-green-300 mt-8 pt-6 text-sm text-center">
+                <p>&copy; 2025 SwapLibrary. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Contact button functionality
+            document.querySelectorAll('.book-card button:first-child').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const donorName = this.closest('.book-card').querySelector('p.text-sm.font-medium').textContent;
+                    alert(`Você está entrando em contato com ${donorName} sobre este livro.`);
+                });
+            });
+            
+            // Favorite button functionality
+            document.querySelectorAll('.book-card button:last-child').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.classList.toggle('text-red-500');
+                    this.classList.toggle('bg-gray-200');
+                    
+                    if(this.classList.contains('text-red-500')) {
+                        this.innerHTML = '<i class="fas fa-heart"></i>';
+                        alert('Livro adicionado aos favoritos!');
+                    } else {
+                        this.innerHTML = '<i class="fas fa-heart"></i>';
+                    }
+                });
+            });
+            
+            // Filter functionality would be implemented here
+            const applyFiltersBtn = document.querySelector('.bg-\\[\\#368141\\]');
+            applyFiltersBtn.addEventListener('click', function() {
+                alert('Filtros aplicados! (Esta funcionalidade seria implementada com JavaScript avançado)');
+            });
+            
+            // Donate book button
+            const donateBookBtn = document.querySelector('button.bg-\\[\\#368141\\].flex.items-center');
+            donateBookBtn.addEventListener('click', function() {
+                alert('Redirecionando para a página de doação de livros...');
+                // In a real app, this would redirect to the donate book page
+                // window.location.href = 'doar-livro.html';
+            });
+        });
+    </script>
+</body>
+</html>

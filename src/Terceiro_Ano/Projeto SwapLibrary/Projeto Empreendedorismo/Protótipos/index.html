@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwapLibrary - Compartilhando conhecimento literário</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f4f3;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #368141 0%, #0a333f 100%);
+        }
+        
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+        
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header/Navigation -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-book-open text-2xl"></i>
+                    <h1 class="text-2xl font-bold">SwapLibrary</h1>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="hover:text-green-200 transition font-bold">Início</a>
+                    <a href="biblioteca.html" class="hover:text-green-200 transition">Estante</a>
+                    <a href="buscar.html" class="hover:text-green-200 transition">Trocas</a>
+                    <a href="doacoes.html" class="hover:text-green-200 transition">Doações</a>
+                    <a href="missoes.html" class="hover:text-green-200 transition">Missões</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <i class="fas fa-bell text-xl cursor-pointer hover:text-green-200 transition"></i>
+                        <span class="notification-badge bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-envelope text-xl cursor-pointer hover:text-green-200 transition"></i>
+                        <span class="notification-badge bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">1</span>
+                    </div>
+                    <a href="login.html" class="flex items-center space-x-2 cursor-pointer hover:text-green-200 transition">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="w-8 h-8 rounded-full border-2 border-white">
+                        <span class="hidden md:inline">Maria Silva</span>
+                    </a>
+                </div>
+                
+                <button class="md:hidden text-xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden bg-white shadow-lg hidden" id="mobileMenu">
+        <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+            <a href="index.html" class="py-2 border-b border-gray-100 font-bold">Início</a>
+            <a href="biblioteca.html" class="py-2 border-b border-gray-100">Estante</a>
+            <a href="buscar.html" class="py-2 border-b border-gray-100">Trocas</a>
+            <a href="doacoes.html" class="py-2 border-b border-gray-100">Doações</a>
+            <a href="missoes.html" class="py-2 border-b border-gray-100">Missões</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- User Profile Summary -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="w-24 h-24 rounded-full border-4 border-green-100">
+                
+                <div class="flex-1">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <h2 class="text-2xl font-bold text-gray-800">Maria Silva</h2>
+                            <p class="text-gray-600">Escola Estadual Professor João da Silva</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Guardião Literário</span>
+                        </div>
+                    </div>
+                                    
+                    <div class="mt-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-gray-700 font-medium">Progresso para o próximo nível</span>
+                            <span class="text-gray-600">1,850/2,000 pontos</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-green-600 h-2.5 rounded-full" style="width: 92.5%"></div>
+                        </div>
+                    </div>
+                                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                        <div class="bg-green-50 p-3 rounded-lg text-center">
+                            <p class="text-gray-600 text-sm">Livros na estante</p>
+                            <p class="text-2xl font-bold text-green-800">87</p>
+                        </div>
+                        <div class="bg-blue-50 p-3 rounded-lg text-center">
+                            <p class="text-gray-600 text-sm">Trocas realizadas</p>
+                            <p class="text-2xl font-bold text-blue-800">12</p>
+                        </div>
+                        <div class="bg-purple-50 p-3 rounded-lg text-center">
+                            <p class="text-gray-600 text-sm">Doações feitas</p>
+                            <p class="text-2xl font-bold text-purple-800">5</p>
+                        </div>
+                        <div class="bg-yellow-50 p-3 rounded-lg text-center">
+                            <p class="text-gray-600 text-sm">Livros lidos</p>
+                            <p class="text-2xl font-bold text-yellow-800">23</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition cursor-pointer" onclick="document.getElementById('bookModal').classList.remove('hidden')">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-green-100 p-3 rounded-full">
+                        <i class="fas fa-book text-green-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-800">Adicionar livro</h3>
+                        <p class="text-sm text-gray-600">Cadastre um novo livro na sua estante</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition cursor-pointer" onclick="document.getElementById('exchangeModal').classList.remove('hidden')">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-blue-100 p-3 rounded-full">
+                        <i class="fas fa-exchange-alt text-blue-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-800">Oferecer troca</h3>
+                        <p class="text-sm text-gray-600">Proponha trocar um livro da sua estante</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition cursor-pointer">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-purple-100 p-3 rounded-full">
+                        <i class="fas fa-gift text-purple-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-800">Fazer doação</h3>
+                        <p class="text-sm text-gray-600">Doe um livro para outro estudante</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity & Books -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column - Recent Activity -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-bold text-gray-800">Atividade Recente</h2>
+                        <a href="#" class="text-sm text-green-600 hover:underline">Ver tudo</a>
+                    </div>
+                                    
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-green-100 p-2 rounded-full">
+                                <i class="fas fa-check-circle text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-800">Você completou a prova do livro <span class="font-medium">"Dom Casmurro"</span> com 85% de acerto!</p>
+                                <p class="text-sm text-gray-500">+30 pontos • Hoje às 14:32</p>
+                            </div>
+                        </div>
+                                                
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 p-2 rounded-full">
+                                <i class="fas fa-exchange-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-800">Troca confirmada! Você recebeu <span class="font-medium">"O Pequeno Príncipe"</span> em troca de <span class="font-medium">"Capitães da Areia"</span>.</p>
+                                <p class="text-sm text-gray-500">+80 pontos • Ontem às 18:15</p>
+                            </div>
+                        </div>
+                                                
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-yellow-100 p-2 rounded-full">
+                                <i class="fas fa-medal text-yellow-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-800">Parabéns! Você desbloqueou a conquista <span class="font-medium">"Leitor Avançado"</span>.</p>
+                                <p class="text-sm text-gray-500">2 dias atrás</p>
+                            </div>
+                        </div>
+                                                
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-purple-100 p-2 rounded-full">
+                                <i class="fas fa-gift text-purple-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-800">Você doou o livro <span class="font-medium">"Iracema"</span> para João Pedro.</p>
+                                <p class="text-sm text-gray-500">+150 pontos • 3 dias atrás</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Books Section -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-xl font-bold text-gray-800">Livros na sua estante</h2>
+                        <div class="flex space-x-2">
+                            <button class="bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700 transition" onclick="document.getElementById('bookModal').classList.remove('hidden')">Adicionar</button>
+                            <button class="bg-gray-200 text-gray-700 px-3 py-1 rounded text-sm hover:bg-gray-300 transition">Filtrar</button>
+                        </div>
+                    </div>
+                                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                        <!-- Book Card 1 -->
+                        <div class="book-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                            <div class="relative pb-3/4">
+                                <img src="https://m.media-amazon.com/images/I/61Z2bMhGicL._SL1360_.jpg" alt="Dom Casmurro" class="w-full h-40 object-cover">
+                                <div class="absolute top-2 right-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Lido</div>
+                            </div>
+                            <div class="p-3">
+                                <h3 class="font-bold text-sm text-gray-800 truncate">Dom Casmurro</h3>
+                                <p class="text-xs text-gray-600">Machado de Assis</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">Romance</span>
+                                    <div class="flex space-x-1">
+                                        <i class="fas fa-exchange-alt text-blue-500 text-xs cursor-pointer"></i>
+                                        <i class="fas fa-gift text-purple-500 text-xs cursor-pointer"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                
+                        <!-- Book Card 2 -->
+                        <div class="book-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                            <div class="relative pb-3/4">
+                                <img src="https://m.media-amazon.com/images/I/81TmOZIXvzL._SL1500_.jpg" alt="O Pequeno Príncipe" class="w-full h-40 object-cover">
+                            </div>
+                            <div class="p-3">
+                                <h3 class="font-bold text-sm text-gray-800 truncate">O Pequeno Príncipe</h3>
+                                <p class="text-xs text-gray-600">Antoine de Saint-Exupéry</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">Infantil</span>
+                                    <div class="flex space-x-1">
+                                        <i class="fas fa-exchange-alt text-blue-500 text-xs cursor-pointer"></i>
+                                        <i class="fas fa-gift text-purple-500 text-xs cursor-pointer"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                
+                        <!-- Book Card 3 -->
+                        <div class="book-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                            <div class="relative pb-3/4">
+                                <img src="https://m.media-amazon.com/images/I/81t7altQZxL._SL1500_.jpg" alt="Capitães da Areia" class="w-full h-40 object-cover">
+                                <div class="absolute top-2 right-2 bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Em troca</div>
+                            </div>
+                            <div class="p-3">
+                                <h3 class="font-bold text-sm text-gray-800 truncate">Capitães da Areia</h3>
+                                <p class="text-xs text-gray-600">Jorge Amado</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">Romance</span>
+                                    <div class="flex space-x-1">
+                                        <i class="fas fa-exchange-alt text-blue-500 text-xs cursor-pointer"></i>
+                                        <i class="fas fa-gift text-purple-500 text-xs cursor-pointer"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                
+                        <!-- Book Card 4 -->
+                        <div class="book-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                            <div class="relative pb-3/4">
+                                <img src="https://m.media-amazon.com/images/I/61Kt3d+mhuL._SL1360_.jpg" alt="Quincas Borba" class="w-full h-40 object-cover">
+                            </div>
+                            <div class="p-3">
+                                <h3 class="font-bold text-sm text-gray-800 truncate">Quincas Borba</h3>
+                                <p class="text-xs text-gray-600">Machado de Assis</p>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">Romance</span>
+                                    <div class="flex space-x-1">
+                                        <i class="fas fa-exchange-alt text-blue-500 text-xs cursor-pointer"></i>
+                                        <i class="fas fa-gift text-purple-500 text-xs cursor-pointer"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    
+                    <div class="mt-6 text-center">
+                        <button class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition">Ver todos os livros</button>
+                    </div>
+                </div>
+            </div>
+                        
+            <!-- Right Column - Stats & Missions -->
+            <div class="space-y-6">
+                <!-- Points & Level -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Seu Progresso</h2>
+                                    
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="relative w-32 h-32">
+                            <svg class="w-full h-full" viewBox="0 0 100 100">
+                                <circle class="text-gray-200" stroke-width="8" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50" />
+                                <circle class="text-green-600" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="18.84" stroke-linecap="round" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50" />
+                            </svg>
+                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                                <span class="text-3xl font-bold text-gray-800">92%</span>
+                                <p class="text-xs text-gray-600">para o próximo nível</p>
+                            </div>
+                        </div>
+                    </div>
+                                    
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Pontuação total</span>
+                            <span class="font-bold text-gray-800">1,850 pts</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Nível atual</span>
+                            <span class="font-bold text-gray-800">Guardião Literário</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Livros lidos</span>
+                            <span class="font-bold text-gray-800">23</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Posição no ranking</span>
+                            <span class="font-bold text-gray-800">#7</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Achievements -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-bold text-gray-800">Conquistas</h2>
+                        <a href="#" class="text-sm text-green-600 hover:underline">Ver todas</a>
+                    </div>
+                                    
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="bg-yellow-50 p-3 rounded-lg text-center">
+                            <i class="fas fa-medal text-yellow-500 text-2xl mb-1"></i>
+                            <p class="text-xs font-medium text-gray-800">Leitor Iniciante</p>
+                        </div>
+                        <div class="bg-yellow-50 p-3 rounded-lg text-center">
+                            <i class="fas fa-medal text-yellow-500 text-2xl mb-1"></i>
+                            <p class="text-xs font-medium text-gray-800">Leitor Constante</p>
+                        </div>
+                        <div class="bg-yellow-50 p-3 rounded-lg text-center">
+                            <i class="fas fa-medal text-yellow-500 text-2xl mb-1"></i>
+                            <p class="text-xs font-medium text-gray-800">Leitor Avançado</p>
+                        </div>
+                        <div class="bg-yellow-50 p-3 rounded-lg text-center">
+                            <i class="fas fa-medal text-yellow-500 text-2xl mb-1"></i>
+                            <p class="text-xs font-medium text-gray-800">Biblioteca 50+</p>
+                        </div>
+                        <div class="bg-yellow-50 p-3 rounded-lg text-center">
+                            <i class="fas fa-medal text-yellow-500 text-2xl mb-1"></i>
+                            <p class="text-xs font-medium text-gray-800">5 Livros Lidos</p>
+                        </div>
+                        <div class="bg-yellow-50 p-3 rounded-lg text-center">
+                            <i class="fas fa-medal text-yellow-500 text-2xl mb-1"></i>
+                            <p class="text-xs font-medium text-gray-800">Primeira Troca</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Missions -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-bold text-gray-800">Missões Ativas</h2>
+                        <a href="#" class="text-sm text-green-600 hover:underline">Ver todas</a>
+                    </div>
+                                    
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-3 py-1">
+                            <h3 class="font-medium text-gray-800">Resumo de "Vidas Secas"</h3>
+                            <p class="text-xs text-gray-600">Prazo: 15/06/2023</p>
+                            <div class="mt-2">
+                                <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                    <div class="bg-green-600 h-1.5 rounded-full" style="width: 25%"></div>
+                                </div>
+                                <p class="text-xs text-gray-600 mt-1">25% concluído</p>
+                            </div>
+                        </div>
+                                                
+                        <div class="border-l-4 border-blue-500 pl-3 py-1">
+                            <h3 class="font-medium text-gray-800">Prova de "Memórias Póstumas"</h3>
+                            <p class="text-xs text-gray-600">Prazo: 20/06/2023</p>
+                            <div class="mt-2">
+                                <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                    <div class="bg-blue-600 h-1.5 rounded-full" style="width: 0%"></div>
+                                </div>
+                                <p class="text-xs text-gray-600 mt-1">Não iniciado</p>
+                            </div>
+                        </div>
+                    </div>
+                                    
+                    <button class="mt-4 w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition">Nova Missão</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal para adicionar livros -->
+    <div id="bookModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-md mx-4">
+            <div class="flex justify-between items-center border-b p-4">
+                <h3 class="text-lg font-bold text-gray-800">Adicionar Novo Livro</h3>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <form id="bookForm" class="space-y-4">
+                    <div>
+                        <label for="bookTitle" class="block text-sm font-medium text-gray-700 mb-1">Título do Livro</label>
+                        <input type="text" id="bookTitle" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label for="bookAuthor" class="block text-sm font-medium text-gray-700 mb-1">Autor</label>
+                        <input type="text" id="bookAuthor" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label for="bookGenre" class="block text-sm font-medium text-gray-700 mb-1">Gênero</label>
+                        <select id="bookGenre" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" required>
+                            <option value="">Selecione um gênero</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Ficção">Ficção</option>
+                            <option value="Fantasia">Fantasia</option>
+                            <option value="Aventura">Aventura</option>
+                            <option value="Infantil">Infantil</option>
+                            <option value="Biografia">Biografia</option>
+                            <option value="História">História</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="bookCover" class="block text-sm font-medium text-gray-700 mb-1">Capa do Livro (URL)</label>
+                        <input type="url" id="bookCover" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="https://exemplo.com/capa.jpg">
+                    </div>
+                    <div>
+                        <label for="bookStatus" class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                        <select id="bookStatus" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            <option value="available">Disponível</option>
+                            <option value="reading">Lendo</option>
+                            <option value="read">Lido</option>
+                            <option value="exchange">Para troca</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="bookDescription" class="block text-sm font-medium text-gray-700 mb-1">Descrição (Opcional)</label>
+                        <textarea id="bookDescription" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="flex justify-end space-x-3 p-4 border-t">
+                <button id="cancelModal" class="px-4 py-2 text-gray-600 hover:text-gray-800 transition">Cancelar</button>
+                <button id="saveBook" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition">Salvar Livro</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para oferecer troca -->
+    <div id="exchangeModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-md mx-4">
+            <div class="flex justify-between items-center border-b p-4">
+                <h3 class="text-lg font-bold text-gray-800">Oferecer Troca de Livro</h3>
+                <button id="closeExchangeModal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <form id="exchangeForm" class="space-y-4">
+                    <div>
+                        <label for="exchangeBook" class="block text-sm font-medium text-gray-700 mb-1">Selecione seu livro para troca</label>
+                        <select id="exchangeBook" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" required>
+                            <option value="">Selecione um livro</option>
+                            <option value="1">Dom Casmurro - Machado de Assis</option>
+                            <option value="2">O Pequeno Príncipe - Antoine de Saint-Exupéry</option>
+                            <option value="3">Capitães da Areia - Jorge Amado</option>
+                            <option value="4">Quincas Borba - Machado de Assis</option>
+                            <option value="5">Memórias Póstumas de Brás Cubas - Machado de Assis</option>
+                            <option value="6">Iracema - José de Alencar</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="exchangeUser" class="block text-sm font-medium text-gray-700 mb-1">Selecione o usuário para troca</label>
+                        <select id="exchangeUser" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" required>
+                            <option value="">Selecione um usuário</option>
+                            <option value="1">João Pedro (Escola Estadual Professor João da Silva)</option>
+                            <option value="2">Ana Clara (Escola Municipal Maria Quitéria)</option>
+                            <option value="3">Carlos Eduardo (Colégio Estadual Tiradentes)</option>
+                            <option value="4">Luiza Fernanda (Escola Estadual Professor João da Silva)</option>
+                            <option value="5">Pedro Henrique (Colégio Estadual Tiradentes)</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="exchangeMessage" class="block text-sm font-medium text-gray-700 mb-1">Mensagem (Opcional)</label>
+                        <textarea id="exchangeMessage" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Escreva uma mensagem para o usuário..."></textarea>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-3 rounded-md">
+                        <p class="text-sm text-blue-800"><i class="fas fa-info-circle mr-2"></i> Você receberá uma notificação quando o usuário responder à sua proposta de troca.</p>
+                    </div>
+                </form>
+            </div>
+            <div class="flex justify-end space-x-3 p-4 border-t">
+                <button id="cancelExchangeModal" class="px-4 py-2 text-gray-600 hover:text-gray-800 transition">Cancelar</button>
+                <button id="sendExchange" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">Enviar Proposta</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">SwapLibrary</h3>
+                    <p class="text-sm">Promovendo o compartilhamento de livros e o amor pela leitura entre estudantes de escolas públicas.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Links Úteis</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:underline">Como funciona</a></li>
+                        <li><a href="#" class="hover:underline">Regras da comunidade</a></li>
+                        <li><a href="#" class="hover:underline">Perguntas frequentes</a></li>
+                        <li><a href="#" class="hover:underline">Termos de uso</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contato</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>contato@swaplibrary.org</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>(47) 1234-5678</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Joinville, SC</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Redes Sociais</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-white text-green-600 p-2 rounded-full hover:bg-green-100 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-white text-green-600 p-2 rounded-full hover:bg-green-100 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-white text-green-600 p-2 rounded-full hover:bg-green-100 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-white text-green-600 p-2 rounded-full hover:bg-green-100 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-green-300 mt-8 pt-6 text-sm text-center">
+                <p>&copy; 2025 SwapLibrary. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('header button').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+                
+        // Book Modal functionality
+        const bookModal = document.getElementById('bookModal');
+        const closeModal = document.getElementById('closeModal');
+        const cancelModal = document.getElementById('cancelModal');
+        const saveBook = document.getElementById('saveBook');
+        const bookForm = document.getElementById('bookForm');
+        
+        // Close modal functions
+        const closeBookModalFunc = () => {
+            bookModal.classList.add('hidden');
+            bookForm.reset();
+        };
+        
+        closeModal.addEventListener('click', closeBookModalFunc);
+        cancelModal.addEventListener('click', closeBookModalFunc);
+        
+        // Close modal when clicking outside
+        bookModal.addEventListener('click', (e) => {
+            if (e.target === bookModal) {
+                closeBookModalFunc();
+            }
+        });
+        
+        // Save book functionality
+        saveBook.addEventListener('click', () => {
+            if (bookForm.checkValidity()) {
+                const bookData = {
+                    title: document.getElementById('bookTitle').value,
+                    author: document.getElementById('bookAuthor').value,
+                    genre: document.getElementById('bookGenre').value,
+                    cover: document.getElementById('bookCover').value || 'https://via.placeholder.com/150x220?text=Sem+Capa',
+                    status: document.getElementById('bookStatus').value,
+                    description: document.getElementById('bookDescription').value
+                };
+                
+                console.log('Livro a ser adicionado:', bookData);
+                
+                // Aqui você normalmente faria uma requisição AJAX para salvar no banco de dados
+                // Por enquanto apenas simulamos o comportamento
+                
+                closeBookModalFunc();
+                alert('Livro adicionado com sucesso!');
+                
+                // Atualizaria a lista de livros na interface aqui
+                // Por exemplo, adicionando o novo livro à estante
+            } else {
+                bookForm.reportValidity();
+            }
+        });
+        
+        // Exchange Modal functionality
+        const exchangeModal = document.getElementById('exchangeModal');
+        const closeExchangeModal = document.getElementById('closeExchangeModal');
+        const cancelExchangeModal = document.getElementById('cancelExchangeModal');
+        const sendExchange = document.getElementById('sendExchange');
+        const exchangeForm = document.getElementById('exchangeForm');
+        
+        // Close modal functions
+        const closeExchangeModalFunc = () => {
+            exchangeModal.classList.add('hidden');
+            exchangeForm.reset();
+        };
+        
+        closeExchangeModal.addEventListener('click', closeExchangeModalFunc);
+        cancelExchangeModal.addEventListener('click', closeExchangeModalFunc);
+        
+        // Close modal when clicking outside
+        exchangeModal.addEventListener('click', (e) => {
+            if (e.target === exchangeModal) {
+                closeExchangeModalFunc();
+            }
+        });
+        
+        // Send exchange functionality
+        sendExchange.addEventListener('click', () => {
+            if (exchangeForm.checkValidity()) {
+                const exchangeData = {
+                    bookId: document.getElementById('exchangeBook').value,
+                    userId: document.getElementById('exchangeUser').value,
+                    message: document.getElementById('exchangeMessage').value
+                };
+                
+                console.log('Proposta de troca:', exchangeData);
+                
+                // Aqui você normalmente faria uma requisição AJAX para enviar a proposta
+                // Por enquanto apenas simulamos o comportamento
+                
+                closeExchangeModalFunc();
+                alert('Proposta de troca enviada com sucesso!');
+                
+                // Atualizaria a interface aqui se necessário
+            } else {
+                exchangeForm.reportValidity();
+            }
+        });
+        
+        // Sample book data for demonstration
+        const books = [
+            {
+                title: "Dom Casmurro",
+                author: "Machado de Assis",
+                genre: "Romance",
+                status: "read",
+                cover: "https://m.media-amazon.com/images/I/51XKHn5zO3L._SY425_.jpg"
+            },
+            {
+                title: "O Pequeno Príncipe",
+                author: "Antoine de Saint-Exupéry",
+                genre: "Infantil",
+                status: "available",
+                cover: "https://m.media-amazon.com/images/I/71QhN+QeGmL._SY425_.jpg"
+            },
+            {
+                title: "Capitães da Areia",
+                author: "Jorge Amado",
+                genre: "Romance",
+                status: "exchange",
+                cover: "https://m.media-amazon.com/images/I/81O7+6W1YVL._SY425_.jpg"
+            },
+            {
+                title: "Quincas Borba",
+                author: "Machado de Assis",
+                genre: "Romance",
+                status: "available",
+                cover: "https://m.media-amazon.com/images/I/71yNgTMEcpL._SY425_.jpg"
+            }
+        ];
+    </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+1. Atributo mais crítico para o sucesso de um software:
+Dentre os atributos da ISO/IEC 25010, a usabilidade se destaca como o mais crítico, pois está diretamente ligada à experiência do usuário. Um sistema difícil de usar, por mais funcional que seja, pode ser rejeitado ou causar insatisfação. Exemplo disso são aplicativos financeiros, em que a facilidade de uso é essencial para que os clientes realizem suas operações com rapidez e confiança.
+
+2. Importância de investir em qualidade desde o início:
+Investir em qualidade desde o início do projeto permite detectar e corrigir problemas nas fases iniciais, quando os custos são menores. Isso evita retrabalho, reduz atrasos e aumenta a eficiência do time. Além disso, contribui para a entrega de um produto mais estável e alinhado com as necessidades do cliente, promovendo sua satisfação e reduzindo chamados e reclamações no pós-venda.
