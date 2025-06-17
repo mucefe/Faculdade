@@ -1,0 +1,99 @@
+openapi: 3.0.0
+info:
+  title: API de Produtos
+  version: 1.0.0
+paths:
+  /products:
+    get:
+      summary: Listar produtos
+      responses:
+        '200':
+          description: Lista de produtos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+    post:
+      summary: Criar produto
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductCreate'
+      responses:
+        '201':
+          description: Produto criado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+  /products/{id}:
+    put:
+      summary: Atualizar produto
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductCreate'
+      responses:
+        '200':
+          description: Produto atualizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+    delete:
+      summary: Excluir produto
+      description: Remove um produto pelo ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Produto excluído com sucesso (sem conteúdo)
+        '404':
+          description: Produto não encontrado
+        '400':
+          description: Requisição inválida
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: Produto A
+        price:
+          type: number
+          format: float
+          example: 100.0
+    ProductCreate:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Produto C
+        price:
+          type: number
+          format: float
+          example: 150.0
+      required:
+        - name
+        - price

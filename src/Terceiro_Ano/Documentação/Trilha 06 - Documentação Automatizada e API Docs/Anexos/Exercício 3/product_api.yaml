@@ -1,0 +1,48 @@
+openapi: 3.0.0
+info:
+  title: Product API
+  version: 1.0.0
+paths:
+  /products:
+    get:
+      summary: Listar produtos
+      responses:
+        '200':
+          description: Lista de produtos
+    post:
+      summary: Criar um produto
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                price:
+                  type: number
+      responses:
+        '201':
+          description: Produto criado com sucesso
+  /products/{id}:
+    put:
+      summary: Atualizar produto
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                price:
+                  type: number
+      responses:
+        '200':
+          description: Produto atualizado com sucesso

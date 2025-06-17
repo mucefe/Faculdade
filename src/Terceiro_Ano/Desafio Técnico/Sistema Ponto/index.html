@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Registro de Ponto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="min-h-screen bg-gray-100">
+    <div id="app" class="container mx-auto px-4 py-8">
+        <!-- Login Screen -->
+        <div id="login-screen" class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+            <div class="md:flex">
+                <div class="hidden md:block md:w-1/3 bg-gradient-to-b from-blue-500 to-blue-700 relative">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="wave">
+                            <i class="fas fa-clock text-white text-6xl"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 w-full md:w-2/3">
+                    <div class="flex justify-center md:hidden mb-6">
+                        <i class="fas fa-clock text-blue-600 text-5xl"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold text-gray-800 text-center mb-1">Registro de Ponto</h1>
+                    <p class="text-gray-600 text-center mb-6">Entre com suas credenciais</p>
+                    
+                    <div class="mb-4">
+                        <label for="login-user" class="block text-gray-700 text-sm font-bold mb-2">Matrícula</label>
+                        <input type="text" id="login-user" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div class="mb-6">
+                        <label for="login-password" class="block text-gray-700 text-sm font-bold mb-2">Senha</label>
+                        <input type="password" id="login-password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button id="login-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 w-full pulse">
+                            Entrar
+                        </button>
+                    </div>
+                    
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-sm text-blue-600 hover:text-blue-800">Problemas para acessar?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Employee Dashboard -->
+        <div id="employee-dashboard" class="hidden max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="md:flex">
+                <div class="p-8 w-full">
+                    <div class="flex justify-between items-center mb-6">
+                        <h1 class="text-2xl font-bold text-gray-800">Dashboard do Funcionário</h1>
+                        <button id="logout-btn" class="text-gray-600 hover:text-gray-800">
+                            <i class="fas fa-sign-out-alt"></i> Sair
+                        </button>
+                    </div>
+                    
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6 rounded">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-info-circle text-blue-500"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-blue-700">
+                                    Seja bem-vindo(a), <span id="employee-name" class="font-semibold">João Silva</span>. Registre seus horários dentro das janelas permitidas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-white border rounded-lg shadow-sm p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-lg font-medium text-gray-900">Horário Atual</h3>
+                                <i class="fas fa-clock text-gray-400"></i>
+                            </div>
+                            <div class="text-center">
+                                <div id="current-time" class="text-3xl font-bold text-gray-800 mb-2">00:00:00</div>
+                                <div id="current-date" class="text-gray-500">Sexta-feira, 11 de Junho de 2025</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white border rounded-lg shadow-sm p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-lg font-medium text-gray-900">Registros de Hoje</h3>
+                                <i class="fas fa-list text-gray-400"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Entrada Manhã:</span>
+                                    <span id="morning-in" class="font-medium">--:--</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Saída Manhã:</span>
+                                    <span id="morning-out" class="font-medium">--:--</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Entrada Tarde:</span>
+                                    <span id="afternoon-in" class="font-medium">--:--</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Saída Tarde:</span>
+                                    <span id="afternoon-out" class="font-medium">--:--</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white border rounded-lg shadow-sm p-6 mb-6">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Registrar Ponto</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <button id="morning-in-btn" class="bg-blue-100 hover:bg-blue-200 text-blue-800 font-semibold py-3 px-4 rounded transition duration-200">
+                                <i class="fas fa-sign-in-alt mr-2"></i> Entrada Manhã
+                            </button>
+                            <button id="morning-out-btn" class="bg-green-100 hover:bg-green-200 text-green-800 font-semibold py-3 px-4 rounded transition duration-200">
+                                <i class="fas fa-sign-out-alt mr-2"></i> Saída Manhã
+                            </button>
+                            <button id="afternoon-in-btn" class="bg-yellow-100 hover:bg-yellow-200 text-yellow-800 font-semibold py-3 px-4 rounded transition duration-200">
+                                <i class="fas fa-sign-in-alt mr-2"></i> Entrada Tarde
+                            </button>
+                            <button id="afternoon-out-btn" class="bg-red-100 hover:bg-red-200 text-red-800 font-semibold py-3 px-4 rounded transition duration-200">
+                                <i class="fas fa-sign-out-alt mr-2"></i> Saída Tarde
+                            </button>
+                        </div>
+                        
+                        <div id="register-message" class="mt-4 hidden">
+                            <div class="rounded-md p-4">
+                                <div class="flex">
+                                    <div class="flex-shrink-0">
+                                        <i id="register-icon" class="fas"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p id="register-text" class="text-sm font-medium"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white border rounded-lg shadow-sm p-6">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Histórico Recente</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Data</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ent. Manhã</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Saí. Manhã</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ent. Tarde</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Saí. Tarde</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="time-records" class="bg-white divide-y divide-gray-200">
+                                    <!-- Records will be added dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Admin Dashboard -->
+        <div id="admin-dashboard" class="hidden max-w-7xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-800">Painel Administrativo</h1>
+                    <div class="flex items-center space-x-4">
+                        <button id="generate-report-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 flex items-center">
+                            <i class="fas fa-file-pdf mr-2"></i> Relatório PDF
+                        </button>
+                        <button id="admin-logout-btn" class="text-gray-600 hover:text-gray-800">
+                            <i class="fas fa-sign-out-alt"></i> Sair
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6 rounded">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-user-shield text-blue-500"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-blue-700">
+                                Bem-vindo ao painel administrativo. Aqui você pode gerenciar funcionários e gerar relatórios de ponto.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-medium text-gray-900">Cadastrar Novo Funcionário</h3>
+                        <button id="add-employee-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 flex items-center">
+                            <i class="fas fa-plus mr-2"></i> Novo Funcionário
+                        </button>
+                    </div>
+                    
+                    <!-- Add Employee Form -->
+                    <div id="add-employee-form" class="hidden bg-white border rounded-lg shadow-sm p-6 mb-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="employee-code" class="block text-sm font-medium text-gray-700 mb-1">Matrícula</label>
+                                <input type="text" id="employee-code" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="employee-name" class="block text-sm font-medium text-gray-700 mb-1">Nome Completo</label>
+                                <input type="text" id="employee-name" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="employee-password" class="block text-sm font-medium text-gray-700 mb-1">Senha</label>
+                                <input type="password" id="employee-password" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div class="flex items-end">
+                                <button id="save-employee-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 w-full">
+                                    Salvar Funcionário
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div id="employee-message" class="mt-4 hidden">
+                            <div class="rounded-md p-4">
+                                <div class="flex">
+                                    <div class="flex-shrink-0">
+                                        <i id="employee-icon" class="fas"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p id="employee-text" class="text-sm font-medium"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white border rounded-lg shadow-sm overflow-hidden">
+                        <div class="flex justify-between items-center px-6 py-3 bg-gray-50 border-b">
+                            <h3 class="text-lg font-medium text-gray-900">Funcionários Cadastrados</h3>
+                            <div class="relative">
+                                <input type="text" id="search-employee" placeholder="Buscar..." class="px-3 py-1 border border-gray-300 rounded-md text-sm shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Matrícula</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nome</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="employees-list" class="bg-white divide-y divide-gray-200">
+                                    <!-- Employees will be added dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-medium text-gray-900">Registros de Ponto de Hoje</h3>
+                        <div class="text-sm text-gray-500">
+                            <span id="current-admin-date" class="font-medium">11/06/2025</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white border rounded-lg shadow-sm overflow-hidden">
+                        <div class="overflow-x-auto custom-scrollbar" style="max-height: 400px;">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Matrícula</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nome</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Data</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ent. Manhã</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Saí. Manhã</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ent. Tarde</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Saí. Tarde</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-time-records" class="bg-white divide-y divide-gray-200">
+                                    <!-- Records will be added dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

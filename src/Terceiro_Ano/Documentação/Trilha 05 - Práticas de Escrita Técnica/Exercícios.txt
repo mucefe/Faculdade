@@ -1,0 +1,55 @@
+Exercício 1: Escreva uma descrição clara e concisa sobre o processo de instalação
+de um software de sua escolha, evitando frases longas e jargões desnecessários.
+
+Para instalar o Google Chrome no Windows, acesse o site oficial google.com/chrome e clique no botão "Download Chrome". Após o download, execute o instalador e siga as instruções exibidas na tela. O processo é rápido e, ao final, o navegador estará pronto para uso. Não é necessário reiniciar o sistema após a instalação.
+
+Exercício 2: Reescreva o parágrafo abaixo de forma mais objetiva e direta: "O
+sistema permite que os usuários façam upload de arquivos, que serão armazenados
+no servidor para que, posteriormente, os administradores possam acessá-los."
+
+O sistema permite que usuários enviem arquivos, que são armazenados no servidor e ficam disponíveis para acesso dos administradores posteriormente.
+
+Exercício 3: Organize a seguinte lista de instruções usando títulos, subtítulos e
+listas ordenadas:
+- Instalar o Node.js.
+- Configurar o ambiente com variáveis de ambiente.
+- Testar a instalação com um comando no terminal.
+- Criar um novo projeto utilizando npm init.
+
+	1. Instalar o Node.js
+
+	Baixe o instalador no site oficial do Node.js e siga as instruções de instalação 	para o seu sistema operacional.
+	2. Configurar Variáveis de Ambiente
+
+	Adicione o caminho de instalação do Node.js à variável de ambiente PATH, se 	necessário.
+	3. Testar a Instalação
+
+	Abra o terminal e execute um comando para verificar se o Node.js está instalado 	corretamente.
+	4. Criar um Novo Projeto
+
+	Inicie um novo projeto interativo e configure as informações básicas, como nome, 	versão e descrição.
+
+
+
+Exercício 4: Crie um exemplo de código que ilustre uma função simples (pode ser
+em qualquer linguagem de programação) e inclua-o em uma explicação sobre como
+essa função pode ser utilizada.
+
+		def saudacao(nome):
+		    return f"Olá, {nome}!"
+
+Essa função recebe um nome e retorna uma saudação personalizada
+Exemplo:
+	print(saudacao("Maria"))
+ 	
+Exercício 5: Crie um diagrama de fluxo que represente o processo de login em um
+sistema (entrada de dados, verificação, sucesso/erro).
+
+[Início] 
+   ↓
+[Usuário insere e-mail e senha] 
+   → [Sistema verifica credenciais] 
+      → (Credenciais válidas?) 
+         → Sim → [Acesso concedido] → [Painel do usuário] 
+         → Não → [Exibir mensagem de erro] → [Tentar novamente]
+[Fim]

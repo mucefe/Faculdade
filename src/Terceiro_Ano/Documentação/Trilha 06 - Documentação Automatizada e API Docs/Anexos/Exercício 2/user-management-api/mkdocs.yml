@@ -1,0 +1,6 @@
+site_name: User Management API Docs
+nav:
+  - Home: index.md
+  - API: api.md
+markdown_extensions:
+  - pymdownx.superfences

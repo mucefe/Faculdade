@@ -1,0 +1,62 @@
+
+Trilha 07 - Estudos de Caso e Aplicações Práticas
+
+Lista de Exercícios de Fixação
+
+Exercício 1:
+Escolha um projeto de software real ou acadêmico e crie uma estrutura de documentação usando o MKDocs. Organize a documentação de forma a cobrir instalação, configuração e uso de APIs.
+
+Resposta:
+Projeto escolhido: Sistema de Gerenciamento de Biblioteca Universitária.
+Estrutura de documentação:
+- Introdução: index.md
+- Instalação: instalacao.md (descrição de dependências e passos de instalação)
+- Configuração: configuracao.md (configurações de banco de dados e variáveis de ambiente)
+- API:
+  - Livros: api/livros.md (endpoints de consulta, cadastro e atualização de livros)
+  - Usuários: api/usuarios.md (endpoints de cadastro de usuários e empréstimos)
+- Tutoriais: tutoriais.md (exemplos de uso e FAQs)
+
+Exercício 2:
+Em um cenário colaborativo, divida um projeto de documentação entre diferentes membros de uma equipe. Cada membro deve ser responsável por uma parte específica, como instalação, API ou tutoriais. Use um sistema de controle de versão para coordenar o trabalho.
+
+Resposta:
+Projeto: Sistema de Controle de Estoque
+Divisão de tarefas:
+- Aluno 1: Instalação e configuração do ambiente
+- Aluno 2: Documentação da API de produtos
+- Aluno 3: Documentação da API de vendas
+- Aluno 4: Criação de tutoriais de uso para o sistema
+Controle de versão: Utilização do GitHub, com branches separados para cada parte e integração via pull requests.
+
+Exercício 3:
+Crie um estudo de caso onde o MKDocs é usado para documentar um sistema completo. Inclua uma explicação sobre como a ferramenta foi integrada ao projeto e como o uso de documentação automatizada (com Swagger, por exemplo) facilitou o processo.
+
+Resposta:
+Estudo de Caso: Documentação de um Sistema de Reservas de Salas
+A equipe usou MKDocs para criar uma documentação navegável, com páginas organizadas por tópicos. Foi integrado o Swagger para gerar automaticamente os endpoints da API de reservas. Toda vez que havia alterações na API, um pipeline de CI gerava uma nova versão da documentação, mantendo os dados sempre atualizados e melhorando a comunicação entre os times de front-end e back-end.
+
+Exercício 4:
+Implemente um processo de revisão de documentação usando Git e pull requests. Cada membro da equipe deve fazer contribuições à documentação e outro membro deve revisar as mudanças antes de serem aceitas.
+
+Resposta:
+Processo implementado:
+- Cada membro trabalha em uma branch separada no GitHub.
+- Ao concluir uma alteração, o membro abre um pull request.
+- Outro membro da equipe faz a revisão, verificando clareza, formatação e consistência.
+- Apenas após aprovação, a alteração é mesclada à branch principal (main).
+
+Exercício 5:
+Crie uma documentação de API para um sistema fictício, incluindo exemplos de requisições e respostas. Use a especificação OpenAPI e integre o Swagger ao MKDocs para gerar uma interface interativa de documentação.
+
+Resposta:
+Sistema fictício: API de Gerenciamento de Tarefas (TaskManager API)
+Documentação criada em OpenAPI (arquivo tasks-api.yaml) com os seguintes endpoints documentados:
+- GET /tarefas
+- POST /tarefas
+- PUT /tarefas/{id}
+- DELETE /tarefas/{id}
+Exemplos de requisição e resposta incluídos em cada endpoint.
+Integração Swagger-MKDocs: O Swagger foi integrado via plugin mkdocs-swagger-ui, permitindo visualizar e testar os endpoints diretamente na interface web da documentação.
+
+Fim do arquivo.

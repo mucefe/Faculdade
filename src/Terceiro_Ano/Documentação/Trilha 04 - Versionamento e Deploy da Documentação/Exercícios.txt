@@ -1,0 +1,47 @@
+Exercício 1: Explique a importância de utilizar sistemas de controle de versão, como
+Git, no gerenciamento de documentação técnica.
+
+Git permite controlar versões da documentação, rastrear mudanças, colaborar com a equipe e reverter erros facilmente.
+
+Exercício 2: Crie um repositório Git para seu projeto MKDocs e faça o commit e
+push da documentação inicial.
+
+git init  
+git add .  
+git commit -m "Adiciona documentação inicial"  
+git remote add origin https://github.com/seu-usuario/seu-repositorio.git  
+git push -u origin main
+
+
+Exercício 3: Realize o deploy da sua documentação no GitHub Pages utilizando o
+comando mkdocs gh-deploy. Após a publicação, acesse o link gerado e verifique
+se a documentação está acessível.
+
+mkdocs gh-deploy  
+
+
+Exercício 4: Configure um sistema de deploy contínuo para a documentação
+utilizando GitHub Actions. Teste se a documentação é atualizada automaticamente
+ao fazer mudanças no repositório.
+
+name: Deploy Documentation
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - run: pip install mkdocs mkdocs-material
+      - run: mkdocs gh-deploy --force
+
+
+Exercício 5: Pesquise sobre como organizar múltiplas versões da documentação
+com MKDocs e implemente uma solução que permita ao usuário alternar entre
+versões.
+
+Usar o plugin mkdocs-versioning ou mike para gerenciar múltiplas versões com um seletor no topo do site.

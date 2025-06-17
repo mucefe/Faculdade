@@ -1,0 +1,30 @@
+Exercício 1: Explique as vantagens da documentação automatizada de código e
+como ela pode beneficiar uma equipe de desenvolvimento.
+
+A documentação automatizada de código garante que as informações sobre o sistema estejam sempre atualizadas e alinhadas com o código-fonte, evitando erros e retrabalho. Ela economiza tempo da equipe, pois a documentação é gerada automaticamente a partir de anotações no código ou de arquivos de configuração, dispensando a produção manual de descrições técnicas detalhadas.
+
+Além disso, essa prática melhora a comunicação entre os membros da equipe e facilita o entendimento do sistema, principalmente para novos desenvolvedores. A integração com pipelines de CI/CD permite que a documentação seja atualizada de forma contínua, contribuindo para a qualidade do software e incentivando a adoção de boas práticas na escrita de código.
+
+
+Exercício 2: Crie um pequeno projeto que utilize o MKDocs integrado ao Swagger
+para documentar uma API de um sistema fictício de gerenciamento de usuários.
+
+[Projeto em anexo]
+
+Exercício 3: Usando a especificação OpenAPI, documente uma API com pelo
+menos três endpoints: um para listar, um para criar e um para atualizar recursos.
+Gere e visualize a documentação com o MKDocs.
+
+[Documentação em anexo]
+
+Exercício 4: Pesquise sobre outra ferramenta de documentação automatizada
+(como Doxygen ou Sphinx) e explique como ela pode ser integrada ao MKDocs.
+
+Uma alternativa popular para documentação automatizada é o Sphinx, que foi originalmente criado para documentar projetos em Python, mas que hoje pode ser usado para documentar diversos tipos de software. O Sphinx gera documentação a partir de arquivos escritos em reStructuredText e permite criar documentação navegável em formatos HTML, PDF, entre outros. Ele pode ser integrado ao MkDocs para aproveitar o visual moderno e a estrutura simplificada que o MkDocs oferece, funcionando como uma fonte geradora da documentação técnica que depois será organizada e publicada pelo MkDocs. Essa integração pode ser feita por meio de plugins ou scripts que convertem a saída do Sphinx para um formato compatível com o MkDocs, como Markdown, ou por meio da inclusão direta da documentação gerada pelo Sphinx dentro do diretório do MkDocs. Assim, a equipe consegue combinar o poder da documentação detalhada e orientada a código do Sphinx com a facilidade de navegação e customização do MkDocs, tornando o processo de documentação mais flexível e eficiente.
+
+Exercício 5: Modifique o exemplo fornecido da API de produtos, adicionando um
+endpoint para excluir um produto, e atualize a documentação automaticamente com
+o Swagger.
+
+[Projeto de api em anexo]
+
