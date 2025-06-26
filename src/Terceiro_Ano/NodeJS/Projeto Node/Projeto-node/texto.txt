@@ -1,0 +1,1 @@
+Este é o conteúdo de exemplo do arquivo texto.txt.

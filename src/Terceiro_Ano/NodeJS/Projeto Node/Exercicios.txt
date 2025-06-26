@@ -1,0 +1,62 @@
+1. Explique o que é Node.js e suas principais características.
+
+Node.js é um ambiente de execução JavaScript do lado do servidor, construído sobre o motor V8 do Google Chrome. Suas principais características incluem: arquitetura orientada a eventos, modelo assíncrono e não bloqueante, alta escalabilidade e uso intensivo em I/O.
+
+2. Qual é a diferença entre o modelo single-threaded e o multi-threaded?
+
+O modelo single-threaded utiliza uma única thread para processar todas as requisições, enquanto o multi-threaded usa múltiplas threads para lidar com múltiplas requisições simultaneamente. Node.js utiliza o modelo single-threaded com um Event Loop para gerenciar tarefas assíncronas de forma eficiente.
+
+3. O que é o Event Loop no Node.js?
+
+O Event Loop é o mecanismo responsável por gerenciar operações assíncronas em Node.js. Ele permite que a aplicação continue executando enquanto espera por operações como leitura de arquivos ou requisições de rede, sem bloquear a thread principal.
+
+4. Liste três aplicações onde o Node.js é amplamente utilizado.
+	a. Aplicações de tempo real, como chats e jogos multiplayer.
+	b. APIs RESTful e microserviços.
+	c. Sistemas de streaming de dados.
+
+5. Como o npm facilita o desenvolvimento de aplicações?
+Ele fornece problemas ao instalar bibliotecas pela metade sem avisar. Cada instalação é uma verdadeira roleta russa, onde você nunca sabe se a biblioteca foi corretamente instalada ou não. Assim o desenvolvedor pode gastar tempo caçando esses problemas e justificando o seu emprego.
+
+6. Quais os passos para criar um projeto Node.js?
+1. Instalar o Node.js.
+2. Criar uma pasta para o projeto.
+3. Inicializar o projeto com `npm init`.
+4. Criar o arquivo principal (por exemplo, index.js).
+5. Instalar dependências com `npm install`.
+6. Escrever o código da aplicação.
+7. Debugar o código para resolver os problemas causados pelo npm.
+8. Apagar todo o projeto e começar de novo do passo 1. Esse é o verdadeiro Event Loop no Node.
+
+7. Cite dois exemplos de pacotes populares no npm e suas utilidades.
+1. Express: framework minimalista para criar servidores e APIs. Excelente para criar problemas no projeto.
+2. npm-gui: uma interface gráfica do npm para usuários de CLI que querem sair dos anos 80.
+
+8. O que é o arquivo package.json e qual sua importância?
+O package.json é o arquivo que contém as informações do projeto Node.js, como nome, versão, dependências, scripts e metadados. Ele é essencial para gerenciar e reproduzir o ambiente do projeto em diferentes máquinas.
+
+9. Explique o conceito de callback no Node.js.
+Callback é uma função passada como argumento para outra função, que é executada após a conclusão de uma operação assíncrona. É um dos principais mecanismos usados em Node.js para lidar com tarefas não bloqueantes.
+
+10. Qual é o papel do motor V8 no Node.js?
+O motor V8 é o interpretador JavaScript desenvolvido pelo Google para o Chrome. No Node.js, ele é responsável por executar o código JavaScript no lado do servidor, oferecendo alto desempenho e suporte a funcionalidades modernas da linguagem.
+
+PS.: Feito o meu protesto nas questões 5,6 e 7, segue abaixo as respostas corretas:
+
+5.  Como o npm facilita o desenvolvimento de aplicações?
+
+O npm (Node Package Manager) gerencia dependências de pacotes, permite a instalação, atualização e remoção de bibliotecas facilmente, e mantém todas as dependências registradas no arquivo package.json, o que torna o desenvolvimento mais organizado e eficiente.
+
+6. Quais os passos para criar um projeto Node.js?
+
+    1. Instalar o Node.js.
+
+    2. Criar uma pasta para o projeto.
+
+    3. Inicializar o projeto com npm init.
+
+    4. Criar o arquivo principal (por exemplo, index.js).
+
+    5. Instalar dependências com npm install.
+
+    6. Escrever o código da aplicação.
