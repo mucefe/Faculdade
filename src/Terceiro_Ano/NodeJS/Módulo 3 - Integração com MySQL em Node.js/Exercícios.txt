@@ -1,0 +1,31 @@
+Exercicios.txt
+
+1. Explique a diferença entre mysql2 e mysql2/promise.
+   O pacote `mysql2` suporta dois modos de uso: o tradicional baseado em callbacks e a interface baseada em Promises, disponível via `mysql2/promise`. A diferença principal está na forma como o código assíncrono é tratado. O `mysql2/promise` permite usar `async/await`, o que torna o código mais limpo e legível, especialmente em operações encadeadas ou complexas.
+
+2. Quais as vantagens de usar variáveis de ambiente na conexão com o banco de dados?
+   As variáveis de ambiente permitem separar as configurações sensíveis (como usuário, senha e nome do banco) do código-fonte. Isso aumenta a segurança, facilita a configuração para diferentes ambientes (desenvolvimento, testes, produção) e evita o risco de expor dados sensíveis em sistemas de controle de versão como o Git.
+
+3. O que é um prepared statement e como ele ajuda na segurança da aplicação?
+   Um *prepared statement* é uma instrução SQL que é enviada ao banco de dados com seus parâmetros separados dos dados. Isso impede a injeção de SQL, pois o banco trata os dados como valores, não como parte do comando. Além da segurança, ele também pode melhorar a performance em consultas repetidas com estrutura idêntica.
+
+4. Por que é recomendável usar conexões em pool em aplicações Node.js?
+   O pool de conexões permite que a aplicação reutilize conexões ao banco em vez de abrir uma nova a cada requisição. Isso melhora a performance, reduz a sobrecarga no servidor de banco de dados e evita o esgotamento do número de conexões permitidas, especialmente em aplicações com múltiplos acessos simultâneos.
+
+5. Descreva o papel do módulo dotenv em projetos Node.js.
+   O `dotenv` é um módulo que carrega variáveis definidas em um arquivo `.env` para `process.env` no Node.js. Isso permite acessar configurações externas ao código-fonte de maneira segura e organizada. Ele é amplamente usado para configurar senhas, portas, chaves de API e outros dados sensíveis.
+
+6. Qual é a estrutura básica para realizar uma consulta SELECT com o pacote mysql2?
+   Usando callbacks, a estrutura básica é: `connection.query('SELECT * FROM tabela', (err, results) => { ... });`. Com Promises, pode-se usar `const [rows] = await connection.execute('SELECT * FROM tabela');`. Ambas permitem extrair dados do banco, mas o uso de Promises com `async/await` é mais moderno e limpo.
+
+7. Liste três boas práticas ao conectar o Node.js com o MySQL.
+   Primeiro, utilize variáveis de ambiente para armazenar credenciais. Segundo, implemente o uso de pool de conexões para melhor desempenho. Terceiro, sempre trate erros de conexão e de consulta com blocos `try/catch` ou verificações apropriadas, para evitar falhas inesperadas na aplicação.
+
+8. Explique o conceito de transações no MySQL e como ele pode ser implementado em Node.js.
+   Uma transação é um conjunto de operações SQL que são executadas como uma unidade: ou todas ocorrem com sucesso, ou nenhuma é aplicada. Em Node.js, usando `mysql2/promise`, pode-se usar `beginTransaction`, `commit` e `rollback` para garantir a integridade dos dados em operações críticas como transferências ou múltiplas atualizações.
+
+9. Quais erros podem ocorrer ao conectar ao MySQL, e como tratá-los no Node.js?
+   Os erros mais comuns incluem falha de autenticação, host incorreto, banco inexistente, ou número máximo de conexões excedido. Eles podem ser tratados verificando o objeto `err` no callback ou em blocos `try/catch` no uso com Promises, e exibindo mensagens informativas ou logando os erros para depuração.
+
+10. Por que é importante organizar o código em módulos ao trabalhar com bancos de dados?
+   Modularizar o código facilita a manutenção, o reuso e a leitura. Separar a lógica de conexão e consultas do restante da aplicação ajuda a manter o código limpo e a isolar responsabilidades, o que é essencial para escalar o projeto, testar partes isoladas e evitar duplicação de lógica.

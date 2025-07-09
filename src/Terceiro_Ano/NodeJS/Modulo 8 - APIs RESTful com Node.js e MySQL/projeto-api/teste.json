@@ -1,0 +1,21 @@
+{
+  "nome": "Jo",         // Muito curto, deve ter mínimo 3 caracteres
+  "email": "emailinvalido",  // Formato inválido
+  "senha": "123"        // Muito curta, mínimo 6 caracteres
+}
+
+{
+  "nome": "Maria"
+  // email e senha ausentes
+}
+
+
+{
+  "nome": null,
+  "email": 12345,
+  "senha": true
+}
+
+curl -X POST http://localhost:3000/usuarios \
+  -H "Content-Type: application/json" \
+  -d '{"nome":"Jo","email":"inválido","senha":"123"}'

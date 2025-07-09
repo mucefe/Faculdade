@@ -1,0 +1,304 @@
+Atividades Teóricas
+1. Exploração da Documentação Oficial
+○ Objetivo: Familiarizar-se com a documentação do módulo events no
+Node.js.
+○ Atividade: Pesquise a documentação oficial e responda:
+■ Quais métodos principais a classe EventEmitter oferece?
+Os principais métodos são:
+
+    on(eventName, listener)
+    Registra um listener (ouvinte) para o evento especificado.
+
+    once(eventName, listener)
+    Registra um listener que será executado uma única vez.
+
+    emit(eventName, [...args])
+    Emite um evento, acionando todos os listeners registrados.
+
+    off(eventName, listener) ou removeListener(eventName, listener)
+    Remove um listener específico.
+
+    removeAllListeners([eventName])
+    Remove todos os listeners de um evento (ou de todos os eventos).
+
+    listenerCount(eventName)
+    Retorna o número de listeners para um determinado evento.
+
+    listeners(eventName)
+    Retorna um array com os listeners registrados para um evento.
+
+■ Qual é a diferença entre os métodos on e once?
+"on" registra um callback que será executado toda vez que o evento for emitido, enquanto "once" registra um callback que será executado apenas na primeira vez que o evento for emitido, e depois é automaticamente removido.
+
+■ O que acontece se você tentar emitir um evento sem um listener?
+Nada acontece. O evento é simplesmente ignorado sem nenhum erro e sem nenhum callback ser executado.
+
+2. Diagrama de Fluxo de Eventos
+○ Objetivo: Entender o fluxo de um evento em um sistema baseado em
+eventos.
+○ Atividade: Crie um diagrama de fluxo que mostre o processo de:
+■ Registro de listeners.
+■ Emissão de eventos.
+■ Execução de callbacks.
+
+[Início]
+   ↓
+Registrar listener com on()/once()
+   ↓
+Listener associado a um evento
+   ↓
+Emitir evento com emit()
+   ↓
+O Node verifica se há listeners
+   ↓
+→ Se houver → Executa os callbacks
+→ Se não houver → Nada acontece
+   ↓
+[Fim]
+
+3. Questionário de Múltipla Escolha
+○ Objetivo: Testar o conhecimento básico sobre o EventEmitter.
+○ Atividade: Responda perguntas como:
+■ Qual método é usado para emitir eventos?
+emit().
+
+■ O que faz o método removeListener?
+Remove um listener específico associado a um evento.
+
+■ É possível registrar vários listeners para o mesmo evento?
+Sim.
+
+4. Análise de Código
+○ Objetivo: Identificar e explicar como o EventEmitter está sendo usado.
+○ Atividade: Analise o seguinte código e explique cada parte:
+
+const EventEmitter = require('events'); 
+// Importa a classe EventEmitter do módulo 'events'
+const emitter = new EventEmitter();
+// Cria uma nova instância de EventEmitter
+
+emitter.on('data', (info) => {
+    console.log('Dado recebido:', info);
+});
+// Registra um listener para o evento 'data'. 
+// Quando o evento for emitido, executará essa função callback
+
+emitter.emit('data', { id: 1, message: 'Olá!' });
+
+// Emite o evento 'data' com um objeto como argumento.
+// O callback acima será executado, exibindo:
+// Dado recebido: { id: 1, message: 'Olá!' }
+
+5. Estudo de Caso
+○ Objetivo: Relacionar o uso de eventos com casos reais.
+○ Atividade: Dê exemplos de aplicações práticas que poderiam usar o
+EventEmitter, como:
+■ Streaming de áudio/vídeo.
+
+Em aplicações de streaming de áudio ou vídeo, o EventEmitter é essencial para gerenciar o fluxo contínuo de dados e reagir a eventos que ocorrem em tempo real. Por exemplo, ao carregar trechos de um vídeo, eventos podem indicar quando o próximo segmento está pronto para reprodução, quando há um problema de buffering ou quando a conexão foi interrompida. Isso permite uma reprodução mais fluida e resiliente, pois o sistema pode reagir imediatamente a cada uma dessas situações, ajustando o comportamento conforme necessário — como exibir um carregando, pular para outro trecho ou tentar reconectar.
+
+■ Notificações em tempo real.
+
+Sistemas que exigem notificações instantâneas, como chats, painéis de monitoramento ou plataformas colaborativas, podem usar o EventEmitter para disparar eventos sempre que algo relevante acontece, como a chegada de uma nova mensagem, uma atualização de status ou a entrada de um usuário. Esses eventos são tratados por listeners que imediatamente acionam ações visuais ou sonoras no sistema do usuário, garantindo uma experiência dinâmica e responsiva. Isso elimina a necessidade de consultas constantes ao servidor (polling), economizando recursos e melhorando a performance.
+
+■ Controle de fluxos de dados em APIs.
+
+Em APIs complexas que processam dados de múltiplas fontes, o EventEmitter ajuda a modularizar o código e controlar o fluxo das operações. Cada fase de uma requisição — como o recebimento de dados, a validação, o processamento interno, a comunicação com serviços externos e a resposta ao cliente — pode ser tratada como um evento separado. Com isso, é possível implementar lógica condicional, registrar logs, capturar exceções e reagir a falhas de forma muito mais organizada e eficiente, tornando o sistema mais robusto e fácil de manter.
+
+					ATIVIDADES PRÁTICAS
+
+6. Criação de Eventos Simples
+○ Objetivo: Implementar e testar eventos básicos.
+○ Atividade:
+■ Crie um programa que emite um evento chamado hello e responde
+com "Hello, World!".
+
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+
+emitter.on('hello', () => {
+    console.log('Hello, World!');
+});
+
+emitter.emit('hello');
+
+
+■ Modifique para receber o nome de uma pessoa e dizer "Hello,
+[nome]!".
+
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+
+emitter.on('hello', (name) => {
+    console.log(`Hello, ${name}!`);
+});
+
+emitter.emit('hello', 'Alice');
+
+
+7. Sistema de Registro de Log
+○ Objetivo: Implementar um sistema de logging usando o EventEmitter.
+○ Atividade:
+■ Crie um evento log que registra mensagens no console.
+■ Adicione diferentes níveis de log: info, warn e error.
+
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+
+emitter.on('log', (level, message) => {
+    const timestamp = new Date().toISOString();
+    switch (level) {
+        case 'info':
+            console.log(`[INFO - ${timestamp}] ${message}`);
+            break;
+        case 'warn':
+            console.warn(`[WARN - ${timestamp}] ${message}`);
+            break;
+        case 'error':
+            console.error(`[ERROR - ${timestamp}] ${message}`);
+            break;
+        default:
+            console.log(`[UNKNOWN - ${timestamp}] ${message}`);
+    }
+});
+
+emitter.emit('log', 'info', 'Aplicação iniciada.');
+emitter.emit('log', 'warn', 'Uso de memória elevado.');
+emitter.emit('log', 'error', 'Falha ao conectar ao banco de dados.');
+
+
+
+
+8. Simulação de Chat
+○ Objetivo: Simular um sistema de chat com eventos.
+○ Atividade:
+■ Crie uma classe ChatRoom que emite eventos quando usuários
+entram na sala e enviam mensagens.
+■ Teste emitindo eventos como userJoined e message.
+
+const EventEmitter = require('events');
+
+class ChatRoom extends EventEmitter {
+    userJoin(username) {
+        this.emit('userJoined', username);
+    }
+
+    sendMessage(username, message) {
+        this.emit('message', { user: username, text: message });
+    }
+}
+
+const chat = new ChatRoom();
+
+chat.on('userJoined', (user) => {
+    console.log(`${user} entrou na sala.`);
+});
+
+chat.on('message', ({ user, text }) => {
+    console.log(`${user}: ${text}`);
+});
+
+// Teste
+chat.userJoin('Carlos');
+chat.sendMessage('Carlos', 'Olá, pessoal!');
+
+
+9. Eventos com Múltiplos Listeners
+○ Objetivo: Demonstrar como vários listeners podem ser registrados para o
+mesmo evento.
+○ Atividade:
+■ Crie um evento dataReceived com dois listeners:
+1. Um listener que salva os dados em um arquivo.
+2. Outro que exibe os dados no console.
+
+const fs = require('fs');
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+
+// Listener 1: salva os dados em um arquivo
+emitter.on('dataReceived', (data) => {
+    fs.writeFileSync('output.txt', data);
+});
+
+// Listener 2: exibe os dados no console
+emitter.on('dataReceived', (data) => {
+    console.log('Dados recebidos:', data);
+});
+
+emitter.emit('dataReceived', 'Estes são os dados do evento.');
+
+
+10. Gerenciamento de Erros com Eventos
+○ Objetivo: Praticar o uso do evento error.
+○ Atividade:
+■ Implemente um EventEmitter que emite um evento error quando
+ocorre um problema.
+■ Crie um listener para tratar esses erros e exibir mensagens
+apropriadas no console
+
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+
+// Listener para tratar erros
+emitter.on('error', (err) => {
+    console.error('Erro capturado:', err.message);
+});
+
+// Emissão de um erro
+try {
+    throw new Error('Algo deu errado!');
+} catch (err) {
+    emitter.emit('error', err);
+}
+
+
+Desafio Extra:
+
+Combine as atividades práticas 6 e 7 para criar um programa que registra e
+gerencia logs baseados em eventos.
+
+const EventEmitter = require('events');
+
+class Logger extends EventEmitter {
+    log(level, message) {
+        this.emit('log', level, message);
+    }
+
+    greet(name) {
+        this.emit('hello', name);
+    }
+}
+
+const logger = new Logger();
+
+// Listener para eventos de log
+logger.on('log', (level, message) => {
+    const timestamp = new Date().toISOString();
+    switch (level) {
+        case 'info':
+            console.log(`[INFO - ${timestamp}] ${message}`);
+            break;
+        case 'warn':
+            console.warn(`[WARN - ${timestamp}] ${message}`);
+            break;
+        case 'error':
+            console.error(`[ERROR - ${timestamp}] ${message}`);
+            break;
+        default:
+            console.log(`[UNKNOWN - ${timestamp}] ${message}`);
+    }
+});
+
+// Listener para evento 'hello'
+logger.on('hello', (name) => {
+    const greeting = `Hello, ${name}!`;
+    console.log(greeting);
+    logger.log('info', `Saudação enviada para ${name}`);
+});
+
+// Testes
+logger.greet('Alice');
+logger.greet('Bruno');
+
+logger.log('warn', 'Aviso de teste.');
+logger.log('error', 'Erro simulado no sistema.');
