@@ -1,0 +1,25 @@
+name: Deploy Simples
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositório
+        uses: actions/checkout@v3
+
+      - name: Build simples
+        run: echo "Iniciando build do projeto..."
+
+      - name: Mensagem de Deploy
+        run: echo "Deploy realizado com sucesso"
+        
+      - name: Salvar artefato
+        uses: actions/upload-artifact@v3
+        with:
+          name: pagina-html
+          path: index.html
