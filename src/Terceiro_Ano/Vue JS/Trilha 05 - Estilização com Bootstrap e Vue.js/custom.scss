@@ -1,0 +1,19 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+$primary: #FF5733; 
+.card {
+  border-radius: 1.5rem;       
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+  transition: transform 0.3s;  
+  &:hover {
+    transform: translateY(-5px);
+  }
+  .card-title {
+    color: $primary; 
+    font-weight: bold;
+  }
+  .card-body {
+    background-color: #f9f9f9; 
+  }
+}

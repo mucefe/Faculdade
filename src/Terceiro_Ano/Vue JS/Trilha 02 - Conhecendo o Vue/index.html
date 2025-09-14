@@ -1,0 +1,11 @@
+<div id="app">
+    <h1> Minha Lista</h1>>
+    <ul>
+<li v-for="(item, index) in lista" :key="index">
+    {{ item }}
+    <button @click="removerItem(index)">Remover</button>
+</li>
+    </ul>
+    <input v-model="novoItem" placeholder="Adicionar novo item" />
+    <button @click="adicionarItem">Adicionar</button>
+</div>
