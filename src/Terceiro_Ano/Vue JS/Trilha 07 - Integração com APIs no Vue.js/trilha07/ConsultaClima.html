@@ -1,0 +1,99 @@
+<template>
+  <div>
+    <h2>Previsão do Tempo</h2>    
+    <input v-model="cidade" placeholder="Digite a cidade" @keyup.enter="buscarClima" />
+    <select v-model="unidade">
+      <option value="metric">Celsius (°C)</option>
+      <option value="imperial">Fahrenheit (°F)</option>
+    </select>
+    <button @click="buscarClima">Buscar</button>
+    <div v-if="loading" class="spinner"></div>
+    <div v-else-if="erro" class="erro">
+      <p>{{ erro }}</p>
+    </div>
+    <div v-else-if="clima">
+      <p><strong>Temperatura:</strong> {{ clima.temp }}° {{ unidade === 'metric' ? 'C' : 'F' }}</p>
+      <p><strong>Clima:</strong> {{ clima.descricao }}</p>
+    </div>
+  </div>
+</template>
+<script>
+import axios from 'axios';
+export default {
+  data() {
+    return {
+      cidade: '',
+      unidade: 'metric',
+      clima: null,
+      loading: false,
+      erro: ''
+    };
+  },
+  methods: {
+    async buscarClima() {
+      if (!this.cidade) {this.erro = 'Por favor, digite o nome de uma cidade.';
+        return;
+      }
+      this.loading = true;
+      this.erro = '';
+      this.clima = null;
+      const API_KEY = 'SUA_API_KEY_AQUI';
+      try {
+        const response = await axios.get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${this.cidade}&appid=${API_KEY}&units=${this.unidade}&lang=pt_br`
+        );
+        this.clima = {
+          temp: response.data.main.temp,
+          descricao: response.data.weather[0].description
+        };
+      } catch (err) {console.error('Erro na API:', err);
+
+        if (!err.response) {
+          this.erro = 'Não foi possível conectar à API. Verifique sua conexão.';
+        } else if (err.response.status === 404) {
+          this.erro = 'Cidade não encontrada. Verifique o nome e tente novamente.';
+        } else if (err.response.status === 401) {
+          this.erro = 'Chave de API inválida. Verifique sua configuração.';
+        } else {
+          this.erro = 'Ocorreu um erro inesperado. Tente novamente mais tarde.';
+        }
+      } finally {
+        this.loading = false;
+      }
+    }
+  }
+};
+</script>
+
+<style>
+input, select {
+  padding: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.erro {
+  color: red;
+  font-weight: bold;
+}
+
+/* Spinner simples */
+.spinner {
+  margin: 20px auto;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>

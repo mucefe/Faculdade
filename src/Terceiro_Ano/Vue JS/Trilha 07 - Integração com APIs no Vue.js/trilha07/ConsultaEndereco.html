@@ -1,0 +1,77 @@
+<template>
+  <div>
+    <h1>Consulta de Endereço por CEP</h1>
+    <input
+      type="text"
+      v-model="cep"
+      placeholder="Digite o CEP (apenas números)"
+      @keyup.enter="buscarEndereco"
+    />
+    <button @click="buscarEndereco">Buscar</button>
+
+    <div v-if="loadingCep">
+      <p>Carregando...</p>
+    </div>
+
+    <div v-else-if="erroCep">
+      <p style="color: red;">{{ erroCep }}</p>
+    </div>
+
+    <div v-else-if="endereco">
+      <h2>Endereço</h2>
+      <p><strong>Logradouro:</strong> {{ endereco.logradouro }}</p>
+      <p><strong>Bairro:</strong> {{ endereco.bairro }}</p>
+      <p><strong>Cidade:</strong> {{ endereco.localidade }}</p>
+      <p><strong>Estado:</strong> {{ endereco.uf }}</p>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+import api from './services/api';
+
+const cep = ref('');
+const endereco = ref(null);
+const loadingCep = ref(false);
+const erroCep = ref('');
+
+const buscarEndereco = async () => {
+ 
+  const cepLimpo = cep.value.replace(/\D/g, '');
+  if (cepLimpo.length !== 8) {
+    erroCep.value = 'CEP inválido. Digite 8 números.';
+    endereco.value = null;
+    return;
+  }
+
+  loadingCep.value = true;
+  erroCep.value = '';
+  endereco.value = null;
+
+  try {
+    const response = await api.get(`/${cepLimpo}/json/`);
+    if (response.data.erro) {
+      erroCep.value = 'CEP não encontrado.';
+    } else {
+      endereco.value = response.data;
+    }
+  } catch (err) {
+    erroCep.value = 'Erro ao buscar o CEP. Tente novamente.';
+    console.error(err);
+  } finally {
+    loadingCep.value = false;
+  }
+};
+</script>
+
+<style>
+input {
+  padding: 5px;
+  margin-right: 10px;
+}
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+</style>
